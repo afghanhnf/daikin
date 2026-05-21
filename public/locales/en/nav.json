@@ -7,7 +7,10 @@
     "philosophy": "Brand Philosophy",
     "technology": "Technology & Innovation",
     "streamer": "Streamer Technology",
-    "awards": "Awards & Certifications"
+    "awards": "Awards & Certifications",
+    "tkdn": "TKDN Certification",
+    "discovery": "Daikin Discovery",
+    "vrv": "VRV Certified Dealer"
   },
   "products": {
     "label": "Products",
@@ -18,15 +21,17 @@
     "catalogue": "E-Catalogue"
   },
   "services": {
-    "label": "Services & Dealers",
+    "label": "Services",
     "ishop": "iShop (Residential)",
     "proshop": "ProShop (Commercial)",
     "maintenance": "Service & Maintenance",
     "center": "Service Center",
-    "warranty": "Warranty & Support"
+    "warranty": "Warranty & Support",
+    "vrv": "VRV Certified Dealer",
+    "technicalData": "Technical Data"
   },
   "solutions": {
-    "label": "Solutions",
+    "label": "Information",
     "howToChoose": "How to Choose AC",
     "energy": "Energy Efficiency & Inverter",
     "calculator": "AC Calculator",
@@ -39,7 +44,17 @@
     "promotions": "Promotions",
     "events": "Events & Activities",
     "training": "Training & Certification",
-    "csr": "Daikin Impact (CSR)"
+    "csr": "Daikin Impact (CSR)",
+    "perfecting": "Perfecting The Air"
+  },
+  "dealer": {
+    "label": "Find Dealer"
+  },
+  "perfecting": {
+    "label": "Perfecting The Air",
+    "idealAir": "The Ideal Air",
+    "power": "The Power to Create",
+    "stories": "Perfecting The Air Stories"
   },
   "campaign": {
     "label": "Campaign",

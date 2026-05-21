@@ -4,6 +4,9 @@ export interface NavChild {
   icon?: string
   description?: string
   disabled?: boolean
+  isDivider?: boolean
+  groupLabel?: string
+  categoryIcon?: string
 }
 
 export interface NavItem {
@@ -11,6 +14,8 @@ export interface NavItem {
   path: string
   children?: NavChild[]
   isMegaMenu?: boolean
+  isTwoColumn?: boolean
   icon?: string
   disabled?: boolean
+  isDealer?: boolean
 }

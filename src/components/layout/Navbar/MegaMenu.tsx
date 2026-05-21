@@ -41,15 +41,8 @@ export default function MegaMenu({ items, onClose }: MegaMenuProps) {
       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] border border-gray-100 w-[400px] z-50 overflow-hidden"
     >
       {/* Header */}
-      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-gray-100">
+      <div className="px-5 pt-4 pb-3 border-b border-gray-100">
         <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Produk Daikin</span>
-        <Link
-          to="/products"
-          onClick={onClose}
-          className="flex items-center gap-1 text-xs font-semibold text-daikin-blue hover:text-daikin-blue-dark transition-colors"
-        >
-          Lihat Semua <ArrowRight className="w-3 h-3" />
-        </Link>
       </div>
 
       {/* Items */}

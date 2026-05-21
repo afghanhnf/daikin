@@ -25,7 +25,7 @@ const contactChannels = [
   {
     icon: MessageSquare,
     title: 'WhatsApp',
-    value: '+62 812-0000-1924',
+    value: '+62 811-1000-0202',
     sub: 'Chat langsung dengan tim kami',
     gradient: 'from-emerald-600 to-teal-700',
   },

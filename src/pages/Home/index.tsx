@@ -9,7 +9,7 @@ import {
   BookOpen, MapPin, Play, ChevronRight, Mail,
   Building2, MonitorPlay,
   Wifi, Thermometer, Cable, WrapText, Settings, SlidersHorizontal, MoreHorizontal,
-  Leaf, TrendingUp,
+  Leaf, TrendingUp, Package,
 } from 'lucide-react'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -80,14 +80,78 @@ const heroSlides = [
     toneOverlay: 'from-charcoal/55 via-[#1a2a4a]/25 to-transparent',
     image: '/images/hero/slider-emura.jpeg',
   },
+  {
+    id: 4,
+    badge: 'Mulai dari Keputusan yang Tepat',
+    title: 'Pilih AC yang tepat untuk Anda',
+    titleAccent: '',
+    subtitle: 'Ukuran ruangan, kapasitas daya, dan tipe AC menentukan kenyamanan Anda seterusnya. Pelajari panduan lengkap kami sebelum membeli - gratis, cepat, dan akurat.',
+    ctaPrimary:   { label: 'Panduan Memilih AC', href: '/solutions/how-to-choose' },
+    ctaSecondary: { label: 'Garansi & Layanan',  href: '/services/warranty' },
+    stat1: { value: '5 Thn',   label: 'Garansi Kompressor' },
+    stat2: { value: '1.500+',  label: 'Service Center' },
+    gradient: 'from-[#005a87] via-daikin-blue to-daikin-blue-light',
+    thumbGradient: 'from-[#005a87]/30 to-daikin-blue-light/10',
+    toneOverlay: 'from-[#005a87]/55 via-daikin-blue/20 to-transparent',
+    image: '/images/hero/slider-perfecting.jpg',
+  },
 ]
 
-const productCategories = [
-  { label: 'AC Hunian',     sublabel: 'Residential',     href: '#', disabled: true, image: '/images/category_ac/ac-hunian.webp',        overlay: 'from-daikin-blue-dark/70 via-daikin-blue/35 to-transparent'    },
-  { label: 'AC Premium',    sublabel: 'Designer Series', href: '#', disabled: true, image: '/images/category_ac/ac-hunian-premium.webp', overlay: 'from-charcoal/70 via-[#1a2a4a]/35 to-transparent'             },
-  { label: 'AC Komersial',  sublabel: 'Commercial',      href: '#', disabled: true, image: '/images/category_ac/ac-komersial.webp',     overlay: 'from-[#0a1628]/70 via-daikin-blue-dark/35 to-transparent'     },
-  { label: 'AC Industrial', sublabel: 'VRV / Chiller',   href: '#', disabled: true, image: '/images/category_ac/ac-industrial.webp',    overlay: 'from-charcoal/75 via-[#1a2a4a]/40 to-transparent'             },
-  { label: 'Virtual Tour',  sublabel: 'Showroom Online', href: '/profile/technology',   image: '/images/category_ac/virtual-tour.webp',     overlay: 'from-daikin-blue/65 via-daikin-blue-light/25 to-transparent'  },
+type ProductCat = {
+  label: string; sublabel: string; href: string
+  disabled?: boolean; featured?: boolean
+  image?: string; overlay?: string
+  gradient?: string; Icon?: React.FC<{ className?: string }>
+  tags?: string[]
+}
+
+const productCategories: ProductCat[] = [
+  // ── Row 1 — featured (2 wide cards) ───────────────────────────────
+  {
+    label: 'Residential Solutions', sublabel: 'AC Hunian & Hunian Premium',
+    tags: ['1/2 PK – 2.5 PK', 'Inverter', 'Streamer'],
+    href: '/products/residential', featured: true,
+    image: '/images/category_ac/ac-hunian.webp',
+    overlay: 'from-daikin-blue-dark/80 via-daikin-blue/35 to-transparent',
+    gradient: 'from-daikin-blue-dark to-daikin-blue',
+  },
+  {
+    label: 'Commercial Solutions', sublabel: 'AC Komersial & Industrial',
+    tags: ['VRV / VRF', 'Chiller', 'Cassette'],
+    href: '#', disabled: true, featured: true,
+    image: '/images/category_ac/ac-komersial.webp',
+    overlay: 'from-[#0a1628]/80 via-daikin-blue-dark/35 to-transparent',
+    gradient: 'from-[#0a1628] to-daikin-blue-dark',
+  },
+  // ── Row 2 — compact (4 cards) ─────────────────────────────────────
+  {
+    label: 'Accessories', sublabel: 'Aksesori Pelengkap',
+    href: '#', disabled: true,
+    image: '/images/category_ac/acc.jpg',
+    overlay: 'from-emerald-700/75 via-emerald-600/30 to-transparent',
+    gradient: 'from-emerald-600 to-teal-700',
+  },
+  {
+    label: 'Spare Parts', sublabel: 'Suku Cadang Resmi',
+    href: '#', disabled: true,
+    image: '/images/category_ac/spareparts.jpg',
+    overlay: 'from-orange-600/75 via-orange-500/30 to-transparent',
+    gradient: 'from-orange-500 to-amber-600',
+  },
+  {
+    label: 'E-Catalogue', sublabel: 'Unduh Katalog Digital',
+    href: '/products/e-catalogue',
+    image: '/images/category_ac/ac-industrial.webp',
+    overlay: 'from-violet-700/75 via-violet-600/30 to-transparent',
+    gradient: 'from-violet-600 to-purple-700',
+  },
+  {
+    label: 'Virtual Tour', sublabel: 'Showroom Online',
+    href: '/profile/technology',
+    image: '/images/category_ac/virtual-tour.webp',
+    overlay: 'from-daikin-blue/70 via-daikin-blue-light/25 to-transparent',
+    gradient: 'from-daikin-blue to-daikin-blue-light',
+  },
 ]
 
 const whyItems = [
@@ -342,74 +406,122 @@ export default function Home() {
       </section>
 
       {/* ── 2. PRODUCT CATEGORIES ───────────────────────────── */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section className="py-10 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          {/* Row 1: 2 large cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-            {productCategories.slice(0, 2).map((cat, i) => {
-              const isDisabled = (cat as typeof cat & { disabled?: boolean }).disabled
+
+          {/* ── Row 1: 2 featured cards (equal halves) ───────── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            {productCategories.filter((c) => c.featured).map((cat) => {
               const inner = (
                 <motion.div
-                  whileHover={isDisabled ? undefined : 'hover'}
-                  className="relative rounded-2xl overflow-hidden h-72 cursor-pointer group shadow-md hover:shadow-xl transition-shadow duration-300"
+                  whileHover={cat.disabled ? undefined : 'hover'}
+                  className="relative rounded-2xl overflow-hidden h-72 md:h-80 cursor-pointer group shadow-md hover:shadow-xl transition-shadow duration-300"
                 >
-                  <motion.img
-                    variants={isDisabled ? undefined : { hover: { scale: 1.06 } }}
-                    transition={{ duration: 0.5, ease: 'easeOut' }}
-                    src={cat.image} alt={cat.label}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay}`} />
-                  <div className="absolute bottom-0 inset-x-0 bg-black/30 backdrop-blur-sm px-6 py-4 border-t border-white/10">
-                    <p className="text-white font-bold text-lg leading-tight drop-shadow">{cat.label}</p>
-                    <p className="text-white/65 text-xs mt-0.5 font-medium tracking-wide uppercase">{cat.sublabel}</p>
-                  </div>
-                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                    <ArrowRight className="w-4 h-4 text-white" />
+                  {/* Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${cat.gradient}`} />
+                  {cat.image && (
+                    <motion.img
+                      variants={cat.disabled ? undefined : { hover: { scale: 1.05 } }}
+                      transition={{ duration: 0.55, ease: 'easeOut' }}
+                      src={cat.image} alt={cat.label}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                  {/* Gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay ?? 'from-black/70 to-transparent'}`} />
+
+                  {/* Tags — top left */}
+                  {cat.tags && (
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
+                      {cat.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] font-semibold text-white/90 bg-white/15 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/20">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Arrow — top right */}
+                  {!cat.disabled && (
+                    <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                      <ArrowRight className="w-4 h-4 text-white" />
+                    </div>
+                  )}
+
+                  {/* Label panel — bottom */}
+                  <div className="absolute bottom-0 inset-x-0 bg-black/35 backdrop-blur-sm px-6 py-4 border-t border-white/10 group-hover:bg-black/50 transition-colors duration-300">
+                    <p className="text-white font-bold text-xl leading-tight drop-shadow">{cat.label}</p>
+                    <p className="text-white/65 text-[13px] mt-1 font-medium">{cat.sublabel}</p>
                   </div>
                 </motion.div>
               )
-              return isDisabled ? (
-                <div key={cat.label} className={`pointer-events-none cursor-default ${i === 0 ? 'sm:col-span-2' : 'sm:col-span-1'}`}>{inner}</div>
-              ) : (
-                <Link key={cat.label} to={cat.href} className={i === 0 ? 'sm:col-span-2' : 'sm:col-span-1'}>{inner}</Link>
-              )
-            })}
-          </div>
-          {/* Row 2: 3 small cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {productCategories.slice(2).map((cat) => {
-              const isDisabled = (cat as typeof cat & { disabled?: boolean }).disabled
-              const inner = (
-                <motion.div
-                  whileHover={isDisabled ? undefined : 'hover'}
-                  className="relative rounded-2xl overflow-hidden h-48 cursor-pointer group shadow-md hover:shadow-xl transition-shadow duration-300"
-                >
-                  <motion.img
-                    variants={isDisabled ? undefined : { hover: { scale: 1.06 } }}
-                    transition={{ duration: 0.5, ease: 'easeOut' }}
-                    src={cat.image} alt={cat.label}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay}`} />
-                  <div className="absolute bottom-0 inset-x-0 bg-black/30 backdrop-blur-sm px-4 py-3 border-t border-white/10">
-                    <p className="text-white font-bold text-sm leading-tight drop-shadow">{cat.label}</p>
-                    <p className="text-white/60 text-[11px] mt-0.5 font-medium tracking-wide uppercase">{cat.sublabel}</p>
-                  </div>
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                    <ArrowRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </motion.div>
-              )
-              return isDisabled ? (
+              return cat.disabled ? (
                 <div key={cat.label} className="pointer-events-none cursor-default">{inner}</div>
               ) : (
                 <Link key={cat.label} to={cat.href}>{inner}</Link>
               )
             })}
           </div>
+
+          {/* ── Row 2: 4 compact cards ───────────────────────── */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {productCategories.filter((c) => !c.featured).map((cat) => {
+              const Icon = cat.Icon
+              const inner = (
+                <motion.div
+                  whileHover={cat.disabled ? undefined : 'hover'}
+                  className={`relative rounded-2xl overflow-hidden h-52 cursor-pointer group shadow-sm hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br ${cat.gradient ?? 'from-slate-600 to-slate-800'}`}
+                >
+                  {/* Dot pattern watermark */}
+                  <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)', backgroundSize: '18px 18px' }} />
+
+                  {/* Photo (if available) */}
+                  {cat.image && (
+                    <motion.img
+                      variants={cat.disabled ? undefined : { hover: { scale: 1.07 } }}
+                      transition={{ duration: 0.5, ease: 'easeOut' }}
+                      src={cat.image} alt={cat.label}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                  {cat.overlay && <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay}`} />}
+
+                  {/* Large icon watermark (icon-only cards) */}
+                  {Icon && !cat.image && (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-300">
+                      <Icon className="w-24 h-24 text-white" />
+                    </div>
+                  )}
+
+                  {/* Arrow */}
+                  {!cat.disabled && (
+                    <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
+                      <ArrowRight className="w-3.5 h-3.5 text-white" />
+                    </div>
+                  )}
+
+                  {/* Small icon badge + label panel */}
+                  <div className="absolute bottom-0 inset-x-0 bg-black/30 backdrop-blur-sm px-4 py-3.5 border-t border-white/10 group-hover:bg-black/45 transition-colors duration-300">
+                    {Icon && (
+                      <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center mb-2">
+                        <Icon className="w-3.5 h-3.5 text-white" />
+                      </div>
+                    )}
+                    <p className="text-white font-bold text-[15px] leading-tight drop-shadow">{cat.label}</p>
+                    <p className="text-white/60 text-[11px] mt-0.5 font-medium">{cat.sublabel}</p>
+                  </div>
+                </motion.div>
+              )
+              return cat.disabled ? (
+                <div key={cat.label} className="pointer-events-none cursor-default">{inner}</div>
+              ) : (
+                <Link key={cat.label} to={cat.href}>{inner}</Link>
+              )
+            })}
+          </div>
+
         </div>
       </section>
 
@@ -455,6 +567,32 @@ export default function Home() {
               ))}
             </FadeInUp>
           </div>
+          {/* Quick access strip */}
+          <FadeInUp className="mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { label: 'Panduan Memilih AC', desc: 'Panduan lengkap sebelum membeli', icon: BookOpen, href: '/solutions/how-to-choose' },
+                { label: 'Jaminan & Garansi',  desc: 'Garansi resmi & cara klaim',      icon: Shield,   href: '/services/warranty' },
+                { label: 'Dealer & Service Center', desc: 'Temukan lokasi resmi terdekat', icon: MapPin, href: '/services/ishop' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl border border-daikin-blue/15 hover:border-daikin-blue/40 hover:bg-white px-4 py-3.5 transition-all duration-200 group shadow-sm hover:shadow-card"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-daikin-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-daikin-blue group-hover:text-white transition-colors">
+                    <item.icon className="w-4 h-4 text-daikin-blue group-hover:text-white transition-colors" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-bold text-charcoal text-sm leading-tight">{item.label}</p>
+                    <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-daikin-blue transition-colors flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </FadeInUp>
+
           <FadeInUp>
             <div className="grid grid-cols-3 gap-3 h-72 md:h-80">
               {whyPhotos.map((photo, i) => (
@@ -716,7 +854,7 @@ export default function Home() {
       </section>
 
       {/* ── 9. PRODUK UNGGULAN — 3 cards ────────────────────── */}
-      <section className="py-16 md:py-24 bg-soft-gray">
+      <section className="pt-16 md:pt-24 pb-8 md:pb-10 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <SectionHeading
@@ -736,40 +874,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. CERITA YANG KAMI YAKINI (Campaign) ──────────── */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <SectionHeading
-            title="Cerita yang Kami Yakini"
-            subtitle="Di balik setiap produk, ada misi yang lebih besar: udara yang lebih baik, untuk semua orang."
-          />
-          <FadeInUp stagger className="grid md:grid-cols-3 gap-5">
-            {campaigns.map((camp) => (
-              <FadeInItem key={camp.href}>
-                <div className="pointer-events-none cursor-default">
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    className="relative overflow-hidden rounded-xl text-white h-56 flex flex-col justify-end group shadow-card hover:shadow-card-hover transition-shadow"
-                  >
-                    <img src={(camp as typeof camp & { image: string }).image} alt={camp.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${camp.gradient}`} />
-                    <div className="relative z-10 p-6 border-t border-white/10">
-                      <h3 className="text-sm font-bold mb-1.5 leading-snug drop-shadow">{camp.title}</h3>
-                      <p className="text-white/75 text-xs mb-3 line-clamp-2">{camp.desc}</p>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:gap-2.5 transition-all duration-300">
-                        Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </motion.div>
-                </div>
-              </FadeInItem>
-            ))}
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ── 11. AKSESORI — CATEGORIES ───────────────────────── */}
-      <section className="py-16 md:py-20 bg-soft-gray">
+      {/* ── 10. AKSESORI — CATEGORIES ───────────────────────── */}
+      <section className="pt-8 md:pt-10 pb-16 md:pb-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -939,7 +1045,7 @@ export default function Home() {
       </section>
 
       {/* ── 14. ARTIKEL & BERITA ────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-16 md:pt-24 pb-8 md:pb-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <SectionHeading
@@ -954,6 +1060,38 @@ export default function Home() {
           <FadeInUp stagger className="grid md:grid-cols-3 gap-6">
             {latestNews.map((article) => (
               <FadeInItem key={article.id}><NewsCard article={article} /></FadeInItem>
+            ))}
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* ── Cerita yang Kami Yakini (Campaign) ──────────────── */}
+      <section className="pt-8 md:pt-10 pb-16 md:pb-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <SectionHeading
+            title="Cerita yang Kami Yakini"
+            subtitle="Di balik setiap produk, ada misi yang lebih besar: udara yang lebih baik, untuk semua orang."
+          />
+          <FadeInUp stagger className="grid md:grid-cols-3 gap-5">
+            {campaigns.map((camp) => (
+              <FadeInItem key={camp.href}>
+                <div className="pointer-events-none cursor-default">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="relative overflow-hidden rounded-xl text-white h-56 flex flex-col justify-end group shadow-card hover:shadow-card-hover transition-shadow"
+                  >
+                    <img src={(camp as typeof camp & { image: string }).image} alt={camp.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${camp.gradient}`} />
+                    <div className="relative z-10 p-6 border-t border-white/10">
+                      <h3 className="text-sm font-bold mb-1.5 leading-snug drop-shadow">{camp.title}</h3>
+                      <p className="text-white/75 text-xs mb-3 line-clamp-2">{camp.desc}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:gap-2.5 transition-all duration-300">
+                        Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </motion.div>
+                </div>
+              </FadeInItem>
             ))}
           </FadeInUp>
         </div>

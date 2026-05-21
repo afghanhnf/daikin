@@ -2,17 +2,22 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, ChevronDown, Search, Facebook, Instagram, Youtube, Twitter } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Facebook, Instagram, Youtube, Twitter, Building2, Zap } from 'lucide-react'
 import { navItems } from '@/data/navigation'
 import { useNavigation } from '@/context/NavigationContext'
 import { cn } from '@/utils/cn'
 import MegaMenu from './MegaMenu'
+import TwoColumnMenu from './TwoColumnMenu'
 import LanguageSwitcher from './LanguageSwitcher'
+
+const mobileCategoryIconMap: Record<string, React.FC<{ className?: string }>> = {
+  Building2,
+  Zap,
+}
 
 const topBarLinks = [
   { label: '#KeputusanYangTepat', href: '/profile/about', accent: true },
   { label: 'DAIKIN DESIGNER AWARDS', href: '/campaign/ideal-air', accent: false },
-  { label: 'TEMUKAN DEALER', href: '/services/ishop', accent: false },
 ]
 
 const socialLinks = [
@@ -134,9 +139,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" onClick={() => setActiveDropdown(null)} className="flex-shrink-0">
               <img
-                src="/images/logo/logo-daikin.svg"
+                src={isTransparent ? '/images/logo/logo-daikin-white.png' : '/images/logo/logo-daikin.svg'}
                 alt="Daikin Indonesia"
-                className={`h-8 md:h-9 w-auto transition-all duration-300 ${isTransparent ? 'brightness-0 invert' : ''}`}
+                className="h-8 md:h-9 w-auto transition-all duration-300"
               />
             </Link>
 
@@ -160,7 +165,14 @@ export default function Navbar() {
 
                 return (
                   <li key={item.labelKey} className="relative">
-                    {hasDropdown ? (
+                    {item.isDealer ? (
+                      <Link
+                        to={item.path}
+                        className="flex items-center gap-1.5 px-4 py-1.5 text-sm font-semibold rounded-btn text-white bg-[#0097E0] hover:bg-daikin-blue-dark transition-colors duration-200 whitespace-nowrap ml-1"
+                      >
+                        {t(item.labelKey)}
+                      </Link>
+                    ) : hasDropdown ? (
                       <button
                         onMouseEnter={() => setActiveDropdown(item.labelKey)}
                         onMouseLeave={() => setActiveDropdown(null)}
@@ -191,6 +203,8 @@ export default function Navbar() {
                           {isOpen && (
                             item.isMegaMenu
                               ? <MegaMenu items={item.children!} onClose={() => setActiveDropdown(null)} />
+                              : item.isTwoColumn
+                                ? <TwoColumnMenu items={item.children!} onClose={() => setActiveDropdown(null)} />
                               : (
                                 <motion.div
                                   initial={{ opacity: 0, y: 8 }}
@@ -200,7 +214,15 @@ export default function Navbar() {
                                   className="bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-100 py-2 min-w-[220px]"
                                 >
                                   {item.children!.map((child) => (
-                                    child.disabled ? (
+                                    child.isDivider ? (
+                                      <div key={child.path} className="px-4 pt-2 pb-1 mt-1 border-t border-gray-100">
+                                        {child.groupLabel && (
+                                          <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                            {child.groupLabel}
+                                          </span>
+                                        )}
+                                      </div>
+                                    ) : child.disabled ? (
                                       <span
                                         key={child.path}
                                         className="block px-4 py-2.5 text-sm text-charcoal pointer-events-none cursor-default"
@@ -320,7 +342,21 @@ export default function Navbar() {
                             className="overflow-hidden pl-4"
                           >
                             {item.children.map((child) => (
-                              child.disabled ? (
+                              child.isDivider ? (
+                                <div key={child.path} className="px-3 pt-3 pb-1 mt-2 first:mt-0 first:pt-1 border-t border-gray-100 first:border-t-0">
+                                  {child.groupLabel && (
+                                    <div className="flex items-center gap-1.5">
+                                      {child.categoryIcon && mobileCategoryIconMap[child.categoryIcon] && (() => {
+                                        const CatIcon = mobileCategoryIconMap[child.categoryIcon!]
+                                        return <CatIcon className="w-3 h-3 text-gray-400" />
+                                      })()}
+                                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                        {child.groupLabel}
+                                      </span>
+                                    </div>
+                                  )}
+                                </div>
+                              ) : child.disabled ? (
                                 <span
                                   key={child.path}
                                   className="block px-3 py-2.5 text-sm text-gray-600 rounded-lg pointer-events-none cursor-default"
@@ -341,6 +377,13 @@ export default function Navbar() {
                         )}
                       </AnimatePresence>
                     </>
+                  ) : item.isDealer ? (
+                    <Link
+                      to={item.path}
+                      className="block px-3 py-3 text-sm font-semibold text-white bg-[#0097E0] rounded-lg hover:bg-daikin-blue-dark transition-colors text-center"
+                    >
+                      {t(item.labelKey)}
+                    </Link>
                   ) : (
                     <Link
                       to={item.path}
