@@ -27,7 +27,7 @@ export default function IdealAir() {
             <div className="accent-line" />
             <h2 className="section-heading">Apa Itu Udara Ideal?</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Udara ideal bukan hanya soal suhu. Ini mencakup tingkat kelembaban yang tepat, bebas dari partikel berbahaya, dengan aroma segar yang menenangkan — kondisi yang memungkinkan Anda dan keluarga bernapas dengan bebas.
+              Udara ideal bukan hanya soal suhu. Ini mencakup tingkat kelembaban yang tepat, bebas dari partikel berbahaya, dengan aroma segar yang menenangkan - kondisi yang memungkinkan Anda dan keluarga bernapas dengan bebas.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Daikin memahami bahwa setiap orang memiliki definisi kenyamanan yang berbeda. Itulah mengapa kami menghadirkan teknologi yang dapat disesuaikan dengan kebutuhan unik setiap ruangan dan penggunanya.

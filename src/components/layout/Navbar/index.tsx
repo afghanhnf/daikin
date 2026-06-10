@@ -145,7 +145,7 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Desktop nav links — centred */}
+            {/* Desktop nav links - centred */}
             <ul className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
               {navItems.map((item) => {
                 const isActive      = location.pathname.startsWith(item.path) && item.path !== '/'
@@ -254,7 +254,7 @@ export default function Navbar() {
             {/* Right-side actions */}
             <div className="flex items-center gap-2 flex-shrink-0">
 
-              {/* Search — desktop */}
+              {/* Search - desktop */}
               <div className="hidden lg:flex items-center gap-2">
                 <AnimatePresence>
                   {searchOpen && (

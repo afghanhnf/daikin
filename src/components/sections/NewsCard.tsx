@@ -38,14 +38,14 @@ export default function NewsCard({ article, featured = false }: NewsCardProps) {
 
         {/* Cover */}
         <div className={`relative overflow-hidden bg-gradient-to-br ${meta.gradient} ${featured ? 'h-64' : 'h-48'}`}>
-          {/* Photo — object-cover for real images, falls back to gradient for SVG */}
+          {/* Photo - object-cover for real images, falls back to gradient for SVG */}
           <img
             src={article.coverImage}
             alt={article.title[lang]}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
-          {/* Branded tint — keeps category colour identity over the photo */}
+          {/* Branded tint - keeps category colour identity over the photo */}
           <div className={`absolute inset-0 bg-gradient-to-br ${meta.gradient} opacity-50`} />
           {/* Bottom vignette for readability */}
           <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/40 to-transparent" />

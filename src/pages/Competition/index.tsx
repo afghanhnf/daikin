@@ -17,7 +17,7 @@ export default function Competition() {
               Ikuti kompetisi bergengsi Daikin dan tunjukkan keahlian Anda! Informasi kompetisi berikutnya akan segera diumumkan.
             </p>
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-6 py-3 rounded-full text-white font-medium">
-              Segera Hadir — Stay Tuned!
+              Segera Hadir - Stay Tuned!
             </div>
           </FadeInUp>
         </div>

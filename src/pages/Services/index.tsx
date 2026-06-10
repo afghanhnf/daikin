@@ -60,7 +60,7 @@ const journey = [
   { step: '02', title: 'Pembelian', desc: 'Proses pembelian mudah dengan berbagai metode pembayaran. Kami juga memfasilitasi cicilan tanpa bunga.' },
   { step: '03', title: 'Instalasi', desc: 'Teknisi bersertifikat Daikin melakukan pemasangan sesuai standar teknis untuk performa optimal dan keamanan pengguna.' },
   { step: '04', title: 'Perawatan', desc: 'Program servis berkala memastikan AC Anda selalu dalam kondisi prima dengan efisiensi energi dan kualitas udara terjaga.' },
-  { step: '05', title: 'Dukungan Purna Jual', desc: 'Tim support Daikin siap membantu kapan pun Anda membutuhkan — dari konsultasi teknis hingga penanganan garansi.' },
+  { step: '05', title: 'Dukungan Purna Jual', desc: 'Tim support Daikin siap membantu kapan pun Anda membutuhkan - dari konsultasi teknis hingga penanganan garansi.' },
 ]
 
 const stats = [
@@ -73,7 +73,7 @@ const stats = [
 const reasons = [
   { icon: Award, title: 'Teknisi Bersertifikat Resmi', desc: 'Setiap teknisi menjalani pelatihan intensif dan sertifikasi resmi dari Daikin Japan sebelum melayani pelanggan.' },
   { icon: Star, title: 'Suku Cadang 100% Orisinal', desc: 'Hanya menggunakan komponen asli Daikin yang terverifikasi untuk memastikan kinerja dan keawetan unit Anda.' },
-  { icon: Clock, title: 'Respons Cepat', desc: 'Layanan darurat tersedia dengan waktu respons 24 jam untuk wilayah utama — kami mengerti setiap menit kenyamanan Anda berarti.' },
+  { icon: Clock, title: 'Respons Cepat', desc: 'Layanan darurat tersedia dengan waktu respons 24 jam untuk wilayah utama - kami mengerti setiap menit kenyamanan Anda berarti.' },
   { icon: Users, title: 'Jaringan Terluas', desc: 'Lebih dari 500 titik servis di seluruh Indonesia menjamin Anda tidak pernah jauh dari bantuan ahli Daikin.' },
 ]
 
@@ -82,7 +82,7 @@ export default function ServicesIndex() {
     <PageTransition>
       <PageMeta
         title="Layanan & Dealer Daikin Indonesia"
-        description="Jaringan layanan Daikin terluas di Indonesia — 14 cabang, 1200+ dealer iShop, 500+ service center, dan 5000+ teknisi bersertifikat siap melayani Anda."
+        description="Jaringan layanan Daikin terluas di Indonesia - 14 cabang, 1200+ dealer iShop, 500+ service center, dan 5000+ teknisi bersertifikat siap melayani Anda."
         canonical="/services"
       />
 
@@ -93,7 +93,7 @@ export default function ServicesIndex() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Layanan & Dealer</h1>
             <p className="text-white/80 text-xl max-w-2xl leading-relaxed">
-              Dari konsultasi pertama hingga perawatan jangka panjang — jaringan layanan Daikin yang luas memastikan Anda mendapat dukungan terbaik di setiap langkah.
+              Dari konsultasi pertama hingga perawatan jangka panjang - jaringan layanan Daikin yang luas memastikan Anda mendapat dukungan terbaik di setiap langkah.
             </p>
           </FadeInUp>
         </div>
@@ -119,7 +119,7 @@ export default function ServicesIndex() {
       <section className="section-container">
         <SectionHeading
           title="Ekosistem Layanan Lengkap"
-          subtitle="Daikin membangun ekosistem layanan end-to-end yang tidak tertandingi — memastikan setiap pelanggan mendapatkan pengalaman terbaik dari awal hingga purna jual."
+          subtitle="Daikin membangun ekosistem layanan end-to-end yang tidak tertandingi - memastikan setiap pelanggan mendapatkan pengalaman terbaik dari awal hingga purna jual."
         />
         <FadeInUp stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((svc) => {
@@ -160,7 +160,7 @@ export default function ServicesIndex() {
         <div className="section-container">
           <SectionHeading
             title="Perjalanan Layanan Daikin"
-            subtitle="Kami merancang setiap tahap perjalanan pelanggan — dari pertama kali mengenal Daikin hingga bertahun-tahun setelah pembelian."
+            subtitle="Kami merancang setiap tahap perjalanan pelanggan - dari pertama kali mengenal Daikin hingga bertahun-tahun setelah pembelian."
             centered
           />
           <div className="relative">
@@ -189,10 +189,10 @@ export default function ServicesIndex() {
             <div className="accent-line" />
             <h2 className="section-heading">Mengapa Mempercayakan AC Anda kepada Daikin?</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Layanan purna jual yang baik bukan sekadar memperbaiki yang rusak — ini tentang memastikan investasi Anda terlindungi selama bertahun-tahun. Itulah filosofi di balik ekosistem layanan Daikin.
+              Layanan purna jual yang baik bukan sekadar memperbaiki yang rusak - ini tentang memastikan investasi Anda terlindungi selama bertahun-tahun. Itulah filosofi di balik ekosistem layanan Daikin.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Setiap teknisi Daikin melewati proses seleksi ketat dan pelatihan berjenjang yang terakreditasi langsung oleh Daikin Japan. Mereka tidak hanya mahir secara teknis — mereka memahami standar kualitas yang ditetapkan dari markas besar kami di Osaka.
+              Setiap teknisi Daikin melewati proses seleksi ketat dan pelatihan berjenjang yang terakreditasi langsung oleh Daikin Japan. Mereka tidak hanya mahir secara teknis - mereka memahami standar kualitas yang ditetapkan dari markas besar kami di Osaka.
             </p>
             <div className="space-y-4">
               {reasons.map(({ icon: Icon, title, desc }) => (

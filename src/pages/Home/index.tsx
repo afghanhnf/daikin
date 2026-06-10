@@ -40,7 +40,7 @@ const heroSlides = [
     badge: 'Solusi Udara Terdepan di Indonesia',
     title: 'Perfecting',
     titleAccent: 'the Air',
-    subtitle: 'Lebih dari sekadar pendingin ruangan — Daikin menghadirkan udara yang sehat, efisien, dan nyaman. Karena setiap napas yang Anda hirup di rumah, itu tanggung jawab kami.',
+    subtitle: 'Lebih dari sekadar pendingin ruangan - Daikin menghadirkan udara yang sehat, efisien, dan nyaman. Karena setiap napas yang Anda hirup di rumah, itu tanggung jawab kami.',
     ctaPrimary:   { label: 'Lihat Produk',  href: '#', disabled: true },
     ctaSecondary: { label: 'Kalkulator AC', href: '/solutions/ac-calculator' },
     stat1: { value: '60%',    label: 'Hemat Energi' },
@@ -55,7 +55,7 @@ const heroSlides = [
     badge: 'Exclusive Daikin Technology',
     title: 'Streamer',
     titleAccent: 'Technology',
-    subtitle: 'Ketika udara dalam ruangan bisa lebih berbahaya dari luar, Streamer Technology hadir sebagai penjaga. Aktif menghancurkan 99.9% virus — bukan sekadar menyaringnya.',
+    subtitle: 'Ketika udara dalam ruangan bisa lebih berbahaya dari luar, Streamer Technology hadir sebagai penjaga. Aktif menghancurkan 99.9% virus - bukan sekadar menyaringnya.',
     ctaPrimary:   { label: 'Pelajari Teknologi', href: '/profile/streamer' },
     ctaSecondary: { label: 'Lihat Produk',       href: '#', disabled: true },
     stat1: { value: '99.9%', label: 'Virus Tereliminasi' },
@@ -70,7 +70,7 @@ const heroSlides = [
     badge: 'Red Dot Design Award Winner',
     title: 'Daikin',
     titleAccent: 'Emura Series',
-    subtitle: 'Saat estetika dan performa menyatu tanpa kompromi — itulah Emura. Dirancang di Eropa, diperkuat teknologi Jepang, untuk mereka yang tidak berkompromi dengan kualitas maupun keindahan.',
+    subtitle: 'Saat estetika dan performa menyatu tanpa kompromi - itulah Emura. Dirancang di Eropa, diperkuat teknologi Jepang, untuk mereka yang tidak berkompromi dengan kualitas maupun keindahan.',
     ctaPrimary:   { label: 'Lihat Emura',  href: '#', disabled: true },
     ctaSecondary: { label: 'Cari Dealer',  href: '#', disabled: true },
     stat1: { value: 'Red Dot', label: 'Design Award' },
@@ -106,7 +106,7 @@ type ProductCat = {
 }
 
 const productCategories: ProductCat[] = [
-  // ── Row 1 — featured (2 wide cards) ───────────────────────────────
+  // ── Row 1 - featured (2 wide cards) ───────────────────────────────
   {
     label: 'Residential Solutions', sublabel: 'AC Hunian & Hunian Premium',
     tags: ['1/2 PK – 2.5 PK', 'Inverter', 'Streamer'],
@@ -123,7 +123,7 @@ const productCategories: ProductCat[] = [
     overlay: 'from-[#0a1628]/80 via-daikin-blue-dark/35 to-transparent',
     gradient: 'from-[#0a1628] to-daikin-blue-dark',
   },
-  // ── Row 2 — compact (4 cards) ─────────────────────────────────────
+  // ── Row 2 - compact (4 cards) ─────────────────────────────────────
   {
     label: 'Accessories', sublabel: 'Aksesori Pelengkap',
     href: '#', disabled: true,
@@ -155,10 +155,10 @@ const productCategories: ProductCat[] = [
 ]
 
 const whyItems = [
-  { icon: Zap,    title: 'Hemat Listrik, Bukan Hemat Performa',  desc: 'Variable-speed compressor kami membuktikan bahwa hemat 60% energi tidak berarti kurang dingin — justru lebih konsisten dan stabil.' },
+  { icon: Zap,    title: 'Hemat Listrik, Bukan Hemat Performa',  desc: 'Variable-speed compressor kami membuktikan bahwa hemat 60% energi tidak berarti kurang dingin - justru lebih konsisten dan stabil.' },
   { icon: Wind,   title: 'Udara yang Aktif Dibersihkan',         desc: 'Streamer Technology bukan sekadar filter pasif. Ia aktif menghancurkan patogen, PM2.5, dan alergen sebelum menyentuh Anda.' },
-  { icon: Shield, title: 'Lima Tahun, Tanpa Pertanyaan',         desc: 'Garansi kompressor 5 tahun dan 1.500+ service center resmi — karena kepercayaan Anda adalah kontrak yang kami jaga.' },
-  { icon: Award,  title: 'Terbaik di Dunia, Bukti dari Fakta',   desc: '#1 AC brand global di 170+ negara. Bukan dari iklan — tapi dari jutaan keluarga yang setiap hari memilih Daikin.' },
+  { icon: Shield, title: 'Lima Tahun, Tanpa Pertanyaan',         desc: 'Garansi kompressor 5 tahun dan 1.500+ service center resmi - karena kepercayaan Anda adalah kontrak yang kami jaga.' },
+  { icon: Award,  title: 'Terbaik di Dunia, Bukti dari Fakta',   desc: '#1 AC brand global di 170+ negara. Bukan dari iklan - tapi dari jutaan keluarga yang setiap hari memilih Daikin.' },
 ]
 
 const whyPhotos = [
@@ -172,11 +172,11 @@ const whyPhotos = [
 const innovationPoints = [
   { icon: Leaf,       title: 'Net Zero 2050',         desc: 'Komitmen Daikin menuju operasional karbon netral sepenuhnya.' },
   { icon: TrendingUp, title: 'Peningkatan COP & EER', desc: 'Setiap generasi produk menghadirkan efisiensi yang lebih tinggi.' },
-  { icon: Zap,        title: 'Refrigerant R-32',      desc: 'GWP 66% lebih rendah dibanding R-410A — lebih ramah iklim.' },
+  { icon: Zap,        title: 'Refrigerant R-32',      desc: 'GWP 66% lebih rendah dibanding R-410A - lebih ramah iklim.' },
   { icon: Globe,      title: 'Manufaktur Hijau',      desc: 'Fasilitas produksi bersertifikat ISO 14001 di seluruh dunia.' },
 ]
 
-// Innovation image placeholders — replace src="" when images are ready
+// Innovation image placeholders - replace src="" when images are ready
 const innovationImages = [
   { label: 'R&D Laboratory',           gradient: 'from-daikin-blue to-sky-500',          image: '/images/inovasi/lab-daikin.jpg'           },
   { label: 'Green Manufacturing',      gradient: 'from-emerald-600 to-teal-700',         image: '/images/inovasi/green-manufacturing.png'  },
@@ -200,7 +200,7 @@ const accessoryCategories = [
   { label: 'Lainnya',                 sublabel: 'Produk Lainnya',        gradient: 'from-gray-600 to-gray-800',     Icon: MoreHorizontal    },
 ]
 
-// Campaign — original titles preserved
+// Campaign - original titles preserved
 const campaigns = [
   {
     title: 'The Ideal Air',
@@ -225,12 +225,12 @@ const campaigns = [
   },
 ]
 
-// Training — 3 categories
+// Training - 3 categories
 const trainingCategories = [
   {
     icon: Building2,
     title: 'Pusat Pelatihan',
-    desc: 'Fasilitas modern di Jakarta, Surabaya & Medan — lengkap dengan lab praktik dan ruang kelas berstandar internasional Daikin.',
+    desc: 'Fasilitas modern di Jakarta, Surabaya & Medan - lengkap dengan lab praktik dan ruang kelas berstandar internasional Daikin.',
     gradient: 'from-daikin-blue-dark to-daikin-blue',
     href: '#', disabled: true,
     cta: 'Temukan Lokasi',
@@ -238,7 +238,7 @@ const trainingCategories = [
   {
     icon: BookOpen,
     title: 'Kurikulum',
-    desc: 'Materi dikembangkan langsung oleh Daikin Japan — dari instalasi dasar, diagnostik sistem, hingga integrasi VRV & BMS tingkat lanjut.',
+    desc: 'Materi dikembangkan langsung oleh Daikin Japan - dari instalasi dasar, diagnostik sistem, hingga integrasi VRV & BMS tingkat lanjut.',
     gradient: 'from-charcoal to-daikin-blue-dark',
     href: '#', disabled: true,
     cta: 'Lihat Kurikulum',
@@ -362,16 +362,16 @@ export default function Home() {
                         <div className={`absolute inset-0 bg-gradient-to-br ${slide.thumbGradient}`} />
                         {/* Photo */}
                         <img src={slide.image} alt={slide.titleAccent} className="relative z-10 w-full h-full object-cover" loading="eager" width={480} height={360} />
-                        {/* Branded tone overlay — blends slide colour into photo without crushing it */}
+                        {/* Branded tone overlay - blends slide colour into photo without crushing it */}
                         <div className={`absolute inset-0 z-[15] bg-gradient-to-br ${(slide as typeof slide & { toneOverlay: string }).toneOverlay} pointer-events-none`} />
                         {/* Caption */}
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/65 to-transparent px-5 py-4 z-20">
                           <div className="text-white/60 text-xs">Daikin Indonesia</div>
                           <div className="text-white font-bold text-sm">{slide.titleAccent}</div>
                         </div>
-                        {/* Glass edge — top shine line simulates light hitting glass rim */}
+                        {/* Glass edge - top shine line simulates light hitting glass rim */}
                         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/55 to-transparent z-30 pointer-events-none" />
-                        {/* Glass edge — left rim */}
+                        {/* Glass edge - left rim */}
                         <div className="absolute left-0 inset-y-0 w-px bg-gradient-to-b from-white/35 via-white/10 to-transparent z-30 pointer-events-none" />
                       </div>
                       <motion.div animate={{ y: [0,-8,0] }} transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
@@ -431,7 +431,7 @@ export default function Home() {
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay ?? 'from-black/70 to-transparent'}`} />
 
-                  {/* Tags — top left */}
+                  {/* Tags - top left */}
                   {cat.tags && (
                     <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
                       {cat.tags.map((tag) => (
@@ -442,14 +442,14 @@ export default function Home() {
                     </div>
                   )}
 
-                  {/* Arrow — top right */}
+                  {/* Arrow - top right */}
                   {!cat.disabled && (
                     <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
                       <ArrowRight className="w-4 h-4 text-white" />
                     </div>
                   )}
 
-                  {/* Label panel — bottom */}
+                  {/* Label panel - bottom */}
                   <div className="absolute bottom-0 inset-x-0 bg-black/35 backdrop-blur-sm px-6 py-4 border-t border-white/10 group-hover:bg-black/50 transition-colors duration-300">
                     <p className="text-white font-bold text-xl leading-tight drop-shadow">{cat.label}</p>
                     <p className="text-white/65 text-[13px] mt-1 font-medium">{cat.sublabel}</p>
@@ -525,7 +525,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 3. WHY DAIKIN — with air particles ──────────────── */}
+      {/* ── 3. WHY DAIKIN - with air particles ──────────────── */}
       <section className="py-16 md:py-24 bg-daikin-blue-50 relative overflow-hidden">
         <Suspense fallback={null}><AirParticles /></Suspense>
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
@@ -617,7 +617,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <SectionHeading
             title="Angka yang Berbicara"
-            subtitle="Satu abad bukan waktu yang pendek — dan setiap tahunnya, standar kami terus diperbaiki."
+            subtitle="Satu abad bukan waktu yang pendek - dan setiap tahunnya, standar kami terus diperbaiki."
             centered light
           />
           <StatCounter stats={[
@@ -641,7 +641,7 @@ export default function Home() {
                 <span className="text-daikin-blue-light">Sejak 1924</span>
               </h2>
               <p className="text-white/65 leading-relaxed mb-4 text-lg">
-                Bukan sekadar mesin pendingin — Daikin adalah janji kepada setiap orang yang menghirup udara di ruang yang kami sentuh.
+                Bukan sekadar mesin pendingin - Daikin adalah janji kepada setiap orang yang menghirup udara di ruang yang kami sentuh.
               </p>
               <p className="text-white/50 leading-relaxed mb-8 text-sm">
                 Dari laboratorium di Osaka hingga kamar tidur Anda di Indonesia. Saksikan bagaimana seratus tahun inovasi terwujud dalam satu perjalanan yang nyata.
@@ -664,7 +664,7 @@ export default function Home() {
                   onClick={handlePause}
                   playsInline
                 />
-                {/* Poster overlay — hidden when playing */}
+                {/* Poster overlay - hidden when playing */}
                 {!isPlaying && (
                   <>
                     <div className="absolute inset-0 opacity-[0.07]" style={{
@@ -706,7 +706,7 @@ export default function Home() {
                 Lahir di Osaka,<br /><span className="text-daikin-blue">Dipercaya di Seluruh Dunia</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-4">
-                Berdiri di Osaka, Jepang pada 1924, Daikin Industries tumbuh menjadi produsen AC terbesar di dunia — bukan karena keberuntungan, melainkan karena inovasi yang tak pernah berhenti.
+                Berdiri di Osaka, Jepang pada 1924, Daikin Industries tumbuh menjadi produsen AC terbesar di dunia - bukan karena keberuntungan, melainkan karena inovasi yang tak pernah berhenti.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8 text-sm">
                 Di Indonesia sejak 1976, kami telah membangun kepercayaan yang merentang di 34 provinsi, dengan ratusan dealer dan teknisi bersertifikat yang siap hadir untuk Anda.
@@ -752,7 +752,7 @@ export default function Home() {
                 Inovasi Untuk<br /><span className="text-daikin-blue">Peningkatan Berkelanjutan</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-8">
-                Setiap terobosan yang kami hadirkan bukan hanya untuk hari ini — melainkan untuk menjaga bumi dan kualitas hidup generasi yang akan datang.
+                Setiap terobosan yang kami hadirkan bukan hanya untuk hari ini - melainkan untuk menjaga bumi dan kualitas hidup generasi yang akan datang.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {innovationPoints.map(({ icon: Icon, title, desc }) => (
@@ -853,13 +853,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. PRODUK UNGGULAN — 3 cards ────────────────────── */}
+      {/* ── 9. PRODUK UNGGULAN - 3 cards ────────────────────── */}
       <section className="pt-16 md:pt-24 pb-8 md:pb-10 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <SectionHeading
               title="Dirancang untuk Kebutuhan Anda"
-              subtitle="Dari kamar tidur hingga gedung bertingkat — ada satu Daikin yang tepat untuk setiap ruang."
+              subtitle="Dari kamar tidur hingga gedung bertingkat - ada satu Daikin yang tepat untuk setiap ruang."
               className="mb-0"
             />
             <span className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 pointer-events-none cursor-default">
@@ -874,7 +874,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. AKSESORI — CATEGORIES ───────────────────────── */}
+      {/* ── 10. AKSESORI - CATEGORIES ───────────────────────── */}
       <section className="pt-8 md:pt-10 pb-16 md:pb-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
@@ -919,13 +919,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 12. PELATIHAN — 3 CATEGORIES + KARIR ───────────── */}
+      {/* ── 12. PELATIHAN - 3 CATEGORIES + KARIR ───────────── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="mb-12">
             <div className="accent-line" />
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-2">Jadilah Ahlinya. Kami yang Mendidik.</h2>
-            <p className="text-gray-500 text-sm max-w-xl">Kurikulum pelatihan Daikin dirancang langsung dari Jepang — standar global, implementasi lokal.</p>
+            <p className="text-gray-500 text-sm max-w-xl">Kurikulum pelatihan Daikin dirancang langsung dari Jepang - standar global, implementasi lokal.</p>
           </div>
 
           {/* 3 Training categories */}
@@ -960,7 +960,7 @@ export default function Home() {
             })}
           </FadeInUp>
 
-          {/* Career card — full width */}
+          {/* Career card - full width */}
           <FadeInUp>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-charcoal via-[#1a2a4a] to-daikin-blue-dark">
               <div className="absolute inset-0 opacity-[0.05]" style={{
@@ -975,7 +975,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-bold text-white mb-1">Karir yang Punya Dampak</h3>
                     <p className="text-white/60 text-sm leading-relaxed max-w-lg">
-                      Di Daikin, Anda tidak hanya bekerja — Anda ikut membangun kualitas udara untuk jutaan orang setiap harinya.
+                      Di Daikin, Anda tidak hanya bekerja - Anda ikut membangun kualitas udara untuk jutaan orang setiap harinya.
                     </p>
                     <div className="flex flex-wrap gap-x-6 gap-y-1 mt-3">
                       {['Gaji Kompetitif', 'Pengembangan Karir', 'Rotasi Internasional', 'Lingkungan Inovatif'].map((it) => (
@@ -1005,7 +1005,7 @@ export default function Home() {
             <div>
               <div className="accent-line" />
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal">Daikin Ada di Dekat Anda</h2>
-              <p className="text-gray-500 mt-2 text-sm">1.500+ titik layanan resmi di 34 provinsi — dari kota besar hingga kota kecil, kami selalu ada.</p>
+              <p className="text-gray-500 mt-2 text-sm">1.500+ titik layanan resmi di 34 provinsi - dari kota besar hingga kota kecil, kami selalu ada.</p>
             </div>
             <span className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 pointer-events-none cursor-default">
               Cari Semua <ArrowRight className="w-4 h-4" />
@@ -1116,7 +1116,7 @@ export default function Home() {
                     Dapatkan Update Terbaru,<br />Langsung di Inbox Anda
                   </h2>
                   <p className="text-white/65 text-sm leading-relaxed">
-                    Promo eksklusif, produk baru, tips perawatan AC, dan inspirasi udara sempurna — tanpa spam, berhenti kapan saja.
+                    Promo eksklusif, produk baru, tips perawatan AC, dan inspirasi udara sempurna - tanpa spam, berhenti kapan saja.
                   </p>
                 </div>
                 <div>
@@ -1149,7 +1149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 16. CTA — with air particles ────────────────────── */}
+      {/* ── 16. CTA - with air particles ────────────────────── */}
       <section className="py-20 md:py-28 bg-charcoal relative overflow-hidden">
         <Suspense fallback={null}><AirParticles /></Suspense>
         <div className="absolute inset-0 opacity-[0.04]" style={{
@@ -1165,7 +1165,7 @@ export default function Home() {
               Mulai Perjalanan<br /><span className="text-daikin-blue-light">Udara Sempurna Anda</span>
             </h2>
             <p className="text-gray-400 mb-10 text-base max-w-xl mx-auto leading-relaxed">
-              Ceritakan kebutuhan ruangan Anda kepada kami — dan kami akan pastikan setiap napas yang Anda hirup di sana, sempurna.
+              Ceritakan kebutuhan ruangan Anda kepada kami - dan kami akan pastikan setiap napas yang Anda hirup di sana, sempurna.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <span className="pointer-events-none cursor-default">

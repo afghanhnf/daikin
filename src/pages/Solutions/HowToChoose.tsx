@@ -65,7 +65,7 @@ const comparisonRows = [
 const inverterBenefits = [
   { icon: Zap,    text: 'Hemat listrik 30–60% dibanding Non-Inverter' },
   { icon: Wind,   text: 'Suhu ruangan terjaga stabil tanpa fluktuasi' },
-  { icon: Settings, text: 'Kompresor berputar terus — tidak mati-nyala, lebih awet' },
+  { icon: Settings, text: 'Kompresor berputar terus - tidak mati-nyala, lebih awet' },
 ]
 
 const nonInverterBenefits = [
@@ -115,7 +115,7 @@ const maintenanceSteps = [
     title: 'Cek Freon (oleh Teknisi)',
     content: (
       <p className="text-sm">
-        Penurunan performa pendinginan sering disebabkan freon berkurang. Pemeriksaan freon sebaiknya dilakukan oleh teknisi bersertifikat Daikin setiap 1–2 tahun sekali — jangan coba isi sendiri.
+        Penurunan performa pendinginan sering disebabkan freon berkurang. Pemeriksaan freon sebaiknya dilakukan oleh teknisi bersertifikat Daikin setiap 1–2 tahun sekali - jangan coba isi sendiri.
       </p>
     ),
   },
@@ -126,7 +126,7 @@ const maintenanceSteps = [
       <ul className="list-disc pl-5 space-y-1 text-sm">
         <li>Pastikan kipas outdoor berputar normal</li>
         <li>Tidak ada benda yang menghalangi sirkulasi udara</li>
-        <li>Cek kondisi pipa refrigeran — tidak bocor atau tertekuk</li>
+        <li>Cek kondisi pipa refrigeran - tidak bocor atau tertekuk</li>
       </ul>
     ),
   },
@@ -161,7 +161,7 @@ const usageTips = [
   {
     icon: Droplets,
     title: 'Gunakan Mode Dry',
-    desc: 'Mode Dry (Dehum) menurunkan kelembaban tanpa mendinginkan secara berlebihan — ideal di musim hujan untuk kenyamanan optimal dengan daya lebih rendah.',
+    desc: 'Mode Dry (Dehum) menurunkan kelembaban tanpa mendinginkan secara berlebihan - ideal di musim hujan untuk kenyamanan optimal dengan daya lebih rendah.',
     highlight: 'Ideal musim hujan',
     color: 'text-daikin-blue',
     bgColor: 'bg-daikin-blue-50',
@@ -212,7 +212,7 @@ export default function HowToChoose() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Panduan Lengkap Memilih AC</h1>
             <p className="text-white/80 text-xl max-w-2xl">
-              Dari kapasitas hingga perawatan — semua yang perlu Anda ketahui sebelum dan sesudah membeli AC Daikin.
+              Dari kapasitas hingga perawatan - semua yang perlu Anda ketahui sebelum dan sesudah membeli AC Daikin.
             </p>
           </FadeInUp>
         </div>
@@ -345,7 +345,7 @@ export default function HowToChoose() {
                       <div>
                         <h3 className="text-2xl font-bold text-charcoal mb-2">AC Non-Inverter</h3>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                          AC Non-Inverter menggunakan kompresor dengan kecepatan tetap — mati saat suhu tercapai, nyala kembali saat suhu naik. Harga lebih murah di awal, namun tagihan listrik lebih tinggi untuk penggunaan intensif.
+                          AC Non-Inverter menggunakan kompresor dengan kecepatan tetap - mati saat suhu tercapai, nyala kembali saat suhu naik. Harga lebih murah di awal, namun tagihan listrik lebih tinggi untuk penggunaan intensif.
                         </p>
                         <div className="space-y-4">
                           {nonInverterBenefits.map((b, i) => (

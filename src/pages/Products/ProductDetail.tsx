@@ -77,9 +77,9 @@ export default function ProductDetail() {
   ).slice(0, 3)
 
   const specRows = [
-    { label: 'Kapasitas', value: product.specs.pk > 0 ? `${product.specs.pk} PK (${product.specs.btu.toLocaleString('id-ID')} BTU/h)` : '—' },
+    { label: 'Kapasitas', value: product.specs.pk > 0 ? `${product.specs.pk} PK (${product.specs.btu.toLocaleString('id-ID')} BTU/h)` : '-' },
     { label: 'Voltase', value: `${product.specs.voltage}V` },
-    { label: 'Cakupan Ruangan', value: product.specs.coverage_m2 > 0 ? `~${product.specs.coverage_m2} m²` : '—' },
+    { label: 'Cakupan Ruangan', value: product.specs.coverage_m2 > 0 ? `~${product.specs.coverage_m2} m²` : '-' },
     ...(product.specs.powerInput ? [{ label: 'Daya Input', value: `${product.specs.powerInput} Watt` }] : []),
     ...(product.specs.cop ? [{ label: 'COP', value: String(product.specs.cop) }] : []),
     ...(product.specs.refrigerant ? [{ label: 'Refrigerant', value: product.specs.refrigerant }] : []),
@@ -391,7 +391,7 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      {/* Helper nudge — guide & calculator */}
+      {/* Helper nudge - guide & calculator */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 pb-10">
         <FadeInUp>
           <div className="rounded-2xl bg-gradient-to-br from-daikin-blue-50 to-white border border-daikin-blue/10 px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4">

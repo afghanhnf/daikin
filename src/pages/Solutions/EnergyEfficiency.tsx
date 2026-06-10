@@ -10,7 +10,7 @@ const tips = [
   { title: 'Gunakan Mode Auto/Sleep', desc: 'Mode Sleep secara otomatis menyesuaikan suhu saat tidur, menghemat energi hingga 25%.' },
   { title: 'Bersihkan Filter Rutin', desc: 'Filter kotor meningkatkan beban kerja kompressor. Bersihkan setiap 2-4 minggu.' },
   { title: 'Tutup Pintu & Jendela', desc: 'Minimalkan masuknya udara panas dari luar untuk efisiensi pendinginan optimal.' },
-  { title: 'Manfaatkan Timer', desc: 'Jadwalkan AC mati 30 menit sebelum bangun tidur — ruangan masih dingin, listrik hemat.' },
+  { title: 'Manfaatkan Timer', desc: 'Jadwalkan AC mati 30 menit sebelum bangun tidur - ruangan masih dingin, listrik hemat.' },
   { title: 'Periksa Kondisi Freon', desc: 'Freon yang habis membuat AC bekerja keras tanpa hasil. Cek setiap 2 tahun.' },
 ]
 
@@ -35,7 +35,7 @@ export default function EnergyEfficiency() {
             <div className="accent-line" />
             <h2 className="section-heading">Inverter vs Non-Inverter</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              AC inverter mengatur kecepatan kompressor secara dinamis sesuai kebutuhan pendinginan. Saat ruangan sudah dingin, kompressor bekerja lambat — tidak mati-nyala seperti AC konvensional.
+              AC inverter mengatur kecepatan kompressor secara dinamis sesuai kebutuhan pendinginan. Saat ruangan sudah dingin, kompressor bekerja lambat - tidak mati-nyala seperti AC konvensional.
             </p>
             <div className="space-y-3">
               {[

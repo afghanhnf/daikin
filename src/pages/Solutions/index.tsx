@@ -15,7 +15,7 @@ const solutions = [
     path: '/solutions/how-to-choose',
     gradient: 'from-daikin-blue to-sky-400',
     tag: 'Panduan',
-    desc: 'Panduan lengkap memilih AC yang tepat — mulai dari menentukan kapasitas berdasarkan luas ruangan, memahami perbedaan tipe (split wall, cassette, floor standing), hingga fitur yang benar-benar Anda butuhkan.',
+    desc: 'Panduan lengkap memilih AC yang tepat - mulai dari menentukan kapasitas berdasarkan luas ruangan, memahami perbedaan tipe (split wall, cassette, floor standing), hingga fitur yang benar-benar Anda butuhkan.',
   },
   {
     icon: Calculator,
@@ -23,7 +23,7 @@ const solutions = [
     path: '/solutions/ac-calculator',
     gradient: 'from-sky-400 to-cyan-500',
     tag: 'Tools',
-    desc: 'Hitung kapasitas AC yang ideal secara otomatis hanya dalam hitungan detik. Masukkan dimensi ruangan, jumlah penghuni, dan faktor lingkungan — sistem kami langsung merekomendasikan PK yang tepat.',
+    desc: 'Hitung kapasitas AC yang ideal secara otomatis hanya dalam hitungan detik. Masukkan dimensi ruangan, jumlah penghuni, dan faktor lingkungan - sistem kami langsung merekomendasikan PK yang tepat.',
   },
   {
     icon: Zap,
@@ -73,7 +73,7 @@ export default function SolutionsIndex() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Solusi & Panduan</h1>
             <p className="text-white/80 text-xl max-w-2xl leading-relaxed">
-              Semua yang perlu Anda ketahui tentang AC — dari cara memilih yang tepat, menghitung kebutuhan, menghemat energi, hingga merawatnya agar awet bertahun-tahun.
+              Semua yang perlu Anda ketahui tentang AC - dari cara memilih yang tepat, menghitung kebutuhan, menghemat energi, hingga merawatnya agar awet bertahun-tahun.
             </p>
           </FadeInUp>
         </div>
@@ -83,7 +83,7 @@ export default function SolutionsIndex() {
       <section className="section-container">
         <SectionHeading
           title="Panduan Lengkap untuk Anda"
-          subtitle="Daikin tidak hanya menjual AC — kami memastikan Anda memiliki semua pengetahuan untuk membuat keputusan terbaik dan mendapatkan manfaat maksimal dari produk Anda."
+          subtitle="Daikin tidak hanya menjual AC - kami memastikan Anda memiliki semua pengetahuan untuk membuat keputusan terbaik dan mendapatkan manfaat maksimal dari produk Anda."
         />
         <FadeInUp stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((sol) => {
@@ -150,7 +150,7 @@ export default function SolutionsIndex() {
             <div className="accent-line" />
             <h2 className="section-heading">Mulai dari Mana?</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Jika ini pertama kali Anda membeli AC, mulailah dengan panduan "Cara Memilih AC" untuk memahami dasar-dasarnya — tipe unit, kapasitas, dan fitur yang relevan.
+              Jika ini pertama kali Anda membeli AC, mulailah dengan panduan "Cara Memilih AC" untuk memahami dasar-dasarnya - tipe unit, kapasitas, dan fitur yang relevan.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
               Sudah tahu tipe yang diinginkan? Gunakan Kalkulator AC kami untuk menentukan kapasitas PK yang tepat berdasarkan dimensi dan kondisi ruangan Anda. Hasilnya akurat dalam 30 detik.

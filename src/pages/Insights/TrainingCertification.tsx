@@ -8,7 +8,7 @@ import NewsCard from '@/components/sections/NewsCard'
 
 const programs = [
   { title: 'Sertifikasi Teknisi Level 1', duration: '3 Hari', desc: 'Dasar instalasi, perawatan, dan troubleshooting AC Daikin residential.', badge: 'Terbuka' },
-  { title: 'Sertifikasi Teknisi Level 2', duration: '5 Hari', desc: 'Lanjutan untuk teknisi berpengalaman — sistem VRV, central AC, dan diagnostik lanjutan.', badge: 'Terbuka' },
+  { title: 'Sertifikasi Teknisi Level 2', duration: '5 Hari', desc: 'Lanjutan untuk teknisi berpengalaman - sistem VRV, central AC, dan diagnostik lanjutan.', badge: 'Terbuka' },
   { title: 'Training Dealer / Sales', duration: '2 Hari', desc: 'Product knowledge, teknik penjualan, dan simulasi konsultasi pelanggan.', badge: 'Terbuka' },
   { title: 'Training Manajer Proyek', duration: '4 Hari', desc: 'Manajemen proyek HVAC, estimasi, spesifikasi, dan regulasi.', badge: 'Terbatas' },
 ]

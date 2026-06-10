@@ -89,7 +89,7 @@ export default function ResidentialSolutions() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Residential Solutions</h1>
             <p className="text-white/80 text-xl max-w-2xl">
-              AC inverter dan standar untuk hunian — hemat energi, udara bersih, dan kontrol cerdas.
+              AC inverter dan standar untuk hunian - hemat energi, udara bersih, dan kontrol cerdas.
             </p>
           </FadeInUp>
         </div>

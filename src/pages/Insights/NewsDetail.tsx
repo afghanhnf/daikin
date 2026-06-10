@@ -296,7 +296,7 @@ export default function NewsDetail() {
       <div className="bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-10">
 
-          {/* ── Cover image — contained, not full-bleed ──────── */}
+          {/* ── Cover image - contained, not full-bleed ──────── */}
           <FadeInUp className="mb-8">
             <div className={`relative w-full rounded-2xl overflow-hidden bg-gradient-to-br ${gradient} shadow-[0_8px_40px_rgba(0,0,0,0.12)]`} style={{ maxHeight: '460px' }}>
               <img
@@ -352,7 +352,7 @@ export default function NewsDetail() {
                   <div>
                     <p className="text-xs text-daikin-blue font-semibold uppercase tracking-wide mb-0.5">Ditulis oleh</p>
                     <p className="font-bold text-charcoal">{article.author}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">Daikin Indonesia — {formatDate(article.publishedAt)}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Daikin Indonesia - {formatDate(article.publishedAt)}</p>
                   </div>
                 </div>
               )}
@@ -397,7 +397,7 @@ export default function NewsDetail() {
               )}
             </article>
 
-            {/* ── Sidebar — sticky ─────────────────────────── */}
+            {/* ── Sidebar - sticky ─────────────────────────── */}
             <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
 
               {/* Article info card */}

@@ -22,7 +22,7 @@ export default function Events() {
           <Breadcrumb items={[{ label: 'Insights', path: '/insights' }, { label: 'Events & Kegiatan' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Events & Kegiatan</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Bergabunglah dalam event-event Daikin Indonesia — pameran, webinar, dan kegiatan komunitas.</p>
+            <p className="text-white/80 text-xl max-w-2xl">Bergabunglah dalam event-event Daikin Indonesia - pameran, webinar, dan kegiatan komunitas.</p>
           </FadeInUp>
         </div>
       </div>

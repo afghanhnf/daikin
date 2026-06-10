@@ -48,7 +48,7 @@ export default function IShop() {
 
   return (
     <PageTransition>
-      <PageMeta title="Temukan Dealer — iShop, ProShop & Service Center Daikin" canonical="/services/ishop" />
+      <PageMeta title="Temukan Dealer - iShop, ProShop & Service Center Daikin" canonical="/services/ishop" />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
       <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-36 pb-28">
@@ -56,7 +56,7 @@ export default function IShop() {
           <Breadcrumb items={[{ label: 'Layanan', path: '/services' }, { label: 'Dealer & Service Center' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Dealer & Service Center</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Temukan iShop, ProShop, dan Service Center Daikin resmi di seluruh Indonesia — konsultasi, pembelian, dan layanan purna jual di satu tempat.</p>
+            <p className="text-white/80 text-xl max-w-2xl">Temukan iShop, ProShop, dan Service Center Daikin resmi di seluruh Indonesia - konsultasi, pembelian, dan layanan purna jual di satu tempat.</p>
           </FadeInUp>
         </div>
       </div>

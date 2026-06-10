@@ -125,7 +125,7 @@ export default function WarrantySupport() {
               <div className="flex-1">
                 <div className="text-xs font-semibold text-[#25D366] uppercase tracking-wide mb-1">Solusi Mudah</div>
                 <h3 className="font-bold text-charcoal text-lg mb-1">Hubungi via WhatsApp</h3>
-                <p className="text-gray-500 text-sm mb-3">Konsultasi kendala produk dan pengajuan garansi langsung lewat WhatsApp — respons cepat, mudah, dan gratis.</p>
+                <p className="text-gray-500 text-sm mb-3">Konsultasi kendala produk dan pengajuan garansi langsung lewat WhatsApp - respons cepat, mudah, dan gratis.</p>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-charcoal text-lg tracking-wide">0811-904-8058</span>
                   <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#25D366] group-hover:gap-2 transition-all">

@@ -22,7 +22,7 @@ Daikin Indonesia dengan bangga mengumumkan keberhasilan meraih penghargaan Energ
 
 Energy Efficiency Award merupakan penghargaan tahunan yang diberikan kepada perusahaan dan produk yang berhasil membuktikan komitmennya dalam efisiensi energi. Tahun ini, Daikin berhasil unggul di kategori produk AC inverter residential, mengalahkan puluhan kompetitor dari berbagai merek ternama.
 
-> "Penghargaan ini bukan hanya kebanggaan kami, tetapi juga bukti nyata bahwa inovasi teknologi Daikin terus memberikan dampak positif bagi konsumen dan lingkungan." — Direktur Daikin Indonesia
+> "Penghargaan ini bukan hanya kebanggaan kami, tetapi juga bukti nyata bahwa inovasi teknologi Daikin terus memberikan dampak positif bagi konsumen dan lingkungan." - Direktur Daikin Indonesia
 
 ## Keunggulan Teknologi Inverter Daikin
 
@@ -50,7 +50,7 @@ Daikin Indonesia proudly announces receiving the prestigious Energy Efficiency A
 
 The Energy Efficiency Award is an annual recognition given to companies and products that demonstrate commitment to energy efficiency. This year, Daikin excelled in the residential inverter AC category, surpassing dozens of competitors from various renowned brands.
 
-> "This award is not only our pride, but also concrete proof that Daikin's technological innovation continues to deliver positive impacts for consumers and the environment." — Daikin Indonesia Director
+> "This award is not only our pride, but also concrete proof that Daikin's technological innovation continues to deliver positive impacts for consumers and the environment." - Daikin Indonesia Director
 
 ## Daikin Inverter Technology Excellence
 
@@ -80,23 +80,23 @@ With average energy savings of 40-60%, Daikin inverter AC users can save between
     content: {
       id: `# Peluncuran Resmi Emura Series Generasi Terbaru
 
-Jakarta, Mei 2026 — Daikin Indonesia resmi meluncurkan Emura Series generasi terbaru dalam sebuah acara grand launch eksklusif di Hotel Raffles Jakarta. Kehadiran unit AC terbaru ini disambut antusias oleh ratusan undangan dari kalangan arsitek, interior designer, dan media terkemuka.
+Jakarta, Mei 2026 - Daikin Indonesia resmi meluncurkan Emura Series generasi terbaru dalam sebuah acara grand launch eksklusif di Hotel Raffles Jakarta. Kehadiran unit AC terbaru ini disambut antusias oleh ratusan undangan dari kalangan arsitek, interior designer, dan media terkemuka.
 
 ## Desain yang Memenangkan Hati
 
 Emura Series lahir dari kolaborasi antara Daikin Engineering Jepang dan desainer Italia ternama. Hasilnya adalah sebuah unit AC yang bukan hanya berfungsi sebagai pendingin ruangan, tetapi juga menjadi elemen dekoratif yang mempercantik interior.
 
-Dengan ketebalan hanya 19mm — tertipis di kelasnya — Emura tampil ramping dan elegan. Pilihan warna premium tersedia dalam:
+Dengan ketebalan hanya 19mm - tertipis di kelasnya - Emura tampil ramping dan elegan. Pilihan warna premium tersedia dalam:
 
-- Arctic White — putih bersih dengan sentuhan matte
-- Silver Shadow — abu elegan untuk interior modern minimalis
-- Polished Gold — mewah dan sophisticated untuk ruang formal
+- Arctic White - putih bersih dengan sentuhan matte
+- Silver Shadow - abu elegan untuk interior modern minimalis
+- Polished Gold - mewah dan sophisticated untuk ruang formal
 
 ## Teknologi Streamer Generasi Ketiga
 
 Emura terbaru hadir dengan Streamer Technology generasi ketiga yang mampu mengeliminasi 99.9% virus, bakteri, dan partikel PM2.5. Teknologi ini kini bekerja 2x lebih cepat dibandingkan generasi sebelumnya berkat peningkatan pada unit discharge plasma.
 
-> "Emura bukan sekadar AC. Ini adalah pernyataan gaya hidup bagi mereka yang tidak berkompromi dengan kualitas maupun keindahan." — Product Manager Daikin Indonesia
+> "Emura bukan sekadar AC. Ini adalah pernyataan gaya hidup bagi mereka yang tidak berkompromi dengan kualitas maupun keindahan." - Product Manager Daikin Indonesia
 
 ## Fitur Smart Home Terintegrasi
 
@@ -112,7 +112,7 @@ Seluruh unit Emura terbaru dilengkapi modul WiFi built-in yang memungkinkan kone
 Emura Series terbaru sudah tersedia di seluruh dealer resmi iShop dan ProShop Daikin mulai Mei 2026. Untuk informasi harga dan spesifikasi lengkap, kunjungi website resmi atau hubungi dealer terdekat.`,
       en: `# Official Launch of the Latest Emura Series Generation
 
-Jakarta, May 2026 — Daikin Indonesia officially launches the latest Emura Series generation at an exclusive grand launch event at Hotel Raffles Jakarta. The arrival of this newest AC unit was enthusiastically welcomed by hundreds of guests from architects, interior designers, and leading media.
+Jakarta, May 2026 - Daikin Indonesia officially launches the latest Emura Series generation at an exclusive grand launch event at Hotel Raffles Jakarta. The arrival of this newest AC unit was enthusiastically welcomed by hundreds of guests from architects, interior designers, and leading media.
 
 ## Award-Winning Design
 
@@ -120,7 +120,7 @@ Emura Series was born from a collaboration between Daikin Engineering Japan and 
 
 ## Third Generation Streamer Technology
 
-The latest Emura comes with third-generation Streamer Technology capable of eliminating 99.9% of viruses, bacteria, and PM2.5 particles — working 2x faster than the previous generation.`,
+The latest Emura comes with third-generation Streamer Technology capable of eliminating 99.9% of viruses, bacteria, and PM2.5 particles - working 2x faster than the previous generation.`,
     },
     coverImage: '/images/news/emura.jpg',
     publishedAt: '2026-05-01',
@@ -148,7 +148,7 @@ Program CSR tahunan Daikin Indonesia kembali hadir dengan skala yang lebih besar
 
 Hutan mangrove memiliki peran ekologis yang sangat vital, terutama bagi kota pesisir seperti Jakarta. Mangrove mampu menyerap karbon dioksida 5x lebih efisien dibandingkan hutan tropis biasa, sekaligus menjadi benteng alami terhadap abrasi dan banjir rob.
 
-Daikin memilih program mangrove sebagai bagian dari komitmen Net Zero 2050 perusahaan — sebuah roadmap ambisius untuk mencapai emisi karbon netral di seluruh operasional global Daikin.
+Daikin memilih program mangrove sebagai bagian dari komitmen Net Zero 2050 perusahaan - sebuah roadmap ambisius untuk mencapai emisi karbon netral di seluruh operasional global Daikin.
 
 ## Kolaborasi Multi-Pihak
 
@@ -159,7 +159,7 @@ Program ini tidak berjalan sendiri. Daikin berkolaborasi dengan:
 - Universitas Indonesia (Departemen Biologi)
 - Yayasan Konservasi Pesisir Indonesia
 
-> "Setiap pohon yang kita tanam hari ini adalah warisan untuk anak cucu kita. Daikin berkomitmen bahwa bisnis yang kami jalankan tidak boleh mengorbankan masa depan bumi." — Presiden Direktur Daikin Indonesia
+> "Setiap pohon yang kita tanam hari ini adalah warisan untuk anak cucu kita. Daikin berkomitmen bahwa bisnis yang kami jalankan tidak boleh mengorbankan masa depan bumi." - Presiden Direktur Daikin Indonesia
 
 ## Target dan Dampak Jangka Panjang
 
@@ -201,15 +201,15 @@ The 10,000 mangrove seedlings planted today are projected to absorb 500 tons of 
     slug: 'training-teknisi-bersertifikat-2026',
     category: 'training',
     title: {
-      id: 'Program Sertifikasi Teknisi AC Daikin Batch 3 — 2026',
-      en: 'Daikin AC Technician Certification Program Batch 3 — 2026',
+      id: 'Program Sertifikasi Teknisi AC Daikin Batch 3 - 2026',
+      en: 'Daikin AC Technician Certification Program Batch 3 - 2026',
     },
     excerpt: {
       id: 'Daikin membuka pendaftaran program sertifikasi teknisi AC batch ketiga untuk meningkatkan standar kompetensi tenaga servis di seluruh Indonesia.',
       en: 'Daikin opens registration for the third batch AC technician certification program to improve service technician competency standards across Indonesia.',
     },
     content: {
-      id: `# Program Sertifikasi Teknisi AC Daikin Batch 3 — 2026
+      id: `# Program Sertifikasi Teknisi AC Daikin Batch 3 - 2026
 
 Daikin Indonesia kembali membuka program pelatihan dan sertifikasi untuk teknisi AC batch ketiga tahun 2026. Program ini dirancang untuk meningkatkan standar kompetensi teknisi AC di seluruh Indonesia, memastikan setiap konsumen mendapatkan layanan servis berkualitas tinggi dari tenaga ahli bersertifikat.
 
@@ -243,14 +243,14 @@ Seluruh peserta yang lulus sertifikasi akan mendapatkan:
 - Akses ke platform e-learning Daikin untuk update modul terbaru
 - Diskon spare parts untuk teknisi independen bersertifikat
 
-> "Kami percaya bahwa kualitas layanan purna jual adalah fondasi kepercayaan konsumen. Investasi pada kompetensi teknisi adalah investasi pada loyalitas pelanggan jangka panjang." — Head of Service Daikin Indonesia
+> "Kami percaya bahwa kualitas layanan purna jual adalah fondasi kepercayaan konsumen. Investasi pada kompetensi teknisi adalah investasi pada loyalitas pelanggan jangka panjang." - Head of Service Daikin Indonesia
 
 ## Cara Mendaftar
 
 Pendaftaran dibuka mulai 1 Juli 2026 melalui website resmi Daikin atau melalui dealer resmi terdekat. Biaya pelatihan sepenuhnya ditanggung oleh Daikin untuk teknisi yang bekerja di dealer resmi iShop dan ProShop.
 
 Untuk teknisi independen, tersedia program beasiswa parsial berdasarkan hasil seleksi. Formulir pendaftaran dan informasi lengkap tersedia di halaman Training & Sertifikasi website ini.`,
-      en: `# Daikin AC Technician Certification Program Batch 3 — 2026
+      en: `# Daikin AC Technician Certification Program Batch 3 - 2026
 
 Daikin Indonesia opens its third batch technician certification program for 2026. This intensive 5-day program covers everything from basic refrigeration principles to advanced smart home integration, certified by Daikin's global training standards.
 
@@ -278,17 +278,17 @@ All certified graduates receive official Daikin technician certificates, ID card
     content: {
       id: `# Rekap Daikin Expo Jakarta 2026: 3 Hari, 50.000 Pengunjung
 
-Daikin Expo Jakarta 2026 telah resmi berakhir dengan catatan luar biasa. Selama tiga hari pelaksanaan (15–17 Juli 2026) di Jakarta Convention Center, pameran ini berhasil menarik lebih dari 50.000 pengunjung — melampaui target awal sebesar 40.000 orang.
+Daikin Expo Jakarta 2026 telah resmi berakhir dengan catatan luar biasa. Selama tiga hari pelaksanaan (15–17 Juli 2026) di Jakarta Convention Center, pameran ini berhasil menarik lebih dari 50.000 pengunjung - melampaui target awal sebesar 40.000 orang.
 
 ## Highlight Hari Pertama
 
-Hari pertama dibuka oleh Direktur Utama Daikin Indonesia bersama perwakilan dari Kementerian Perindustrian. Momen yang paling dinantikan adalah peluncuran resmi sistem VRV generasi terbaru yang menghadirkan efisiensi energi setara SEER 25 — tertinggi di pasar Asia Tenggara saat ini.
+Hari pertama dibuka oleh Direktur Utama Daikin Indonesia bersama perwakilan dari Kementerian Perindustrian. Momen yang paling dinantikan adalah peluncuran resmi sistem VRV generasi terbaru yang menghadirkan efisiensi energi setara SEER 25 - tertinggi di pasar Asia Tenggara saat ini.
 
 Antusiasme pengunjung terlihat jelas di booth interaktif yang menampilkan demonstrasi langsung Streamer Technology. Pengunjung dapat menyaksikan secara real-time bagaimana teknologi ini mengeliminasi partikel berbahaya dari udara.
 
 ## Area Xperience Zone
 
-Salah satu daya tarik utama adalah Xperience Zone — ruangan seluas 500m² yang dirancang untuk memberikan pengalaman langsung merasakan perbedaan udara dengan dan tanpa teknologi Daikin.
+Salah satu daya tarik utama adalah Xperience Zone - ruangan seluas 500m² yang dirancang untuk memberikan pengalaman langsung merasakan perbedaan udara dengan dan tanpa teknologi Daikin.
 
 Dalam zona ini, pengunjung dapat:
 
@@ -304,18 +304,18 @@ Dalam zona ini, pengunjung dapat:
 - 1.200 unit AC terjual langsung di lokasi
 - 89% tingkat kepuasan pengunjung berdasarkan survei keluar
 
-> "Antusiasme yang luar biasa ini membuktikan bahwa masyarakat Indonesia semakin sadar pentingnya kualitas udara dalam kehidupan sehari-hari." — Event Director Daikin Expo 2026
+> "Antusiasme yang luar biasa ini membuktikan bahwa masyarakat Indonesia semakin sadar pentingnya kualitas udara dalam kehidupan sehari-hari." - Event Director Daikin Expo 2026
 
 ## Daikin Expo 2027
 
-Menyusul kesuksesan luar biasa tahun ini, Daikin mengumumkan bahwa Daikin Expo 2027 akan diselenggarakan di dua kota sekaligus — Jakarta dan Surabaya. Pendaftaran early bird untuk expo mendatang akan dibuka pada Januari 2027.`,
+Menyusul kesuksesan luar biasa tahun ini, Daikin mengumumkan bahwa Daikin Expo 2027 akan diselenggarakan di dua kota sekaligus - Jakarta dan Surabaya. Pendaftaran early bird untuk expo mendatang akan dibuka pada Januari 2027.`,
       en: `# Daikin Expo Jakarta 2026 Recap: 3 Days, 50,000 Visitors
 
-Daikin Expo Jakarta 2026 concluded with extraordinary results. During three days (July 15-17, 2026) at Jakarta Convention Center, the exhibition attracted over 50,000 visitors — surpassing the initial target of 40,000.
+Daikin Expo Jakarta 2026 concluded with extraordinary results. During three days (July 15-17, 2026) at Jakarta Convention Center, the exhibition attracted over 50,000 visitors - surpassing the initial target of 40,000.
 
 ## Key Highlights
 
-The highlight was the official launch of the latest VRV generation system with SEER 25 efficiency — the highest in Southeast Asia. The interactive Xperience Zone and live Streamer Technology demonstrations were particularly popular attractions.`,
+The highlight was the official launch of the latest VRV generation system with SEER 25 efficiency - the highest in Southeast Asia. The interactive Xperience Zone and live Streamer Technology demonstrations were particularly popular attractions.`,
     },
     coverImage: '/images/news/awards.webp',
     publishedAt: '2026-07-18',
@@ -341,7 +341,7 @@ Daikin Indonesia secara resmi mengumumkan penyelesaian transisi seluruh lini pro
 
 ## Apa itu R-32 dan Mengapa Penting?
 
-R-32 adalah jenis refrigerant (zat pendingin) yang memiliki Global Warming Potential (GWP) sebesar 675 — jauh lebih rendah dibandingkan R-410A yang memiliki GWP 2.088. Artinya, jika terjadi kebocoran, dampak pemanasan global dari R-32 hanya sepertiga dari R-410A.
+R-32 adalah jenis refrigerant (zat pendingin) yang memiliki Global Warming Potential (GWP) sebesar 675 - jauh lebih rendah dibandingkan R-410A yang memiliki GWP 2.088. Artinya, jika terjadi kebocoran, dampak pemanasan global dari R-32 hanya sepertiga dari R-410A.
 
 Selain lebih ramah lingkungan, R-32 juga menawarkan keunggulan teknis:
 
@@ -354,7 +354,7 @@ Selain lebih ramah lingkungan, R-32 juga menawarkan keunggulan teknis:
 
 Transisi ini sejalan dengan Kigali Amendment to the Montreal Protocol yang mengharuskan pengurangan bertahap penggunaan HFC (Hydrofluorocarbon) dengan GWP tinggi. Indonesia sebagai negara penandatangan berkomitmen untuk mengurangi penggunaan HFC sebesar 80% pada tahun 2045.
 
-> "Kami tidak menunggu regulasi mewajibkan. Daikin memilih untuk memimpin — karena masa depan planet ini terlalu penting untuk dipertaruhkan." — Chief Technology Officer Daikin Indonesia
+> "Kami tidak menunggu regulasi mewajibkan. Daikin memilih untuk memimpin - karena masa depan planet ini terlalu penting untuk dipertaruhkan." - Chief Technology Officer Daikin Indonesia
 
 ## Dampak pada Konsumen
 
@@ -367,7 +367,7 @@ Daikin Indonesia officially completed the transition of its entire residential A
 
 ## Why R-32 Matters
 
-R-32 has a Global Warming Potential (GWP) of 675 — significantly lower than R-410A's GWP of 2,088. It also offers 10% higher energy efficiency and requires 30% less refrigerant per unit.`,
+R-32 has a Global Warming Potential (GWP) of 675 - significantly lower than R-410A's GWP of 2,088. It also offers 10% higher energy efficiency and requires 30% less refrigerant per unit.`,
     },
     coverImage: '/images/news/emura.jpg',
     publishedAt: '2026-05-20',
@@ -380,7 +380,7 @@ export const promotions: Promotion[] = [
   {
     id: 'promo-001',
     slug: 'mid-year-sale-2026',
-    title: { id: 'Mid-Year Sale — Hemat Hingga 30%', en: 'Mid-Year Sale — Save Up to 30%' },
+    title: { id: 'Mid-Year Sale - Hemat Hingga 30%', en: 'Mid-Year Sale - Save Up to 30%' },
     description: {
       id: 'Dapatkan diskon spesial hingga 30% untuk seluruh produk AC Daikin Smile dan Aurora Series selama periode Juni 2026.',
       en: 'Get special discounts up to 30% for all Daikin Smile and Aurora Series AC products during June 2026.',
@@ -441,7 +441,7 @@ export const events: Event[] = [
     },
     imageUrl: '/images/events/webinar.svg',
     date: '2026-06-20',
-    location: 'Online — Zoom',
+    location: 'Online - Zoom',
     isUpcoming: true,
   },
 ]

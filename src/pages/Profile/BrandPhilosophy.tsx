@@ -25,7 +25,7 @@ export default function BrandPhilosophy() {
           <Breadcrumb items={[{ label: 'Profile', path: '/profile' }, { label: 'Filosofi Brand' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Filosofi & Nilai Brand</h1>
-            <p className="text-white/80 text-xl max-w-2xl">"Intelligence & Brightness" meets "Robustness & Stability" — dua pilar yang membentuk identitas Daikin.</p>
+            <p className="text-white/80 text-xl max-w-2xl">"Intelligence & Brightness" meets "Robustness & Stability" - dua pilar yang membentuk identitas Daikin.</p>
           </FadeInUp>
         </div>
         <WaveBackground />
@@ -41,7 +41,7 @@ export default function BrandPhilosophy() {
                 Daikin merepresentasikan kecerdasan teknologi dan kejernihan visi masa depan. Setiap produk dirancang dengan presisi ilmiah untuk menghadirkan solusi yang cerdas, efisien, dan responsif terhadap kebutuhan pengguna.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Warna biru khas Daikin melambangkan langit yang jernih dan udara yang bersih — cerminan dari apa yang kami hadirkan dalam setiap produk.
+                Warna biru khas Daikin melambangkan langit yang jernih dan udara yang bersih - cerminan dari apa yang kami hadirkan dalam setiap produk.
               </p>
             </div>
           </FadeInLeft>

@@ -63,7 +63,7 @@ export default function Contact() {
 
   return (
     <PageTransition>
-      <PageMeta title="Hubungi Kami" description="Hubungi tim Daikin Indonesia — kami siap membantu pertanyaan seputar produk, servis, dan dealer." canonical="/contact" />
+      <PageMeta title="Hubungi Kami" description="Hubungi tim Daikin Indonesia - kami siap membantu pertanyaan seputar produk, servis, dan dealer." canonical="/contact" />
 
       {/* Hero */}
       <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-36 pb-28">
@@ -72,7 +72,7 @@ export default function Contact() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Kami Siap Membantu</h1>
             <p className="text-white/75 text-xl max-w-2xl leading-relaxed">
-              Punya pertanyaan tentang produk, servis, atau dealer? Tim Daikin Indonesia hadir untuk Anda — melalui saluran yang paling nyaman bagi Anda.
+              Punya pertanyaan tentang produk, servis, atau dealer? Tim Daikin Indonesia hadir untuk Anda - melalui saluran yang paling nyaman bagi Anda.
             </p>
           </FadeInUp>
         </div>
@@ -192,7 +192,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map placeholder — replace with <iframe> embed when ready */}
+              {/* Map placeholder - replace with <iframe> embed when ready */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-8 h-8 rounded-lg bg-daikin-blue-50 flex items-center justify-center">

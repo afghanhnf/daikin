@@ -26,7 +26,7 @@
     }
   },
   "ishop": {
-    "title": "iShop — Residential Dealers",
+    "title": "iShop - Residential Dealers",
     "subtitle": "Find an authorized Daikin residential dealer near you.",
     "searchPlaceholder": "Search by city or area...",
     "filterProvince": "Filter by Province",
@@ -39,7 +39,7 @@
     "services": "Services Offered"
   },
   "proshop": {
-    "title": "ProShop — Commercial Solutions",
+    "title": "ProShop - Commercial Solutions",
     "subtitle": "Expert partners for commercial and industrial air conditioning projects.",
     "tiers": {
       "platinum": {

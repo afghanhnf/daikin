@@ -89,7 +89,7 @@ export default function CommercialSolutions() {
         />
 
         <div className="flex gap-8 items-start">
-          {/* Filter panel — no PK filter for commercial */}
+          {/* Filter panel - no PK filter for commercial */}
           <ProductFilterPanel
             filters={filters}
             onChange={setFilters}

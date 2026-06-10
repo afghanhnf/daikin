@@ -77,7 +77,7 @@ export default function InsightsIndex() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Insights</h1>
             <p className="text-white/80 text-xl max-w-2xl leading-relaxed">
-              Tetap update dengan berita terbaru, promosi spesial, event, dan program Daikin Indonesia — semua dalam satu tempat.
+              Tetap update dengan berita terbaru, promosi spesial, event, dan program Daikin Indonesia - semua dalam satu tempat.
             </p>
           </FadeInUp>
         </div>
@@ -103,7 +103,7 @@ export default function InsightsIndex() {
       <section className="section-container">
         <SectionHeading
           title="Semua Kanal Informasi"
-          subtitle="Pilih kategori yang Anda minati — dari berita produk hingga program CSR, Daikin selalu punya sesuatu yang relevan untuk Anda."
+          subtitle="Pilih kategori yang Anda minati - dari berita produk hingga program CSR, Daikin selalu punya sesuatu yang relevan untuk Anda."
         />
         <FadeInUp stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {insightCategories.map((cat) => {
@@ -215,7 +215,7 @@ export default function InsightsIndex() {
             </div>
             <div className="space-y-4">
               {[
-                { date: 'Jun 2025', title: 'Daikin Demo Day — Surabaya', desc: 'Sesi demo langsung teknologi Streamer dan smart control. Gratis untuk umum, registrasi diperlukan.', type: 'Demo' },
+                { date: 'Jun 2025', title: 'Daikin Demo Day - Surabaya', desc: 'Sesi demo langsung teknologi Streamer dan smart control. Gratis untuk umum, registrasi diperlukan.', type: 'Demo' },
                 { date: 'Jul 2025', title: 'Pameran HVAC & R Indonesia', desc: 'Temukan inovasi sistem komersial terbaru Daikin di Jakarta Convention Center. Booth A12.', type: 'Pameran' },
                 { date: 'Agt 2025', title: 'Training Teknisi Bersertifikat', desc: 'Batch ke-3 program sertifikasi teknisi level 1 & 2. Terbuka untuk mitra dealer aktif Daikin.', type: 'Training' },
               ].map((event) => (
@@ -248,7 +248,7 @@ export default function InsightsIndex() {
               <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center mb-4">
                 <Heart className="w-6 h-6 text-rose-500" />
               </div>
-              <h2 className="text-2xl font-bold text-charcoal mb-3">Daikin Impact — Komitmen untuk Masa Depan</h2>
+              <h2 className="text-2xl font-bold text-charcoal mb-3">Daikin Impact - Komitmen untuk Masa Depan</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Di luar bisnis, Daikin Indonesia aktif berkontribusi pada masyarakat dan lingkungan. Program Daikin Impact mencakup penghijauan kota, edukasi energi terbarukan, dan pemberdayaan komunitas teknisi lokal.
               </p>

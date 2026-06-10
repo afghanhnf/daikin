@@ -46,7 +46,7 @@ export default function Careers() {
     <PageTransition>
       <PageMeta
         title="Karir di Daikin Indonesia"
-        description="Bergabunglah dengan tim Daikin Indonesia — karir yang bermakna, jaringan global, dan peluang tumbuh bersama pemimpin industri HVAC dunia."
+        description="Bergabunglah dengan tim Daikin Indonesia - karir yang bermakna, jaringan global, dan peluang tumbuh bersama pemimpin industri HVAC dunia."
         canonical="/careers"
       />
 
@@ -63,7 +63,7 @@ export default function Careers() {
         </div>
       </div>
 
-      {/* Culture — gradient photo cards */}
+      {/* Culture - gradient photo cards */}
       <section className="section-container">
         <SectionHeading
           title="Budaya Kerja Daikin"
@@ -89,13 +89,13 @@ export default function Careers() {
             <div className="accent-line" />
             <h2 className="section-heading">Mengapa Berkarir di Daikin?</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Daikin Indonesia bukan sekadar tempat bekerja — ini adalah komunitas profesional yang terus tumbuh bersama. Kami memberikan kesempatan nyata untuk berkembang, belajar, dan memberikan dampak yang berarti.
+              Daikin Indonesia bukan sekadar tempat bekerja - ini adalah komunitas profesional yang terus tumbuh bersama. Kami memberikan kesempatan nyata untuk berkembang, belajar, dan memberikan dampak yang berarti.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
               Dengan lebih dari 5.000 karyawan di seluruh Indonesia dan akses ke jaringan 80.000+ karyawan global Daikin, Anda akan bergabung dengan ekosistem yang dinamis dan penuh peluang lintas budaya.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Kami juga bangga dengan komitmen kami terhadap kesetaraan dan inklusi — setiap individu, tanpa memandang latar belakang, mendapatkan kesempatan yang sama untuk berkontribusi dan maju.
+              Kami juga bangga dengan komitmen kami terhadap kesetaraan dan inklusi - setiap individu, tanpa memandang latar belakang, mendapatkan kesempatan yang sama untuk berkontribusi dan maju.
             </p>
             <div className="grid grid-cols-3 gap-4">
               {[{ v: '5000+', l: 'Karyawan Indonesia' }, { v: '80K+', l: 'Global Workforce' }, { v: '160+', l: 'Negara Operasi' }].map(({ v, l }) => (
@@ -139,7 +139,7 @@ export default function Careers() {
         <div className="section-container">
           <SectionHeading
             title="Benefit & Fasilitas"
-            subtitle="Kami menginvestasikan yang terbaik untuk karyawan kami — karena kami tahu bahwa tim yang bahagia adalah fondasi dari perusahaan yang sukses."
+            subtitle="Kami menginvestasikan yang terbaik untuk karyawan kami - karena kami tahu bahwa tim yang bahagia adalah fondasi dari perusahaan yang sukses."
             centered
           />
           <FadeInUp stagger className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
@@ -163,7 +163,7 @@ export default function Careers() {
         <div className="section-container">
           <SectionHeading
             title="Proses Rekrutmen"
-            subtitle="Proses yang transparan dan efisien — kami menghargai waktu Anda dan berkomitmen untuk memberikan pengalaman rekrutmen yang positif."
+            subtitle="Proses yang transparan dan efisien - kami menghargai waktu Anda dan berkomitmen untuk memberikan pengalaman rekrutmen yang positif."
             centered
           />
           <FadeInUp stagger className="grid md:grid-cols-4 gap-6">
@@ -184,7 +184,7 @@ export default function Careers() {
 
       {/* Job listings */}
       <section className="section-container">
-        <SectionHeading title="Lowongan Terbuka" subtitle={`${filtered.length} posisi tersedia — temukan peluang yang tepat untuk Anda`} />
+        <SectionHeading title="Lowongan Terbuka" subtitle={`${filtered.length} posisi tersedia - temukan peluang yang tepat untuk Anda`} />
 
         <div className="flex flex-wrap gap-2 mb-8">
           {deptFilters.map((dept) => (

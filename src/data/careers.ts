@@ -3,7 +3,7 @@ import type { Job } from '@/types/career'
 export const jobs: Job[] = [
   {
     id: 'job-001',
-    title: { id: 'Sales Engineer — Commercial', en: 'Sales Engineer — Commercial' },
+    title: { id: 'Sales Engineer - Commercial', en: 'Sales Engineer - Commercial' },
     department: 'Commercial Sales',
     location: 'Jakarta Selatan',
     type: 'full-time',
@@ -106,7 +106,7 @@ export const jobs: Job[] = [
   },
   {
     id: 'job-005',
-    title: { id: 'Magang — Software Developer', en: 'Internship — Software Developer' },
+    title: { id: 'Magang - Software Developer', en: 'Internship - Software Developer' },
     department: 'IT',
     location: 'Jakarta Selatan',
     type: 'internship',

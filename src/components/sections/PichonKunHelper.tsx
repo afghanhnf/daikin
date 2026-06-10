@@ -18,28 +18,28 @@ const variantConfig: Record<IconVariant, {
   transition: Record<string, unknown>
   flip?: boolean
 }> = {
-  // Gentle float + side-to-side sway — default greeting pose
+  // Gentle float + side-to-side sway - default greeting pose
   wave: {
     animate: { y: [0, -8, 0], rotate: [0, 4, -4, 0] },
     transition: { repeat: Infinity, duration: 2.5, ease: 'easeInOut' },
   },
-  // Mirrored + slow head-tilt — thinking / contemplating
+  // Mirrored + slow head-tilt - thinking / contemplating
   think: {
     animate: { y: [0, -4, 0], rotate: [-6, -10, -6] },
     transition: { repeat: Infinity, duration: 3.5, ease: 'easeInOut' },
     flip: true,
   },
-  // Energetic double-bounce — asking for help / urgent
+  // Energetic double-bounce - asking for help / urgent
   help: {
     animate: { y: [0, -14, -2, -10, 0], scale: [1, 1.08, 1, 1.04, 1] },
     transition: { repeat: Infinity, duration: 1.8, ease: 'easeInOut' },
   },
-  // Excited wiggle + scale pulse — happy / celebration
+  // Excited wiggle + scale pulse - happy / celebration
   happy: {
     animate: { y: [0, -10, 0], scale: [1, 1.07, 1], rotate: [0, 6, -6, 0] },
     transition: { repeat: Infinity, duration: 1.5, ease: 'easeInOut' },
   },
-  // Very slow minimal float — idle / background presence
+  // Very slow minimal float - idle / background presence
   idle: {
     animate: { y: [0, -5, 0] },
     transition: { repeat: Infinity, duration: 4, ease: 'easeInOut' },

@@ -81,7 +81,7 @@ function PKCalculator() {
     const res = calculateAC(input)
     setResult(res)
     setStep(5)
-    // Async tracking placeholder — backend not yet connected
+    // Async tracking placeholder - backend not yet connected
     void fetch('/api/calculator-track', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -191,7 +191,7 @@ function PKCalculator() {
                     <button key={f} onClick={() => setInput({ ...input, roomFloor: f })}
                       className={`p-3 rounded-xl border-2 text-left transition-all ${input.roomFloor === f ? 'border-daikin-blue bg-daikin-blue-50' : 'border-gray-200 hover:border-daikin-blue-light'}`}>
                       <span className="font-semibold text-sm text-charcoal">{roomFloorLabels[f].label}</span>
-                      <span className="text-xs text-gray-500 ml-2">— {roomFloorLabels[f].sub}</span>
+                      <span className="text-xs text-gray-500 ml-2">- {roomFloorLabels[f].sub}</span>
                     </button>
                   ))}
                 </div>
@@ -527,7 +527,7 @@ function InverterCalculator() {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
 
-      {/* Result card — live */}
+      {/* Result card - live */}
       <div className="rounded-2xl bg-gradient-to-br from-daikin-blue-dark to-daikin-blue p-6 text-white shadow-lg">
         <p className="text-sm font-medium text-white/70 mb-1">Estimasi penghematan per bulan</p>
         <div className="text-5xl font-bold mb-1">Rp {fmt(monthlySavings)}</div>
@@ -640,7 +640,7 @@ function InverterCalculator() {
         <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
           <p className="text-sm text-green-700">
             Dengan <span className="font-bold">AC Inverter Daikin {INVERTER_AC_DATA[pk].label}</span>, Anda menghemat{' '}
-            <span className="font-bold">Rp {fmt(monthlySavings)}/bulan</span> — setara{' '}
+            <span className="font-bold">Rp {fmt(monthlySavings)}/bulan</span> - setara{' '}
             <span className="font-bold">Rp {fmt(yearlySavings)}/tahun</span>.
           </p>
         </div>
@@ -666,7 +666,7 @@ export default function ACCalculator() {
           <Breadcrumb items={[{ label: 'Informasi', path: '/solutions' }, { label: 'Kalkulator AC' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Kalkulator AC</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Hitung kebutuhan kapasitas PK dan kelayakan daya listrik rumah Anda — akurat dan gratis.</p>
+            <p className="text-white/80 text-xl max-w-2xl">Hitung kebutuhan kapasitas PK dan kelayakan daya listrik rumah Anda - akurat dan gratis.</p>
           </FadeInUp>
         </div>
       </div>

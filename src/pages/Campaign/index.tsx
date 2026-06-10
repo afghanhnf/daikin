@@ -12,7 +12,7 @@ const campaigns = [
   {
     title: 'The Ideal Air',
     subtitle: 'Udara yang Sempurna',
-    desc: 'Udara yang sempurna bukan sekadar dingin — ini tentang kualitas, kesehatan, dan kenyamanan yang sesungguhnya. Bagaimana Daikin mendefinisikan ulang standar kesejahteraan udara untuk setiap ruang hidup.',
+    desc: 'Udara yang sempurna bukan sekadar dingin - ini tentang kualitas, kesehatan, dan kenyamanan yang sesungguhnya. Bagaimana Daikin mendefinisikan ulang standar kesejahteraan udara untuk setiap ruang hidup.',
     path: '/campaign/ideal-air',
     cta: 'Temukan Udara Ideal',
     gradient: 'from-daikin-blue to-sky-400',
@@ -21,7 +21,7 @@ const campaigns = [
   {
     title: 'The Power to Create the Air of the Future',
     subtitle: 'Masa Depan Udara',
-    desc: 'Inovasi Daikin membentuk masa depan pendinginan udara yang lebih hijau, lebih cerdas, dan berkelanjutan. Dari refrigeran ramah lingkungan hingga sistem AI-powered — kami memimpin transisi menuju era HVAC baru.',
+    desc: 'Inovasi Daikin membentuk masa depan pendinginan udara yang lebih hijau, lebih cerdas, dan berkelanjutan. Dari refrigeran ramah lingkungan hingga sistem AI-powered - kami memimpin transisi menuju era HVAC baru.',
     path: '/campaign/power-to-create',
     cta: 'Lihat Inovasi',
     gradient: 'from-charcoal to-daikin-blue-dark',
@@ -30,7 +30,7 @@ const campaigns = [
   {
     title: 'Perfecting The Air Stories',
     subtitle: 'Kisah Nyata',
-    desc: 'Kisah nyata dari pelanggan Daikin yang telah merasakan perbedaan udara sempurna dalam kehidupan sehari-hari — dari keluarga yang mendambakan rumah lebih sehat, hingga arsitek yang merancang gedung masa depan.',
+    desc: 'Kisah nyata dari pelanggan Daikin yang telah merasakan perbedaan udara sempurna dalam kehidupan sehari-hari - dari keluarga yang mendambakan rumah lebih sehat, hingga arsitek yang merancang gedung masa depan.',
     path: '/campaign/perfecting-air',
     cta: 'Baca Kisah Nyata',
     gradient: 'from-daikin-blue-dark to-charcoal',
@@ -39,7 +39,7 @@ const campaigns = [
 ]
 
 const brandValues = [
-  { value: '90+', label: 'Tahun Inovasi', desc: 'Daikin berdiri sejak 1924 — lebih dari 90 tahun mempersembahkan udara terbaik' },
+  { value: '90+', label: 'Tahun Inovasi', desc: 'Daikin berdiri sejak 1924 - lebih dari 90 tahun mempersembahkan udara terbaik' },
   { value: '160+', label: 'Negara', desc: 'Kehadiran global di lebih dari 160 negara dengan jaringan produksi dan distribusi terintegrasi' },
   { value: '#1', label: 'HVAC Global', desc: 'Produsen sistem HVAC-R terbesar di dunia berdasarkan pendapatan global' },
   { value: '4%+', label: 'R&D Revenue', desc: 'Lebih dari 4% pendapatan global diinvestasikan kembali untuk riset dan pengembangan tiap tahun' },
@@ -50,11 +50,11 @@ export default function CampaignIndex() {
     <PageTransition>
       <PageMeta
         title="Campaign Daikin Indonesia"
-        description="Kampanye brand Daikin yang menginspirasi — tentang udara yang sempurna, inovasi masa depan, dan kisah nyata pelanggan kami."
+        description="Kampanye brand Daikin yang menginspirasi - tentang udara yang sempurna, inovasi masa depan, dan kisah nyata pelanggan kami."
         canonical="/campaign"
       />
 
-      {/* Hero — keep dark charcoal theme for campaigns */}
+      {/* Hero - keep dark charcoal theme for campaigns */}
       <div className="relative bg-gradient-to-br from-charcoal to-daikin-blue-dark pt-36 pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <Breadcrumb items={[{ label: 'Campaign' }]} className="text-white mb-6" />
@@ -67,7 +67,7 @@ export default function CampaignIndex() {
               Kampanye yang<br />Menginspirasi
             </h1>
             <p className="text-white/75 text-xl max-w-2xl leading-relaxed">
-              Lebih dari sekadar iklan — ini adalah narasi tentang udara, kehidupan, dan visi Daikin untuk masa depan yang lebih nyaman dan berkelanjutan.
+              Lebih dari sekadar iklan - ini adalah narasi tentang udara, kehidupan, dan visi Daikin untuk masa depan yang lebih nyaman dan berkelanjutan.
             </p>
           </FadeInUp>
         </div>
@@ -109,13 +109,13 @@ export default function CampaignIndex() {
               <div className="accent-line" />
               <h2 className="section-heading">Cerita di Balik Brand Daikin</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Daikin bukan hanya produsen AC. Sejak 1924, kami adalah penjaga kenyamanan — sebuah misi yang terus hidup di setiap inovasi yang kami hadirkan. Nama "Daikin" berasal dari bahasa Jepang yang berarti "Nitrogen Besar" — mencerminkan akar kami dalam kimia dan gas.
+                Daikin bukan hanya produsen AC. Sejak 1924, kami adalah penjaga kenyamanan - sebuah misi yang terus hidup di setiap inovasi yang kami hadirkan. Nama "Daikin" berasal dari bahasa Jepang yang berarti "Nitrogen Besar" - mencerminkan akar kami dalam kimia dan gas.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Kampanye kami tidak hanya berbicara tentang produk. Mereka mengundang Anda untuk merasakan bagaimana udara yang tepat dapat mengubah cara Anda hidup, bekerja, dan berkreasi. "The Ideal Air" adalah keyakinan bahwa kenyamanan sejati adalah hak semua orang.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Di Indonesia, Daikin telah hadir lebih dari 50 tahun dan terus memperluas visinya — dari membangun pabrik lokal di 2012 hingga menjadi merek AC terpercaya bagi jutaan keluarga Indonesia.
+                Di Indonesia, Daikin telah hadir lebih dari 50 tahun dan terus memperluas visinya - dari membangun pabrik lokal di 2012 hingga menjadi merek AC terpercaya bagi jutaan keluarga Indonesia.
               </p>
               <div className="flex items-center gap-3">
                 <Link to="/campaign/ideal-air" className="btn-primary inline-flex items-center gap-2">

@@ -21,7 +21,7 @@ export default function Promotions() {
           <Breadcrumb items={[{ label: 'Insights', path: '/insights' }, { label: 'Promosi' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Promosi Spesial</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Penawaran terbaik dari Daikin Indonesia — jangan sampai terlewat!</p>
+            <p className="text-white/80 text-xl max-w-2xl">Penawaran terbaik dari Daikin Indonesia - jangan sampai terlewat!</p>
           </FadeInUp>
         </div>
       </div>

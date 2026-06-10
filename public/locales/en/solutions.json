@@ -96,7 +96,7 @@
       "thinking": "Let me calculate the perfect AC for your room...",
       "result_low": "Great news! A {{pk}} PK unit is perfect for your room. Comfortable and efficient!",
       "result_mid": "Your room needs a {{pk}} PK unit. I'd recommend an inverter model for the best efficiency!",
-      "result_high": "That's a large space! You'll need a {{pk}} PK unit — or consider two smaller units for better air distribution.",
+      "result_high": "That's a large space! You'll need a {{pk}} PK unit - or consider two smaller units for better air distribution.",
       "tip": "Remember to clean your filter every month for best performance!"
     }
   },
@@ -146,7 +146,7 @@
     },
     "pichon": {
       "tip1": "A clean filter can save up to 15% on your electricity bill!",
-      "tip2": "Never spray water directly into the indoor unit — always remove the filter first.",
+      "tip2": "Never spray water directly into the indoor unit - always remove the filter first.",
       "tip3": "If you hear a strange noise, turn off the unit and call a technician. Don't ignore it!",
       "tip4": "Keep outdoor units clear of leaves and debris for efficient heat exchange."
     }

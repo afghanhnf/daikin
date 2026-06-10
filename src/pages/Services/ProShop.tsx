@@ -11,14 +11,14 @@ export default function ProShop() {
 
   return (
     <PageTransition>
-      <PageMeta title="ProShop — Dealer Komersial Daikin" canonical="/services/proshop" />
+      <PageMeta title="ProShop - Dealer Komersial Daikin" canonical="/services/proshop" />
 
       <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-28 pb-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb items={[{ label: 'Layanan', path: '/services' }, { label: 'ProShop' }]} className="text-white/60 mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">ProShop</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Partner resmi Daikin untuk proyek komersial berskala besar — dari perkantoran, hotel, hingga fasilitas industri.</p>
+            <p className="text-white/80 text-xl max-w-2xl">Partner resmi Daikin untuk proyek komersial berskala besar - dari perkantoran, hotel, hingga fasilitas industri.</p>
           </FadeInUp>
         </div>
       </div>

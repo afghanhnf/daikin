@@ -7,7 +7,7 @@ import PageMeta from '@/components/seo/PageMeta'
 export default function NotFound() {
   return (
     <PageTransition>
-      <PageMeta title="404 — Halaman Tidak Ditemukan" noIndex />
+      <PageMeta title="404 - Halaman Tidak Ditemukan" noIndex />
 
       <div className="min-h-screen flex items-center justify-center px-4 pt-24 pb-16">
         <div className="text-center max-w-lg">

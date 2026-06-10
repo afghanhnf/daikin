@@ -99,7 +99,7 @@ export default function MegaMenu({ items, onClose }: MegaMenuProps) {
         })}
       </div>
 
-      {/* Footer shortcut — non-navigable while services section is disabled */}
+      {/* Footer shortcut - non-navigable while services section is disabled */}
       <div className="mx-3 mb-3 mt-1 rounded-xl bg-daikin-blue-50 border border-daikin-blue/10 px-4 py-3 flex items-center justify-between pointer-events-none cursor-default">
         <div>
           <div className="text-xs font-bold text-daikin-blue-dark">Temukan Dealer Resmi</div>

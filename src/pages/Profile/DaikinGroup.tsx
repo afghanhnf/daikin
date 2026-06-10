@@ -30,7 +30,7 @@ export default function DaikinGroup() {
           <Breadcrumb items={[{ label: 'Profile', path: '/profile' }, { label: 'Daikin Group' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Daikin Group Global</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Daikin Industries, Ltd. — pemimpin industri HVAC-R global yang berdiri sejak 1924 di Osaka, Jepang.</p>
+            <p className="text-white/80 text-xl max-w-2xl">Daikin Industries, Ltd. - pemimpin industri HVAC-R global yang berdiri sejak 1924 di Osaka, Jepang.</p>
           </FadeInUp>
         </div>
       </div>

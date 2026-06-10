@@ -26,14 +26,14 @@ export default function DaikinImpact() {
 
   return (
     <PageTransition>
-      <PageMeta title="Daikin Impact — CSR" canonical="/insights/csr" />
+      <PageMeta title="Daikin Impact - CSR" canonical="/insights/csr" />
 
       <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-36 pb-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Breadcrumb items={[{ label: 'Insights', path: '/insights' }, { label: 'Daikin Impact' }]} className="text-white mb-6" />
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Daikin Impact</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Program CSR Daikin Indonesia — berkontribusi untuk lingkungan, pendidikan, dan komunitas yang lebih baik.</p>
+            <p className="text-white/80 text-xl max-w-2xl">Program CSR Daikin Indonesia - berkontribusi untuk lingkungan, pendidikan, dan komunitas yang lebih baik.</p>
           </FadeInUp>
         </div>
       </div>

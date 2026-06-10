@@ -10,7 +10,7 @@ import { FadeInLeft, FadeInRight } from '@/components/animations/FadeInLeft'
 const categories = [
   {
     icon: Home, title: 'Residential Solutions', subtitle: 'Hunian', path: '/products/residential',
-    desc: 'AC inverter dan standar untuk semua ukuran ruangan. Dilengkapi Streamer Technology, Smart Control, dan mode hemat energi otomatis — kenyamanan hunian yang sesungguhnya.',
+    desc: 'AC inverter dan standar untuk semua ukuran ruangan. Dilengkapi Streamer Technology, Smart Control, dan mode hemat energi otomatis - kenyamanan hunian yang sesungguhnya.',
     count: '20+ Model', gradient: 'from-sky-400 to-daikin-blue',
   },
   {
@@ -38,7 +38,7 @@ const categories = [
 const techFeatures = [
   {
     icon: Zap, title: 'Inverter Technology',
-    desc: 'Kompressor variabel Daikin menyesuaikan kapasitas pendinginan secara dinamis — hemat energi hingga 60% dibanding AC konvensional sambil menjaga suhu tetap stabil.',
+    desc: 'Kompressor variabel Daikin menyesuaikan kapasitas pendinginan secara dinamis - hemat energi hingga 60% dibanding AC konvensional sambil menjaga suhu tetap stabil.',
   },
   {
     icon: Wind, title: 'Streamer Technology',
@@ -46,7 +46,7 @@ const techFeatures = [
   },
   {
     icon: Cpu, title: 'Smart Control',
-    desc: 'Ekosistem IoT Daikin — kontrol penuh via smartphone, penjadwalan otomatis, integrasi smart home, dan pemantauan konsumsi energi real-time dari mana saja.',
+    desc: 'Ekosistem IoT Daikin - kontrol penuh via smartphone, penjadwalan otomatis, integrasi smart home, dan pemantauan konsumsi energi real-time dari mana saja.',
   },
 ]
 
@@ -55,7 +55,7 @@ export default function ProductsIndex() {
     <PageTransition>
       <PageMeta
         title="Produk Daikin Indonesia"
-        description="Temukan rangkaian produk AC Daikin — dari solusi hunian hingga komersial. Lebih dari 100 model dengan teknologi Inverter, Streamer, dan Smart Control."
+        description="Temukan rangkaian produk AC Daikin - dari solusi hunian hingga komersial. Lebih dari 100 model dengan teknologi Inverter, Streamer, dan Smart Control."
         canonical="/products"
       />
 
@@ -66,7 +66,7 @@ export default function ProductsIndex() {
           <FadeInUp>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Produk Daikin</h1>
             <p className="text-white/80 text-xl max-w-2xl leading-relaxed">
-              Lebih dari 100 model untuk setiap kebutuhan — dari hunian pribadi hingga gedung komersial berskala besar, semua dirancang dengan standar kualitas global Daikin.
+              Lebih dari 100 model untuk setiap kebutuhan - dari hunian pribadi hingga gedung komersial berskala besar, semua dirancang dengan standar kualitas global Daikin.
             </p>
           </FadeInUp>
         </div>
@@ -76,7 +76,7 @@ export default function ProductsIndex() {
       <section className="section-container">
         <SectionHeading
           title="Kategori Produk"
-          subtitle="Daikin menyediakan solusi pendingin udara lengkap untuk setiap segmen — dari keluarga yang mendambakan udara bersih di rumah hingga pengelola gedung yang membutuhkan sistem HVAC-R terintegrasi."
+          subtitle="Daikin menyediakan solusi pendingin udara lengkap untuk setiap segmen - dari keluarga yang mendambakan udara bersih di rumah hingga pengelola gedung yang membutuhkan sistem HVAC-R terintegrasi."
         />
         <FadeInUp stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat) => {
@@ -117,7 +117,7 @@ export default function ProductsIndex() {
         <div className="section-container">
           <SectionHeading
             title="Teknologi di Setiap Produk Daikin"
-            subtitle="Bukan sekadar AC biasa — setiap produk Daikin mengintegrasikan teknologi eksklusif yang memberikan keunggulan nyata dalam kenyamanan, efisiensi energi, dan kualitas udara."
+            subtitle="Bukan sekadar AC biasa - setiap produk Daikin mengintegrasikan teknologi eksklusif yang memberikan keunggulan nyata dalam kenyamanan, efisiensi energi, dan kualitas udara."
             centered
           />
           <FadeInUp stagger className="grid md:grid-cols-3 gap-6">
@@ -146,10 +146,10 @@ export default function ProductsIndex() {
             <div className="accent-line" />
             <h2 className="section-heading">Mengapa Memilih Produk Daikin?</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Daikin adalah satu-satunya produsen AC di dunia yang menguasai penuh rantai inovasi — dari pengembangan refrigeran, kompressor, hingga sistem kontrol elektronik secara in-house. Keunggulan vertikal ini menghasilkan produk dengan efisiensi dan keandalan yang tidak tertandingi.
+              Daikin adalah satu-satunya produsen AC di dunia yang menguasai penuh rantai inovasi - dari pengembangan refrigeran, kompressor, hingga sistem kontrol elektronik secara in-house. Keunggulan vertikal ini menghasilkan produk dengan efisiensi dan keandalan yang tidak tertandingi.
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Setiap unit yang kami produksi melewati ratusan tahap pengujian ketat sesuai standar global JIS, ISO 9001, dan SNI Indonesia — memastikan bahwa produk yang tiba di rumah Anda adalah yang terbaik yang bisa kami hadirkan.
+              Setiap unit yang kami produksi melewati ratusan tahap pengujian ketat sesuai standar global JIS, ISO 9001, dan SNI Indonesia - memastikan bahwa produk yang tiba di rumah Anda adalah yang terbaik yang bisa kami hadirkan.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {[

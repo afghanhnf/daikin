@@ -163,7 +163,7 @@ const milestones = [
   {
     year: '1994', side: 'left', highlight: false,
     title: 'Pionir AC Inverter Indonesia',
-    desc: 'Daikin menjadi pelopor dalam meluncurkan AC inverter di Indonesia — menetapkan standar baru efisiensi energi dan merevolusi industri AC nasional selamanya.',
+    desc: 'Daikin menjadi pelopor dalam meluncurkan AC inverter di Indonesia - menetapkan standar baru efisiensi energi dan merevolusi industri AC nasional selamanya.',
   },
   {
     year: '2004', side: 'right', highlight: false,
@@ -173,7 +173,7 @@ const milestones = [
   {
     year: '2012', side: 'left', highlight: true,
     title: 'PT Daikin Resmi Berdiri & Pabrik Beroperasi',
-    desc: 'PT Daikin Airconditioning Indonesia didirikan secara resmi pada Juni 2012 sebagai bagian dari DAIKIN Global. Pabrik resmi Daikin di Indonesia mulai beroperasi — menegaskan komitmen investasi jangka panjang untuk Indonesia.',
+    desc: 'PT Daikin Airconditioning Indonesia didirikan secara resmi pada Juni 2012 sebagai bagian dari DAIKIN Global. Pabrik resmi Daikin di Indonesia mulai beroperasi - menegaskan komitmen investasi jangka panjang untuk Indonesia.',
   },
   {
     year: '2016', side: 'right', highlight: false,
@@ -183,7 +183,7 @@ const milestones = [
   {
     year: '2020', side: 'left', highlight: false,
     title: 'Pusat Layanan Terintegrasi',
-    desc: 'Integrasi customer service center nasional dan peluncuran Daikin Contact Center 0800 1 081 081 — layanan bebas pulsa yang siap melayani seluruh pelanggan Indonesia.',
+    desc: 'Integrasi customer service center nasional dan peluncuran Daikin Contact Center 0800 1 081 081 - layanan bebas pulsa yang siap melayani seluruh pelanggan Indonesia.',
   },
   {
     year: '2024', side: 'right', highlight: true,
@@ -218,7 +218,7 @@ export default function AboutIndonesia() {
     <PageTransition>
       <PageMeta
         title="Tentang Daikin Indonesia"
-        description="Mengenal PT Daikin Airconditioning Indonesia — lebih dari 50 tahun hadir di Indonesia dengan 14 cabang, 1.200+ dealer, dan 500+ titik service."
+        description="Mengenal PT Daikin Airconditioning Indonesia - lebih dari 50 tahun hadir di Indonesia dengan 14 cabang, 1.200+ dealer, dan 500+ titik service."
         canonical="/profile/about"
       />
 
@@ -347,7 +347,7 @@ export default function AboutIndonesia() {
                                 className={cn(
                                   'px-5 py-3 text-gray-700 align-middle',
                                   ci === 0 && 'text-gray-400 text-xs font-medium w-12',
-                                  // last col of service table — status badge
+                                  // last col of service table - status badge
                                   activeCard === 'service' && ci === row.length - 1
                                     ? 'whitespace-nowrap'
                                     : 'text-xs'
@@ -511,7 +511,7 @@ export default function AboutIndonesia() {
               <div className="bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden">
                 <div className="bg-gradient-to-r from-daikin-blue-dark to-daikin-blue px-8 py-6">
                   <h3 className="text-white font-bold text-lg">PT Daikin Airconditioning Indonesia</h3>
-                  <p className="text-white/70 text-sm mt-1">Head Quarter — Sudirman, Jakarta</p>
+                  <p className="text-white/70 text-sm mt-1">Head Quarter - Sudirman, Jakarta</p>
                 </div>
                 <div className="p-8 space-y-5">
                   <div className="flex items-start gap-4">
@@ -523,7 +523,7 @@ export default function AboutIndonesia() {
                       <p className="text-sm text-charcoal leading-relaxed">
                         Menara Astra, Jl. Jenderal Sudirman Kav. 5-6<br />
                         Karet Tengsin, Tanah Abang<br />
-                        Jakarta Pusat — 10220
+                        Jakarta Pusat - 10220
                       </p>
                     </div>
                   </div>
