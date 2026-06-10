@@ -199,32 +199,12 @@ function ReadProgress() {
   )
 }
 
-// ─── Related article mini card ────────────────────────────────────────
 
-function RelatedCard({ article, lang }: { article: ReturnType<typeof getRelatedArticles>[number]; lang: string }) {
-  const gradient = COVER_GRADIENT[article.category] ?? 'from-slate-600 to-slate-800'
-  return (
-    <Link to={`/insights/news/${article.slug}`} className="flex gap-3 group">
-      <div className={`relative w-20 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br ${gradient}`}>
-        <img src={article.coverImage} alt={article.title[lang]} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-        <div className="absolute inset-0 bg-black/20" />
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-[11px] text-gray-400 mb-1">{formatShortDate(article.publishedAt)}</p>
-        <p className="text-sm font-semibold text-charcoal leading-snug line-clamp-2 group-hover:text-daikin-blue transition-colors">
-          {article.title[lang]}
-        </p>
-      </div>
-    </Link>
-  )
-}
-
-// ─── Main component ───────────────────────────────────────────────────
 
 export default function NewsDetail() {
   const { slug } = useParams<{ slug: string }>()
   const { i18n } = useTranslation()
-  const lang = i18n.language?.startsWith('en') ? 'en' : 'id'
+  const lang: 'id' | 'en' = i18n.language?.startsWith('en') ? 'en' : 'id'
   const articleRef = useRef<HTMLDivElement>(null)
 
   const article  = getNewsBySlug(slug ?? '')

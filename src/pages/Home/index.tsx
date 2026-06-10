@@ -9,7 +9,7 @@ import {
   BookOpen, MapPin, Play, ChevronRight, Mail,
   Building2, MonitorPlay,
   Wifi, Thermometer, Cable, WrapText, Settings, SlidersHorizontal, MoreHorizontal,
-  Leaf, TrendingUp, Package,
+  Leaf, TrendingUp,
 } from 'lucide-react'
 import 'swiper/css'
 import 'swiper/css/pagination'

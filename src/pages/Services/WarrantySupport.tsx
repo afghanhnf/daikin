@@ -5,7 +5,7 @@ import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeading from '@/components/sections/SectionHeading'
 import Accordion from '@/components/ui/Accordion'
 import FadeInUp from '@/components/animations/FadeInUp'
-import { FadeInLeft, FadeInRight } from '@/components/animations/FadeInLeft'
+import { FadeInLeft } from '@/components/animations/FadeInLeft'
 
 const warrantyItems = [
   { key: 'q1', title: 'Berapa lama garansi produk Daikin?', content: 'Garansi standar Daikin adalah 1 tahun untuk unit dan 5 tahun untuk kompressor pada semua produk inverter. Garansi diperpanjang tersedia melalui program Daikin Extended Warranty.' },
