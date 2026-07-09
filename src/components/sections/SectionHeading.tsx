@@ -7,9 +7,10 @@ interface SectionHeadingProps {
   centered?: boolean
   light?: boolean
   className?: string
+  subtitleClassName?: string
 }
 
-export default function SectionHeading({ title, subtitle, centered = false, light = false, className }: SectionHeadingProps) {
+export default function SectionHeading({ title, subtitle, centered = false, light = false, className, subtitleClassName }: SectionHeadingProps) {
   return (
     <FadeInUp className={cn('mb-12', centered && 'text-center', className)}>
       <div className={cn('w-12 h-1 rounded-full mb-4', light ? 'bg-white/60' : 'bg-daikin-blue', centered && 'mx-auto')} />
@@ -17,7 +18,7 @@ export default function SectionHeading({ title, subtitle, centered = false, ligh
         {title}
       </h2>
       {subtitle && (
-        <p className={cn('text-lg leading-relaxed max-w-2xl', light ? 'text-white/80' : 'text-gray-600', centered && 'mx-auto')}>
+        <p className={cn('text-lg leading-relaxed max-w-2xl', light ? 'text-white/80' : 'text-gray-600', centered && 'mx-auto', subtitleClassName)}>
           {subtitle}
         </p>
       )}

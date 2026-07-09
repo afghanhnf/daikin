@@ -131,7 +131,7 @@ export default function Navbar() {
         'transition-all duration-300',
         isTransparent
           ? 'bg-transparent'
-          : 'bg-white/96 backdrop-blur-lg shadow-[0_2px_24px_rgba(0,0,0,0.08)]'
+          : 'bg-white/95 backdrop-blur-lg shadow-[0_2px_24px_rgba(0,0,0,0.08)]'
       )}>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <nav className="flex items-center justify-between h-16 gap-4">

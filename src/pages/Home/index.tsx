@@ -41,10 +41,10 @@ const heroSlides = [
     title: 'Perfecting',
     titleAccent: 'the Air',
     subtitle: 'Lebih dari sekadar pendingin ruangan - Daikin menghadirkan udara yang sehat, efisien, dan nyaman. Karena setiap napas yang Anda hirup di rumah, itu tanggung jawab kami.',
-    ctaPrimary:   { label: 'Lihat Produk',  href: '#', disabled: true },
+    ctaPrimary: { label: 'Lihat Produk', href: '#', disabled: true },
     ctaSecondary: { label: 'Kalkulator AC', href: '/solutions/ac-calculator' },
-    stat1: { value: '60%',    label: 'Hemat Energi' },
-    stat2: { value: '5 Thn',  label: 'Garansi Kompressor' },
+    stat1: { value: '60%', label: 'Hemat Energi' },
+    stat2: { value: '5 Thn', label: 'Garansi Kompressor' },
     gradient: 'from-daikin-blue-dark via-daikin-blue to-daikin-blue-light',
     thumbGradient: 'from-daikin-blue-dark/30 to-daikin-blue/10',
     toneOverlay: 'from-daikin-blue-dark/55 via-daikin-blue/20 to-transparent',
@@ -56,8 +56,8 @@ const heroSlides = [
     title: 'Streamer',
     titleAccent: 'Technology',
     subtitle: 'Ketika udara dalam ruangan bisa lebih berbahaya dari luar, Streamer Technology hadir sebagai penjaga. Aktif menghancurkan 99.9% virus - bukan sekadar menyaringnya.',
-    ctaPrimary:   { label: 'Pelajari Teknologi', href: '/profile/streamer' },
-    ctaSecondary: { label: 'Lihat Produk',       href: '#', disabled: true },
+    ctaPrimary: { label: 'Pelajari Teknologi', href: '/profile/streamer' },
+    ctaSecondary: { label: 'Lihat Produk', href: '#', disabled: true },
     stat1: { value: '99.9%', label: 'Virus Tereliminasi' },
     stat2: { value: 'PM2.5', label: 'Filter Aktif' },
     gradient: 'from-[#0a1628] via-daikin-blue-dark to-daikin-blue',
@@ -71,10 +71,10 @@ const heroSlides = [
     title: 'Daikin',
     titleAccent: 'Emura Series',
     subtitle: 'Saat estetika dan performa menyatu tanpa kompromi - itulah Emura. Dirancang di Eropa, diperkuat teknologi Jepang, untuk mereka yang tidak berkompromi dengan kualitas maupun keindahan.',
-    ctaPrimary:   { label: 'Lihat Emura',  href: '#', disabled: true },
-    ctaSecondary: { label: 'Cari Dealer',  href: '#', disabled: true },
+    ctaPrimary: { label: 'Lihat Emura', href: '#', disabled: true },
+    ctaSecondary: { label: 'Cari Dealer', href: '#', disabled: true },
     stat1: { value: 'Red Dot', label: 'Design Award' },
-    stat2: { value: 'A++',     label: 'Energy Rating' },
+    stat2: { value: 'A++', label: 'Energy Rating' },
     gradient: 'from-charcoal via-[#1a2a4a] to-daikin-blue-dark',
     thumbGradient: 'from-charcoal/30 to-daikin-blue-dark/10',
     toneOverlay: 'from-charcoal/55 via-[#1a2a4a]/25 to-transparent',
@@ -86,10 +86,10 @@ const heroSlides = [
     title: 'Pilih AC yang tepat untuk Anda',
     titleAccent: '',
     subtitle: 'Ukuran ruangan, kapasitas daya, dan tipe AC menentukan kenyamanan Anda seterusnya. Pelajari panduan lengkap kami sebelum membeli - gratis, cepat, dan akurat.',
-    ctaPrimary:   { label: 'Panduan Memilih AC', href: '/solutions/how-to-choose' },
-    ctaSecondary: { label: 'Garansi & Layanan',  href: '/services/warranty' },
-    stat1: { value: '5 Thn',   label: 'Garansi Kompressor' },
-    stat2: { value: '1.500+',  label: 'Service Center' },
+    ctaPrimary: { label: 'Panduan Memilih AC', href: '/solutions/how-to-choose' },
+    ctaSecondary: { label: 'Garansi & Layanan', href: '/services/warranty' },
+    stat1: { value: '5 Thn', label: 'Garansi Kompressor' },
+    stat2: { value: '1.500+', label: 'Service Center' },
     gradient: 'from-[#005a87] via-daikin-blue to-daikin-blue-light',
     thumbGradient: 'from-[#005a87]/30 to-daikin-blue-light/10',
     toneOverlay: 'from-[#005a87]/55 via-daikin-blue/20 to-transparent',
@@ -155,49 +155,49 @@ const productCategories: ProductCat[] = [
 ]
 
 const whyItems = [
-  { icon: Zap,    title: 'Hemat Listrik, Bukan Hemat Performa',  desc: 'Variable-speed compressor kami membuktikan bahwa hemat 60% energi tidak berarti kurang dingin - justru lebih konsisten dan stabil.' },
-  { icon: Wind,   title: 'Udara yang Aktif Dibersihkan',         desc: 'Streamer Technology bukan sekadar filter pasif. Ia aktif menghancurkan patogen, PM2.5, dan alergen sebelum menyentuh Anda.' },
-  { icon: Shield, title: 'Lima Tahun, Tanpa Pertanyaan',         desc: 'Garansi kompressor 5 tahun dan 1.500+ service center resmi - karena kepercayaan Anda adalah kontrak yang kami jaga.' },
-  { icon: Award,  title: 'Terbaik di Dunia, Bukti dari Fakta',   desc: '#1 AC brand global di 170+ negara. Bukan dari iklan - tapi dari jutaan keluarga yang setiap hari memilih Daikin.' },
+  { icon: Zap, title: 'Hemat Listrik, Bukan Hemat Performa', desc: 'Variable-speed compressor kami membuktikan bahwa hemat 60% energi tidak berarti kurang dingin - justru lebih konsisten dan stabil.' },
+  { icon: Wind, title: 'Udara yang Aktif Dibersihkan', desc: 'Streamer Technology bukan sekadar filter pasif. Ia aktif menghancurkan patogen, PM2.5, dan alergen sebelum menyentuh Anda.' },
+  { icon: Shield, title: 'Lima Tahun, Tanpa Pertanyaan', desc: 'Garansi kompressor 5 tahun dan 1.500+ service center resmi - karena kepercayaan Anda adalah kontrak yang kami jaga.' },
+  { icon: Award, title: 'Terbaik di Dunia, Bukti dari Fakta', desc: '#1 AC brand global di 170+ negara. Bukan dari iklan - tapi dari jutaan keluarga yang setiap hari memilih Daikin.' },
 ]
 
 const whyPhotos = [
-  { label: 'Inovasi Teknologi',   gradient: 'from-daikin-blue to-daikin-blue-dark',   span: 'col-span-2', image: '/images/kenali/inovasi-technology.jpg' },
-  { label: 'Kualitas Produk',     gradient: 'from-daikin-blue-dark to-[#0a1628]',      span: 'col-span-1', image: '/images/kenali/kualitas-produk.webp'   },
-  { label: 'Layanan Purna Jual',  gradient: 'from-[#0a1628] to-charcoal',              span: 'col-span-1', image: '/images/kenali/purna-jual.jpg'          },
-  { label: 'Mitra Terpercaya',    gradient: 'from-charcoal to-daikin-blue-dark',       span: 'col-span-2', image: '/images/kenali/mitra.jpg'               },
+  { label: 'Inovasi Teknologi', gradient: 'from-daikin-blue to-daikin-blue-dark', span: 'col-span-2', image: '/images/kenali/inovasi-technology.jpg' },
+  { label: 'Kualitas Produk', gradient: 'from-daikin-blue-dark to-[#0a1628]', span: 'col-span-1', image: '/images/kenali/kualitas-produk.webp' },
+  { label: 'Layanan Purna Jual', gradient: 'from-[#0a1628] to-charcoal', span: 'col-span-1', image: '/images/kenali/purna-jual.jpg' },
+  { label: 'Mitra Terpercaya', gradient: 'from-charcoal to-daikin-blue-dark', span: 'col-span-2', image: '/images/kenali/mitra.jpg' },
 ]
 
 // Innovation section
 const innovationPoints = [
-  { icon: Leaf,       title: 'Net Zero 2050',         desc: 'Komitmen Daikin menuju operasional karbon netral sepenuhnya.' },
+  { icon: Leaf, title: 'Net Zero 2050', desc: 'Komitmen Daikin menuju operasional karbon netral sepenuhnya.' },
   { icon: TrendingUp, title: 'Peningkatan COP & EER', desc: 'Setiap generasi produk menghadirkan efisiensi yang lebih tinggi.' },
-  { icon: Zap,        title: 'Refrigerant R-32',      desc: 'GWP 66% lebih rendah dibanding R-410A - lebih ramah iklim.' },
-  { icon: Globe,      title: 'Manufaktur Hijau',      desc: 'Fasilitas produksi bersertifikat ISO 14001 di seluruh dunia.' },
+  { icon: Zap, title: 'Refrigerant R-32', desc: 'GWP 66% lebih rendah dibanding R-410A - lebih ramah iklim.' },
+  { icon: Globe, title: 'Manufaktur Hijau', desc: 'Fasilitas produksi bersertifikat ISO 14001 di seluruh dunia.' },
 ]
 
 // Innovation image placeholders - replace src="" when images are ready
 const innovationImages = [
-  { label: 'R&D Laboratory',           gradient: 'from-daikin-blue to-sky-500',          image: '/images/inovasi/lab-daikin.jpg'           },
-  { label: 'Green Manufacturing',      gradient: 'from-emerald-600 to-teal-700',         image: '/images/inovasi/green-manufacturing.png'  },
-  { label: 'Low-GWP Refrigerant',      gradient: 'from-daikin-blue-dark to-daikin-blue', image: '/images/inovasi/refrigerant.jpg'          },
-  { label: 'Renewable Energy Facility',gradient: 'from-green-600 to-emerald-700',        image: '/images/inovasi/renewable.jpeg'           },
+  { label: 'R&D Laboratory', gradient: 'from-daikin-blue to-sky-500', image: '/images/inovasi/lab-daikin.jpg' },
+  { label: 'Green Manufacturing', gradient: 'from-emerald-600 to-teal-700', image: '/images/inovasi/green-manufacturing.png' },
+  { label: 'Low-GWP Refrigerant', gradient: 'from-daikin-blue-dark to-daikin-blue', image: '/images/inovasi/refrigerant.jpg' },
+  { label: 'Renewable Energy Facility', gradient: 'from-green-600 to-emerald-700', image: '/images/inovasi/renewable.jpeg' },
 ]
 
 const xperienceImages = [
-  { label: 'Showroom Utama',  gradient: 'from-charcoal to-daikin-blue-dark',    image: '/images/zone/showroom.jpg'    },
-  { label: 'Demo Area',       gradient: 'from-daikin-blue to-daikin-blue-light', image: '/images/zone/demo-area.jpg'  },
-  { label: 'Konsultasi Zone', gradient: 'from-daikin-blue-dark to-[#0a1628]',   image: '/images/zone/konsultasi.jpeg' },
+  { label: 'Showroom Utama', gradient: 'from-charcoal to-daikin-blue-dark', image: '/images/zone/showroom.jpg' },
+  { label: 'Demo Area', gradient: 'from-daikin-blue to-daikin-blue-light', image: '/images/zone/demo-area.jpg' },
+  { label: 'Konsultasi Zone', gradient: 'from-daikin-blue-dark to-[#0a1628]', image: '/images/zone/konsultasi.jpeg' },
 ]
 
 const accessoryCategories = [
-  { label: 'Refrigerant',             sublabel: 'R-32 & R-410A',        gradient: 'from-blue-600 to-blue-800',     Icon: Thermometer       },
-  { label: 'Pipa AC',                 sublabel: 'Copper & Flare',        gradient: 'from-slate-600 to-slate-800',   Icon: Cable             },
-  { label: 'Insulasi AC',             sublabel: 'Armaflex & Foam',       gradient: 'from-daikin-blue to-[#005a87]', Icon: WrapText          },
-  { label: 'Daikin Recommend Tools',  sublabel: 'Toolkit Resmi',         gradient: 'from-charcoal to-[#1a2a4a]',    Icon: Settings          },
-  { label: 'Filter',                  sublabel: 'HEPA & PM2.5',          gradient: 'from-teal-600 to-teal-800',     Icon: SlidersHorizontal },
-  { label: 'Smart Connection',        sublabel: 'WiFi & BMS',            gradient: 'from-sky-500 to-sky-700',       Icon: Wifi              },
-  { label: 'Lainnya',                 sublabel: 'Produk Lainnya',        gradient: 'from-gray-600 to-gray-800',     Icon: MoreHorizontal    },
+  { label: 'Refrigerant', sublabel: 'R-32 & R-410A', gradient: 'from-blue-600 to-blue-800', Icon: Thermometer },
+  { label: 'Pipa AC', sublabel: 'Copper & Flare', gradient: 'from-slate-600 to-slate-800', Icon: Cable },
+  { label: 'Insulasi AC', sublabel: 'Armaflex & Foam', gradient: 'from-daikin-blue to-[#005a87]', Icon: WrapText },
+  { label: 'Daikin Recommend Tools', sublabel: 'Toolkit Resmi', gradient: 'from-charcoal to-[#1a2a4a]', Icon: Settings },
+  { label: 'Filter', sublabel: 'HEPA & PM2.5', gradient: 'from-teal-600 to-teal-800', Icon: SlidersHorizontal },
+  { label: 'Smart Connection', sublabel: 'WiFi & BMS', gradient: 'from-sky-500 to-sky-700', Icon: Wifi },
+  { label: 'Lainnya', sublabel: 'Produk Lainnya', gradient: 'from-gray-600 to-gray-800', Icon: MoreHorizontal },
 ]
 
 // Campaign - original titles preserved
@@ -254,12 +254,12 @@ const trainingCategories = [
 ]
 
 const dealerHighlights = [
-  { city: 'Jakarta',  count: '120+', type: 'iShop & ProShop' },
-  { city: 'Surabaya', count: '85+',  type: 'iShop & ProShop' },
-  { city: 'Bandung',  count: '60+',  type: 'iShop' },
-  { city: 'Medan',    count: '45+',  type: 'iShop' },
-  { city: 'Makassar', count: '35+',  type: 'iShop' },
-  { city: 'Semarang', count: '40+',  type: 'iShop' },
+  { city: 'Jakarta', count: '120+', type: 'iShop & ProShop' },
+  { city: 'Surabaya', count: '85+', type: 'iShop & ProShop' },
+  { city: 'Bandung', count: '60+', type: 'iShop' },
+  { city: 'Medan', count: '45+', type: 'iShop' },
+  { city: 'Makassar', count: '35+', type: 'iShop' },
+  { city: 'Semarang', count: '40+', type: 'iShop' },
 ]
 
 // ─── Component ───────────────────────────────────────────────────────
@@ -303,60 +303,60 @@ export default function Home() {
                   backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
                   backgroundSize: '52px 52px',
                 }} />
-                <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-32 pb-24 grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-                  <div className="lg:col-span-3">
-                    <div className="bg-white/[0.07] backdrop-blur-md rounded-2xl border border-white/15 p-7 md:p-10 text-white">
-                      <motion.span
-                        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-                        className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-sm font-medium mb-6"
-                      >
-                        <Wind className="w-4 h-4" />{slide.badge}
-                      </motion.span>
-                      <motion.h1
-                        initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.6 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5"
-                      >
-                        {slide.title}<br /><span className="text-white/80">{slide.titleAccent}</span>
-                      </motion.h1>
-                      <motion.p
-                        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 }}
-                        className="text-base md:text-lg text-white/75 leading-relaxed mb-8 max-w-lg"
-                      >
-                        {slide.subtitle}
-                      </motion.p>
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
-                        className="flex flex-wrap gap-3"
-                      >
-                        {(slide.ctaPrimary as typeof slide.ctaPrimary & { disabled?: boolean }).disabled ? (
-                          <span className="pointer-events-none cursor-default">
-                            <Button variant="white" size="lg">{slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" /></Button>
-                          </span>
-                        ) : (
-                          <Link to={slide.ctaPrimary.href}>
-                            <Button variant="white" size="lg">{slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" /></Button>
-                          </Link>
-                        )}
-                        {(slide.ctaSecondary as typeof slide.ctaSecondary & { disabled?: boolean }).disabled ? (
-                          <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl border-2 border-white/35 text-white">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-32 pb-24 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                  <div className="text-white relative z-10 lg:pr-4">
+                    <motion.span
+                      initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
+                      className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-md border border-white/20"
+                    >
+                      <Wind className="w-4 h-4" />{slide.badge}
+                    </motion.span>
+                    <motion.h1
+                      initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.6 }}
+                      className="text-4xl md:text-5xl lg:text-[4rem] font-bold leading-[1.1] mb-6 drop-shadow-sm"
+                    >
+                      {slide.title}<br /><span className="text-white/90 drop-shadow-md">{slide.titleAccent}</span>
+                    </motion.h1>
+                    <motion.p
+                      initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 }}
+                      className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-10 max-w-xl drop-shadow-sm"
+                    >
+                      {slide.subtitle}
+                    </motion.p>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
+                      className="flex flex-wrap gap-4"
+                    >
+                      {(slide.ctaPrimary as typeof slide.ctaPrimary & { disabled?: boolean }).disabled ? (
+                        <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full bg-white/80 text-daikin-blue/80">
+                          {slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" />
+                        </span>
+                      ) : (
+                        <Link to={slide.ctaPrimary.href}>
+                          <button className="inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full bg-white text-daikin-blue hover:bg-daikin-blue-50 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.25)] active:scale-95">
+                            {slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" />
+                          </button>
+                        </Link>
+                      )}
+                      {(slide.ctaSecondary as typeof slide.ctaSecondary & { disabled?: boolean }).disabled ? (
+                        <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full border-2 border-white/20 text-white/70">
+                          {slide.ctaSecondary.label}
+                        </span>
+                      ) : (
+                        <Link to={slide.ctaSecondary.href}>
+                          <button className="inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/60 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] active:scale-95">
                             {slide.ctaSecondary.label}
-                          </span>
-                        ) : (
-                          <Link to={slide.ctaSecondary.href}>
-                            <button className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/60 transition-all">
-                              {slide.ctaSecondary.label}
-                            </button>
-                          </Link>
-                        )}
-                      </motion.div>
-                    </div>
+                          </button>
+                        </Link>
+                      )}
+                    </motion.div>
                   </div>
                   <motion.div
                     initial={{ opacity: 0, x: 32, scale: 0.94 }} animate={{ opacity: 1, x: 0, scale: 1 }}
                     transition={{ delay: 0.32, duration: 0.7, ease: 'easeOut' }}
-                    className="lg:col-span-2 flex justify-center"
+                    className="flex justify-center lg:justify-end"
                   >
-                    <div className="relative w-full max-w-sm lg:max-w-none">
+                    <div className="relative w-full max-w-md lg:max-w-[500px]">
                       <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-black/10 backdrop-blur-md border border-white/25 shadow-[0_24px_64px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.18)]">
                         {/* Fallback bg */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${slide.thumbGradient}`} />
@@ -374,12 +374,12 @@ export default function Home() {
                         {/* Glass edge - left rim */}
                         <div className="absolute left-0 inset-y-0 w-px bg-gradient-to-b from-white/35 via-white/10 to-transparent z-30 pointer-events-none" />
                       </div>
-                      <motion.div animate={{ y: [0,-8,0] }} transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
+                      <motion.div animate={{ y: [0, -8, 0] }} transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
                         className="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] px-4 py-3 min-w-[100px]">
                         <div className="text-[11px] text-gray-400 font-medium">{slide.stat1.label}</div>
                         <div className="text-xl font-bold text-daikin-blue">{slide.stat1.value}</div>
                       </motion.div>
-                      <motion.div animate={{ y: [0,8,0] }} transition={{ repeat: Infinity, duration: 3.8, ease: 'easeInOut', delay: 0.5 }}
+                      <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 3.8, ease: 'easeInOut', delay: 0.5 }}
                         className="absolute -top-5 -right-5 bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] px-4 py-3 min-w-[100px]">
                         <div className="text-[11px] text-gray-400 font-medium">{slide.stat2.label}</div>
                         <div className="text-xl font-bold text-daikin-blue">{slide.stat2.value}</div>
@@ -387,7 +387,7 @@ export default function Home() {
                     </div>
                   </motion.div>
                 </div>
-                <motion.div animate={{ y: [0,6,0] }} transition={{ repeat: Infinity, duration: 1.8 }}
+                <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}
                   className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 flex flex-col items-center gap-1 text-xs z-10">
                   <span>Scroll</span>
                   <div className="w-px h-5 bg-white/30 mx-auto" />
@@ -405,9 +405,44 @@ export default function Home() {
         </button>
       </section>
 
-      {/* ── 2. PRODUCT CATEGORIES ───────────────────────────── */}
-      <section className="py-10 bg-white border-b border-gray-100">
+      {/* ── Cerita yang Kami Yakini (Campaign Cards) ────────── */}
+      <section className="bg-white relative z-20 flow-root">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <FadeInUp stagger className="grid md:grid-cols-3 gap-5 -mt-16 md:-mt-28 pb-4">
+            {campaigns.map((camp) => (
+              <FadeInItem key={camp.href}>
+                <div className="pointer-events-none cursor-default">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="relative overflow-hidden rounded-xl text-white h-56 flex flex-col justify-end group shadow-card hover:shadow-card-hover transition-shadow"
+                  >
+                    <img src={(camp as typeof camp & { image: string }).image} alt={camp.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${camp.gradient}`} />
+                    <div className="relative z-10 p-6 border-t border-white/10">
+                      <h3 className="text-sm font-bold mb-1.5 leading-snug drop-shadow">{camp.title}</h3>
+                      <p className="text-white/75 text-xs mb-3 line-clamp-2">{camp.desc}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:gap-2.5 transition-all duration-300">
+                        Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </motion.div>
+                </div>
+              </FadeInItem>
+            ))}
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* ── 2. PRODUCT CATEGORIES ───────────────────────────── */}
+      <section className="pt-16 md:pt-20 pb-12 md:pb-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <SectionHeading
+            title="Lengkapi Kebutuhan Tata Udara Anda"
+            subtitle="Iovasi pendingin udara terdepan untuk setiap ruang. Mulai dari AC residensial hemat energi, sistem komersial tangguh untuk produktivitas bisnis, hingga solusi pendinginan presisi untuk skala industri."
+            centered
+            className="mb-8 md:mb-12"
+            subtitleClassName="max-w-4xl mx-auto"
+          />
 
           {/* ── Row 1: 2 featured cards (equal halves) ───────── */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -522,6 +557,32 @@ export default function Home() {
             })}
           </div>
 
+          {/* Quick access strip */}
+          <FadeInUp className="mt-8 md:mt-12 bg-daikin-blue-50/70 rounded-2xl p-3 md:p-4 border border-daikin-blue-100/50">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { label: 'Panduan Memilih AC', desc: 'Panduan lengkap sebelum membeli', icon: BookOpen, href: '/solutions/how-to-choose' },
+                { label: 'Jaminan & Garansi', desc: 'Garansi resmi & cara klaim', icon: Shield, href: '/services/warranty' },
+                { label: 'Dealer & Service Center', desc: 'Temukan lokasi resmi terdekat', icon: MapPin, href: '/services/ishop' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="flex items-center gap-3 md:gap-4 bg-white rounded-xl border border-transparent hover:border-daikin-blue/20 px-4 md:px-5 py-3.5 md:py-4 transition-all duration-200 group shadow-sm hover:shadow-md"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-daikin-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-daikin-blue group-hover:text-white transition-colors">
+                    <item.icon className="w-4 h-4 md:w-5 md:h-5 text-daikin-blue group-hover:text-white transition-colors" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-bold text-charcoal text-sm md:text-[15px] leading-tight">{item.label}</p>
+                    <p className="text-gray-500 text-xs mt-0.5 md:mt-1">{item.desc}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-daikin-blue transition-colors flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </FadeInUp>
+
         </div>
       </section>
 
@@ -567,32 +628,6 @@ export default function Home() {
               ))}
             </FadeInUp>
           </div>
-          {/* Quick access strip */}
-          <FadeInUp className="mb-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {[
-                { label: 'Panduan Memilih AC', desc: 'Panduan lengkap sebelum membeli', icon: BookOpen, href: '/solutions/how-to-choose' },
-                { label: 'Jaminan & Garansi',  desc: 'Garansi resmi & cara klaim',      icon: Shield,   href: '/services/warranty' },
-                { label: 'Dealer & Service Center', desc: 'Temukan lokasi resmi terdekat', icon: MapPin, href: '/services/ishop' },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl border border-daikin-blue/15 hover:border-daikin-blue/40 hover:bg-white px-4 py-3.5 transition-all duration-200 group shadow-sm hover:shadow-card"
-                >
-                  <div className="w-9 h-9 rounded-lg bg-daikin-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-daikin-blue group-hover:text-white transition-colors">
-                    <item.icon className="w-4 h-4 text-daikin-blue group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-bold text-charcoal text-sm leading-tight">{item.label}</p>
-                    <p className="text-gray-500 text-xs mt-0.5">{item.desc}</p>
-                  </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-daikin-blue transition-colors flex-shrink-0" />
-                </Link>
-              ))}
-            </div>
-          </FadeInUp>
-
           <FadeInUp>
             <div className="grid grid-cols-3 gap-3 h-72 md:h-80">
               {whyPhotos.map((photo, i) => (
@@ -621,10 +656,10 @@ export default function Home() {
             centered light
           />
           <StatCounter stats={[
-            { value: 100,      suffix: '+', label: 'Tahun Inovasi' },
-            { value: 170,      suffix: '+', label: 'Negara' },
+            { value: 100, suffix: '+', label: 'Tahun Inovasi' },
+            { value: 170, suffix: '+', label: 'Negara' },
             { value: 84000, suffix: '+', label: 'Unit / Tahun di Indonesia' },
-            { value: 48,       suffix: '+', label: 'Tahun di Indonesia' },
+            { value: 48, suffix: '+', label: 'Tahun di Indonesia' },
           ]} light />
         </div>
         <WaveBackground inverted />
@@ -730,7 +765,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="grid grid-cols-4 gap-3 mt-4">
-                {[{ v:'100+',l:'Tahun'},{v:'170+',l:'Negara'},{v:'90K+',l:'Karyawan'},{v:'48+',l:'Thn di Indonesia'}].map((s) => (
+                {[{ v: '100+', l: 'Tahun' }, { v: '170+', l: 'Negara' }, { v: '90K+', l: 'Karyawan' }, { v: '48+', l: 'Thn di Indonesia' }].map((s) => (
                   <div key={s.l} className="bg-daikin-blue-50 rounded-lg px-3 py-3 text-center border border-daikin-blue/10">
                     <div className="text-base font-bold text-daikin-blue">{s.v}</div>
                     <div className="text-[11px] text-gray-500 mt-0.5 leading-tight">{s.l}</div>
@@ -992,14 +1027,14 @@ export default function Home() {
               </div>
               <motion.img src="/images/mascot/icon-daikin-2.png" alt="Pichon-kun"
                 className="absolute bottom-0 right-8 h-20 w-auto drop-shadow-xl hidden md:block"
-                animate={{ rotate: [0,4,-4,0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} />
+                animate={{ rotate: [0, 4, -4, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} />
             </div>
           </FadeInUp>
         </div>
       </section>
 
       {/* ── 13. DEALER SPESIALIS ────────────────────────────── */}
-      <section className="py-16 md:py-20 bg-soft-gray">
+      <section className="py-16 md:py-20 bg-soft-gray hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -1045,7 +1080,7 @@ export default function Home() {
       </section>
 
       {/* ── 14. ARTIKEL & BERITA ────────────────────────────── */}
-      <section className="pt-16 md:pt-24 pb-8 md:pb-10 bg-white">
+      <section className="pt-2 md:pt-4 pb-16 md:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <SectionHeading
@@ -1060,38 +1095,6 @@ export default function Home() {
           <FadeInUp stagger className="grid md:grid-cols-3 gap-6">
             {latestNews.map((article) => (
               <FadeInItem key={article.id}><NewsCard article={article} /></FadeInItem>
-            ))}
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ── Cerita yang Kami Yakini (Campaign) ──────────────── */}
-      <section className="pt-8 md:pt-10 pb-16 md:pb-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <SectionHeading
-            title="Cerita yang Kami Yakini"
-            subtitle="Di balik setiap produk, ada misi yang lebih besar: udara yang lebih baik, untuk semua orang."
-          />
-          <FadeInUp stagger className="grid md:grid-cols-3 gap-5">
-            {campaigns.map((camp) => (
-              <FadeInItem key={camp.href}>
-                <div className="pointer-events-none cursor-default">
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    className="relative overflow-hidden rounded-xl text-white h-56 flex flex-col justify-end group shadow-card hover:shadow-card-hover transition-shadow"
-                  >
-                    <img src={(camp as typeof camp & { image: string }).image} alt={camp.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${camp.gradient}`} />
-                    <div className="relative z-10 p-6 border-t border-white/10">
-                      <h3 className="text-sm font-bold mb-1.5 leading-snug drop-shadow">{camp.title}</h3>
-                      <p className="text-white/75 text-xs mb-3 line-clamp-2">{camp.desc}</p>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:gap-2.5 transition-all duration-300">
-                        Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </motion.div>
-                </div>
-              </FadeInItem>
             ))}
           </FadeInUp>
         </div>
@@ -1160,7 +1163,7 @@ export default function Home() {
           <FadeInUp>
             <motion.img src="/images/mascot/icon-daikin-4.png" alt="Pichon-kun"
               className="h-20 w-auto mx-auto mb-6 drop-shadow-xl"
-              animate={{ y: [0,-8,0] }} transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }} />
+              animate={{ y: [0, -8, 0] }} transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }} />
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Mulai Perjalanan<br /><span className="text-daikin-blue-light">Udara Sempurna Anda</span>
             </h2>
