@@ -303,7 +303,7 @@ export default function Home() {
                   backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
                   backgroundSize: '52px 52px',
                 }} />
-                <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-32 pb-24 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full py-20 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                   <div className="text-white relative z-10 lg:pr-4">
                     <motion.span
                       initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
@@ -313,38 +313,38 @@ export default function Home() {
                     </motion.span>
                     <motion.h1
                       initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.6 }}
-                      className="text-4xl md:text-5xl lg:text-[4rem] font-bold leading-[1.1] mb-6 drop-shadow-sm"
+                      className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] mb-5 drop-shadow-sm"
                     >
-                      {slide.title}<br /><span className="text-white/90 drop-shadow-md">{slide.titleAccent}</span>
+                      {slide.title}{slide.titleAccent && <><br /><span className="text-white/90 drop-shadow-md">{slide.titleAccent}</span></>}
                     </motion.h1>
                     <motion.p
                       initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 }}
-                      className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-10 max-w-xl drop-shadow-sm"
+                      className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-xl drop-shadow-sm"
                     >
                       {slide.subtitle}
                     </motion.p>
                     <motion.div
                       initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
-                      className="flex flex-wrap gap-4"
+                      className="flex flex-wrap gap-3 md:gap-4"
                     >
                       {(slide.ctaPrimary as typeof slide.ctaPrimary & { disabled?: boolean }).disabled ? (
-                        <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full bg-white/80 text-daikin-blue/80">
+                        <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full bg-white/80 text-daikin-blue/80">
                           {slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" />
                         </span>
                       ) : (
                         <Link to={slide.ctaPrimary.href}>
-                          <button className="inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full bg-white text-daikin-blue hover:bg-daikin-blue-50 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.25)] active:scale-95">
+                          <button className="inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full bg-white text-daikin-blue hover:bg-daikin-blue-50 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.25)] active:scale-95">
                             {slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" />
                           </button>
                         </Link>
                       )}
                       {(slide.ctaSecondary as typeof slide.ctaSecondary & { disabled?: boolean }).disabled ? (
-                        <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full border-2 border-white/20 text-white/70">
+                        <span className="pointer-events-none cursor-default inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full border-2 border-white/20 text-white/70">
                           {slide.ctaSecondary.label}
                         </span>
                       ) : (
                         <Link to={slide.ctaSecondary.href}>
-                          <button className="inline-flex items-center gap-2 px-8 py-3.5 text-[15px] font-bold rounded-full border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/60 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] active:scale-95">
+                          <button className="inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/60 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] active:scale-95">
                             {slide.ctaSecondary.label}
                           </button>
                         </Link>

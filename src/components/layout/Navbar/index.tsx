@@ -9,6 +9,7 @@ import { cn } from '@/utils/cn'
 import MegaMenu from './MegaMenu'
 import TwoColumnMenu from './TwoColumnMenu'
 import LanguageSwitcher from './LanguageSwitcher'
+import SearchOverlay from './SearchOverlay'
 
 const mobileCategoryIconMap: Record<string, React.FC<{ className?: string }>> = {
   Building2,
@@ -35,9 +36,8 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
   const [searchOpen, setSearchOpen]         = useState(false)
-  const [searchQuery, setSearchQuery]       = useState('')
   const navRef    = useRef<HTMLElement>(null)
-  const searchRef = useRef<HTMLInputElement>(null)
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -53,16 +53,11 @@ export default function Navbar() {
     const handleOut = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setActiveDropdown(null)
-        setSearchOpen(false)
       }
     }
     document.addEventListener('mousedown', handleOut)
     return () => document.removeEventListener('mousedown', handleOut)
   }, [])
-
-  useEffect(() => {
-    if (searchOpen) searchRef.current?.focus()
-  }, [searchOpen])
 
   const isTransparent = !scrolled && !isMobileMenuOpen
 
@@ -256,27 +251,8 @@ export default function Navbar() {
 
               {/* Search - desktop */}
               <div className="hidden lg:flex items-center gap-2">
-                <AnimatePresence>
-                  {searchOpen && (
-                    <motion.input
-                      key="search"
-                      ref={searchRef}
-                      initial={{ width: 0, opacity: 0 }}
-                      animate={{ width: 192, opacity: 1 }}
-                      exit={{ width: 0, opacity: 0 }}
-                      transition={{ duration: 0.22 }}
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Cari produk..."
-                      onKeyDown={(e) => e.key === 'Escape' && setSearchOpen(false)}
-                      className="px-3 py-1.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-daikin-blue text-charcoal bg-white"
-                    />
-                  )}
-                </AnimatePresence>
-
                 <button
-                  onClick={() => setSearchOpen(!searchOpen)}
+                  onClick={() => setSearchOpen(true)}
                   className={cn(
                     'p-2 rounded-lg transition-colors',
                     isTransparent
@@ -414,6 +390,9 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Search Overlay */}
+      <SearchOverlay isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
 
     </header>
   )
