@@ -84,7 +84,7 @@ export default function Glance() {
         description="Fakta-fakta menarik mengapa Daikin adalah pemimpin global di industri tata udara (Air Specialists)." 
       />
       
-      <div className="relative h-[450px] lg:h-[500px] flex items-center justify-start overflow-hidden bg-gradient-to-br from-[#0a1628] via-daikin-blue-dark to-daikin-blue">
+      <div className="relative h-[400px] md:h-[450px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-daikin-blue-dark to-daikin-blue text-center">
         <Suspense fallback={null}><AirParticles /></Suspense>
         
         <div className="absolute inset-0 opacity-[0.05]" style={{
@@ -92,8 +92,8 @@ export default function Glance() {
           backgroundSize: '40px 40px',
         }} />
 
-        <div className="relative z-20 w-full px-4 md:px-8 lg:px-12 max-w-7xl mx-auto mt-16 text-left">
-          <nav className="flex items-center space-x-2 text-white/70 mb-8 text-sm font-medium tracking-wide">
+        <div className="relative z-20 w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-4xl mx-auto text-center flex flex-col items-center">
+          <nav className="flex items-center justify-center space-x-2 text-white/70 mb-6 text-sm font-medium tracking-wide">
             <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
             <ChevronRight className="w-4 h-4" />
             <Link to="/profile/about" className="hover:text-white transition-colors">Tentang Kami</Link>
@@ -102,31 +102,31 @@ export default function Glance() {
           </nav>
           
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
               Sekilas <span className="text-daikin-blue-light font-light">Daikin</span>
             </h1>
-            <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed drop-shadow max-w-2xl">
-              9 Fakta mengapa kami adalah pemimpin global di industri tata udara (Air Specialists).
+            <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed drop-shadow max-w-2xl mx-auto">
+              9 fakta menarik mengapa Daikin adalah pemimpin global nomor satu di industri tata udara.
             </p>
           </FadeInUp>
         </div>
       </div>
 
-      <section className="py-24 relative bg-[#0a1628] overflow-hidden">
+      <section className="py-16 md:py-24 relative bg-[#0a1628] overflow-hidden">
         {/* Background elements for depth */}
         <div className="absolute inset-0 bg-gradient-to-br from-daikin-blue-dark/50 via-transparent to-[#0a1628]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-daikin-blue/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-daikin-blue/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
 
-        <div className="container px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">Daikin at a Glance</h2>
-            <p className="text-white/80 text-lg">
+            <p className="text-white/80 text-lg leading-relaxed">
               Sebagai pionir dan inovator nomor satu di dunia untuk solusi udara, kami tidak pernah berhenti melampaui batasan.
             </p>
           </motion.div>
