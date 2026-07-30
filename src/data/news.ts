@@ -2,6 +2,87 @@ import type { NewsArticle, Promotion, Event } from '@/types/news'
 
 export const newsArticles: NewsArticle[] = [
   {
+    id: 'news-007',
+    slug: 'kerja-bareng-disnakertrans-jawa-timur-tingkatkan-kompetensi-instruktur',
+    category: 'training',
+    title: {
+      id: 'Kerja Bareng Disnakertrans Jawa Timur, Tingkatkan Kompetensi Instruktur',
+      en: 'Partnering with East Java Disnakertrans to Enhance Instructor Competency',
+    },
+    excerpt: {
+      id: 'Kerja Bareng Disnakertrans Jawa Timur, Tingkatkan Kompetensi Instruktur',
+      en: 'Daikin Indonesia partners with East Java Labor Office to conduct upskilling and reskilling training for vocational instructors.',
+    },
+    content: {
+      id: `# Kerja Bareng Disnakertrans Jawa Timur, Tingkatkan Kompetensi Instruktur
+
+PT Daikin Airconditioning Indonesia bekerja sama dengan Dinas Tenaga Kerja dan Transmigrasi (Disnakertrans) Provinsi Jawa Timur menyelenggarakan pelatihan upskilling dan reskilling untuk instruktur Balai Latihan Kerja (BLK).
+
+Pelatihan difokuskan pada instalasi Residential Air Conditioner (RA) dan troubleshooting AC inverter terkini, guna meningkatkan kualitas dan standar kompetensi tenaga kerja di bidang tata udara.`,
+      en: `# Partnering with East Java Disnakertrans to Enhance Instructor Competency
+
+PT Daikin Airconditioning Indonesia collaborates with the Manpower and Transmigration Office of East Java to host upskilling and reskilling programs for Vocational Training Center (BLK) instructors.`,
+    },
+    coverImage: '/images/news/disnakertrans-jatim.png',
+    publishedAt: '2026-07-20',
+    author: 'Daikin Indonesia',
+    tags: ['training', 'disnakertrans', 'upskilling', 'jawa-timur'],
+  },
+  {
+    id: 'news-008',
+    slug: 'daikin-mitra-kemendikdasmen-gerakan-partisipasi-semesta-pendidikan-bermutu',
+    category: 'news',
+    title: {
+      id: 'DAIKIN Jadi Mitra KEMENDIKDASMEN Dalam Gerakan Partisipasi Semesta Pendidikan Bermutu',
+      en: 'DAIKIN Becomes KEMENDIKDASMEN Partner in Universal Quality Education Movement',
+    },
+    excerpt: {
+      id: 'DAIKIN kembali menegaskan komitmennya dalam mendukung kemajuan pendidikan nasional dengan menjadi salah satu mitra Kementerian Pendidikan Dasar dan',
+      en: 'DAIKIN reaffirms its commitment to supporting national education by becoming a key partner of the Ministry of Elementary and Secondary Education.',
+    },
+    content: {
+      id: `# DAIKIN Jadi Mitra KEMENDIKDASMEN Dalam Gerakan Partisipasi Semesta Pendidikan Bermutu
+
+DAIKIN kembali menegaskan komitmennya dalam mendukung kemajuan pendidikan nasional dengan menjadi salah satu mitra Kementerian Pendidikan Dasar dan Menengah.
+
+Melalui Gerakan Partisipasi Semesta Pendidikan Bermutu, DAIKIN memberikan kontribusi nyata bagi pengembangan kompetensi siswa vokasi dan tenaga pendidik HVAC di seluruh Indonesia.`,
+      en: `# DAIKIN Becomes KEMENDIKDASMEN Partner in Universal Quality Education Movement
+
+DAIKIN reaffirms its commitment to supporting national education by becoming a key partner of the Ministry of Elementary and Secondary Education.`,
+    },
+    coverImage: '/images/news/kemendikdasmen.png',
+    publishedAt: '2026-07-08',
+    author: 'Daikin Indonesia',
+    tags: ['news', 'kemendikdasmen', 'csr', 'pendidikan'],
+  },
+  {
+    id: 'news-009',
+    slug: 'proshop-award-fy25-apresiasi-daikin-bagi-mitra-dealer-ac-home-central',
+    category: 'event',
+    title: {
+      id: 'Proshop Award FY25: Apresiasi DAIKIN Bagi Mitra Dealer AC Home Central',
+      en: 'Proshop Award FY25: DAIKIN Appreciation for AC Home Central Dealer Partners',
+    },
+    excerpt: {
+      id: 'DAIKIN menggelar Proshop Award FY25 bentuk apresiasi kepada owner dealer, staf, dan teknisi Proshop DAIKIN memberikan 15 penghargaan kepada owner dealer, staf, dan',
+      en: 'DAIKIN hosts the Proshop Award FY25 as an appreciation for dealer owners, staff, and technicians of DAIKIN Proshop.',
+    },
+    content: {
+      id: `# Proshop Award FY25: Apresiasi DAIKIN Bagi Mitra Dealer AC Home Central
+
+DAIKIN menggelar Proshop Award FY25 bertajuk "Infinite Evolution" sebagai bentuk apresiasi kepada owner dealer, staf, dan teknisi Proshop DAIKIN. 
+
+Acara ini memberikan 15 penghargaan kepada owner dealer, staf, dan teknisi atas dedikasi dan performa luar biasa dalam menghadirkan solusi AC Home Central terbaik bagi konsumen.`,
+      en: `# Proshop Award FY25: DAIKIN Appreciation for AC Home Central Dealer Partners
+
+DAIKIN hosts the Proshop Award FY25 'Infinite Evolution' as an appreciation for dealer owners, staff, and technicians of DAIKIN Proshop.`,
+    },
+    coverImage: '/images/news/proshop-award-fy25.png',
+    publishedAt: '2026-07-07',
+    author: 'Daikin Indonesia',
+    tags: ['event', 'proshop', 'award', 'home-central'],
+  },
+  {
     id: 'news-001',
     slug: 'daikin-raih-penghargaan-energy-efficiency-2026',
     category: 'news',

@@ -1,9 +1,12 @@
-import { Zap, Wind, Droplets, Cpu } from 'lucide-react'
+import { lazy, Suspense } from 'react'
+import { Link } from 'react-router-dom'
+import { Zap, Wind, Droplets, Cpu, ChevronRight } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeading from '@/components/sections/SectionHeading'
 import FadeInUp from '@/components/animations/FadeInUp'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 const technologies = [
   { icon: Zap, title: 'Inverter Technology', desc: 'Teknologi inverter Daikin mengatur kecepatan kompressor secara dinamis, menghemat energi hingga 60% dan menjaga suhu konstan tanpa fluktuasi.', badge: 'Flagship' },
@@ -17,12 +20,34 @@ export default function TechnologyOverview() {
     <PageTransition>
       <PageMeta title="Teknologi Daikin" canonical="/profile/technology" />
 
-      <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-36 pb-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Breadcrumb items={[{ label: 'Profile', path: '/profile' }, { label: 'Teknologi' }]} className="text-white mb-6" />
+      {/* Modern Premium Hero Banner */}
+      <div className="relative h-[450px] flex items-center justify-start overflow-hidden bg-gradient-to-br from-[#0a1628] via-daikin-blue-dark to-daikin-blue">
+        <Suspense fallback={null}><AirParticles /></Suspense>
+        
+        {/* Subtle grid pattern for depth */}
+        <div className="absolute inset-0 opacity-[0.05]" style={{
+          backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+          backgroundSize: '40px 40px',
+        }} />
+
+        <div className="relative z-20 w-full px-4 md:px-8 lg:px-12 max-w-7xl mx-auto mt-16 text-left">
+          
+          {/* Active Clickable Breadcrumbs */}
+          <nav className="flex items-center space-x-2 text-white/70 mb-6 text-sm font-medium tracking-wide">
+            <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link to="/profile/about" className="hover:text-white transition-colors">Tentang Kami</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-white drop-shadow-md">Teknologi & Inovasi</span>
+          </nav>
+
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Teknologi & Inovasi</h1>
-            <p className="text-white/80 text-xl max-w-2xl">Daikin berinvestasi lebih dari 4% pendapatan globalnya untuk riset dan pengembangan setiap tahun.</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
+              Teknologi & <span className="text-daikin-blue-light font-light">Inovasi</span>
+            </h1>
+            <p className="text-white/90 text-lg md:text-xl max-w-2xl font-light leading-relaxed drop-shadow">
+              Daikin berinvestasi lebih dari 4% pendapatan globalnya untuk riset dan pengembangan setiap tahun.
+            </p>
           </FadeInUp>
         </div>
       </div>

@@ -18,4 +18,16 @@ export interface NavItem {
   icon?: string
   disabled?: boolean
   isDealer?: boolean
+  footerLink?: {
+    title: string
+    description: string
+    buttonText: string
+    path: string
+  }
+  footerLinks?: Array<{
+    title: string
+    description: string
+    buttonText: string
+    path: string
+  }>
 }

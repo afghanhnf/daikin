@@ -9,7 +9,13 @@ const variants = {
 
 export default function PageTransition({ children }: { children: ReactNode }) {
   return (
-    <motion.div variants={variants} initial="initial" animate="animate" exit="exit">
+    <motion.div 
+      variants={variants} 
+      initial="initial" 
+      animate="animate" 
+      exit="exit"
+      className="w-full"
+    >
       {children}
     </motion.div>
   )

@@ -18,8 +18,9 @@ export default {
         'soft-gray-2': '#EAECF0',
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif'],
+        display: ['Frutiger', 'Frutiger LT Std', 'Frutiger Next', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        heading: ['Frutiger', 'Frutiger LT Std', 'Frutiger Next', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         'card': '1.25rem',
@@ -62,9 +63,9 @@ export default {
               color: '#0097E0',
               '&:hover': { color: '#0072A8' },
             },
-            'h1, h2, h3, h4': {
+            'h1, h2, h3, h4, h5, h6': {
               color: '#1A1A2E',
-              fontFamily: 'Plus Jakarta Sans, sans-serif',
+              fontFamily: 'Frutiger, "Frutiger LT Std", "Frutiger Next", "Helvetica Neue", Arial, sans-serif',
             },
           },
         },

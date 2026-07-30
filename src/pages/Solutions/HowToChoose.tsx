@@ -4,13 +4,14 @@ import { motion } from 'framer-motion'
 import {
   Home, Building2, Maximize2, ArrowRight, Wrench,
   CheckCircle2, Calendar, ThermometerSun, Zap, Wind,
-  Droplets, Settings, Calculator, ShieldCheck,
+  Droplets, Settings, Calculator, ShieldCheck, BookOpen,
 } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeading from '@/components/sections/SectionHeading'
 import FadeInUp from '@/components/animations/FadeInUp'
+import AirParticles from '@/components/animations/AirParticles'
 import PichonKunHelper from '@/components/sections/PichonKunHelper'
 import Tabs from '@/components/ui/Tabs'
 import Accordion from '@/components/ui/Accordion'
@@ -206,27 +207,31 @@ export default function HowToChoose() {
       <PageMeta title="Panduan Memilih AC" canonical="/solutions/how-to-choose" />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-36 pb-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Breadcrumb items={[{ label: 'Informasi', path: '/solutions' }, { label: 'Panduan Memilih AC' }]} className="text-white mb-6" />
+      <div className="relative overflow-hidden bg-gradient-to-br from-daikin-blue-dark via-[#004f7a] to-daikin-blue text-white pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8">
+        <AirParticles color="white" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <Breadcrumb items={[{ label: 'Beranda', path: '/' }, { label: 'Solusi', path: '/solutions' }, { label: 'Panduan Memilih AC' }]} className="text-white mb-6" />
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Panduan Lengkap Memilih AC</h1>
-            <p className="text-white/80 text-xl max-w-2xl">
-              Dari kapasitas hingga perawatan - semua yang perlu Anda ketahui sebelum dan sesudah membeli AC Daikin.
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold mb-4 text-cyan-300">
+              <span>Ruang Pengetahuan Daikin</span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">Panduan Lengkap Memilih AC</h1>
+            <p className="text-blue-100 text-base sm:text-xl max-w-2xl font-light leading-relaxed">
+              Dari kapasitas PK, teknologi Inverter, posisi instalasi hingga tips perawatan - semua yang perlu Anda ketahui sebelum dan sesudah membeli AC Daikin.
             </p>
           </FadeInUp>
         </div>
       </div>
 
       {/* ── Section navigator (sticky) ───────────────────────── */}
-      <div className="bg-white border-b border-gray-100 sticky top-16 z-30 overflow-x-auto scrollbar-hide">
+      <div className="bg-white border-b border-gray-200 sticky top-16 z-30 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex gap-0">
+          <div className="flex gap-2 overflow-x-auto py-3 scrollbar-none">
             {sections.map((s) => (
               <button
                 key={s.id}
                 onClick={() => scrollTo(s.id as keyof typeof sectionRefs)}
-                className="px-5 py-3.5 text-sm font-medium text-gray-500 hover:text-daikin-blue border-b-2 border-transparent hover:border-daikin-blue transition-all whitespace-nowrap"
+                className="px-5 py-2.5 text-xs font-bold text-gray-600 hover:text-daikin-blue hover:bg-daikin-blue-50/80 rounded-xl transition-all whitespace-nowrap border border-gray-200 hover:border-daikin-blue/30"
               >
                 {s.label}
               </button>

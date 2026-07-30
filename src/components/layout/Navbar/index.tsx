@@ -17,8 +17,8 @@ const mobileCategoryIconMap: Record<string, React.FC<{ className?: string }>> = 
 }
 
 const topBarLinks = [
-  { label: '#KeputusanYangTepat', href: '/profile/about', accent: true },
-  { label: 'DAIKIN DESIGNER AWARDS', href: '/campaign/ideal-air', accent: false },
+  { label: '#KeputusanYangTepat', href: '/profile/about', accent: true, external: false },
+  { label: 'DAIKIN DESIGNER AWARDS', href: 'https://daikindesignerawards.daikin.co.id/', accent: false, external: true },
 ]
 
 const socialLinks = [
@@ -79,21 +79,35 @@ export default function Navbar() {
               'transition-colors duration-300 text-xs',
               isTransparent ? 'bg-black/35 backdrop-blur-sm text-white/90' : 'bg-charcoal text-white/80'
             )}>
-              <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-9">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between h-9">
 
                 {/* Left: page links */}
                 <div className="hidden lg:flex items-center">
                   {topBarLinks.map((link, i) => (
                     <span key={link.href} className="flex items-center">
-                      <Link
-                        to={link.href}
-                        className={cn(
-                          'font-medium tracking-wide hover:text-white transition-colors px-3',
-                          link.accent ? 'text-daikin-blue-light font-bold' : 'text-white/75'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
+                      {link.external ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(
+                            'font-medium tracking-wide hover:text-white transition-colors px-3',
+                            link.accent ? 'text-daikin-blue-light font-bold' : 'text-white/75'
+                          )}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className={cn(
+                            'font-medium tracking-wide hover:text-white transition-colors px-3',
+                            link.accent ? 'text-daikin-blue-light font-bold' : 'text-white/75'
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
                       {i < topBarLinks.length - 1 && (
                         <span className="text-white/25 select-none">|</span>
                       )}
@@ -128,7 +142,7 @@ export default function Navbar() {
           ? 'bg-transparent'
           : 'bg-white/95 backdrop-blur-lg shadow-[0_2px_24px_rgba(0,0,0,0.08)]'
       )}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <nav className="flex items-center justify-between h-16 gap-4">
 
             {/* Logo */}
@@ -143,7 +157,11 @@ export default function Navbar() {
             {/* Desktop nav links - centred */}
             <ul className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
               {navItems.map((item) => {
-                const isActive      = location.pathname.startsWith(item.path) && item.path !== '/'
+                const isACRec = location.pathname === '/solutions/ac-recommendation'
+                const isActive = item.path === '/products'
+                  ? (location.pathname.startsWith('/products') || isACRec)
+                  : ((location.pathname.startsWith(item.path) && item.path !== '/') ||
+                     (item.children?.some(child => !child.isDivider && child.path && child.path !== '/solutions/ac-recommendation' && location.pathname.startsWith(child.path))))
                 const hasDropdown   = !!(item.children?.length)
                 const isOpen        = activeDropdown === item.labelKey
 
@@ -199,7 +217,7 @@ export default function Navbar() {
                             item.isMegaMenu
                               ? <MegaMenu items={item.children!} onClose={() => setActiveDropdown(null)} />
                               : item.isTwoColumn
-                                ? <TwoColumnMenu items={item.children!} onClose={() => setActiveDropdown(null)} />
+                                ? <TwoColumnMenu items={item.children!} footerLink={item.footerLink} onClose={() => setActiveDropdown(null)} />
                               : (
                                 <motion.div
                                   initial={{ opacity: 0, y: 8 }}
@@ -224,16 +242,24 @@ export default function Navbar() {
                                       >
                                         {t(child.labelKey)}
                                       </span>
-                                    ) : (
-                                      <Link
-                                        key={child.path}
-                                        to={child.path}
-                                        onClick={() => setActiveDropdown(null)}
-                                        className="block px-4 py-2.5 text-sm text-charcoal hover:text-daikin-blue hover:bg-daikin-blue-50 transition-colors"
-                                      >
-                                        {t(child.labelKey)}
-                                      </Link>
-                                    )
+                                    ) : (() => {
+                                        const isChildActive = location.pathname === child.path
+                                        return (
+                                        <Link
+                                          key={child.path}
+                                          to={child.path}
+                                          onClick={() => setActiveDropdown(null)}
+                                          className={cn(
+                                            "block px-4 py-2.5 text-sm transition-colors",
+                                            isChildActive 
+                                              ? "text-daikin-blue bg-daikin-blue-50 font-semibold"
+                                              : "text-charcoal hover:text-daikin-blue hover:bg-daikin-blue-50"
+                                          )}
+                                        >
+                                          {t(child.labelKey)}
+                                        </Link>
+                                        )
+                                      })()
                                   ))}
                                 </motion.div>
                               )
@@ -322,10 +348,6 @@ export default function Navbar() {
                                 <div key={child.path} className="px-3 pt-3 pb-1 mt-2 first:mt-0 first:pt-1 border-t border-gray-100 first:border-t-0">
                                   {child.groupLabel && (
                                     <div className="flex items-center gap-1.5">
-                                      {child.categoryIcon && mobileCategoryIconMap[child.categoryIcon] && (() => {
-                                        const CatIcon = mobileCategoryIconMap[child.categoryIcon!]
-                                        return <CatIcon className="w-3 h-3 text-gray-400" />
-                                      })()}
                                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                                         {child.groupLabel}
                                       </span>

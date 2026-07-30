@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useState, useEffect, useRef, useMemo } from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Calendar, Clock, User, ArrowLeft, ArrowRight,
   Tag, Share2, Copy, Check,
-  Facebook, Twitter, ChevronLeft, ChevronRight,
+  Facebook, Twitter, Instagram, Linkedin, ChevronLeft, ChevronRight,
+  Search, Mail, CheckCircle, List, Sparkles, X, MessageCircle
 } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
@@ -13,6 +14,16 @@ import FadeInUp from '@/components/animations/FadeInUp'
 import { formatDate, formatShortDate } from '@/utils/formatters'
 import { getNewsBySlug, getAdjacentArticles, getRelatedArticles, estimateReadTime } from '@/data/news'
 import { cn } from '@/utils/cn'
+
+// ─── Custom Threads Icon ────────────────────────────────────────────────
+
+function ThreadsIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.186 24.004c-3.16 0-5.748-.86-7.484-2.487C3.01 19.941 2.2 17.48 2.2 14.37c0-3.327.91-5.992 2.706-7.92C6.772 4.45 9.47 3.447 12.72 3.447c3.272 0 5.922 1.002 7.876 2.98 1.838 1.86 2.76 4.444 2.76 7.68 0 3.237-.922 5.821-2.76 7.681-1.954 1.978-4.604 2.98-7.876 2.98zm-2.023-14.86c-1.393.28-2.408 1.258-2.408 2.59 0 1.488 1.267 2.617 3.013 2.617 1.05 0 2.016-.402 2.72-1.135V9.458c-.68-.262-1.636-.372-3.325-.314zm3.325 5.932c-.89.664-1.99.996-3.19.996-2.57 0-4.48-1.748-4.48-4.11 0-2.28 1.766-4.024 4.094-4.27 2.08-.22 3.576.017 4.54.507v-.472c0-2.02-.94-3.11-2.812-3.11-1.378 0-2.396.48-2.88 1.344l-1.362-.876C8.243 3.65 9.94 2.72 12.39 2.72c3.22 0 4.88 1.943 4.88 5.485v6.52c0 .944.33 1.38 1.05 1.38.38 0 .84-.14 1.28-.42l.73 1.38c-.75.56-1.68.86-2.61.86-1.57 0-2.52-.92-2.52-2.55v-.42c-.75.77-1.89 1.18-3.08 1.18z" />
+    </svg>
+  )
+}
 
 // ─── Category config ─────────────────────────────────────────────────
 
@@ -35,7 +46,31 @@ const COVER_GRADIENT: Record<string, string> = {
   csr:       'from-green-700 to-emerald-900',
 }
 
-// ─── Markdown renderer ────────────────────────────────────────────────
+interface TocItem {
+  id: string
+  text: string
+  level: number
+}
+
+function extractToc(text: string): TocItem[] {
+  const lines = text.split('\n')
+  const toc: TocItem[] = []
+  lines.forEach((line) => {
+    const trimmed = line.trim()
+    if (trimmed.startsWith('## ')) {
+      const headingText = trimmed.slice(3)
+      const id = headingText.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
+      toc.push({ id, text: headingText, level: 2 })
+    } else if (trimmed.startsWith('### ')) {
+      const headingText = trimmed.slice(4)
+      const id = headingText.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
+      toc.push({ id, text: headingText, level: 3 })
+    }
+  })
+  return toc
+}
+
+// ─── Markdown renderer with TOC IDs ──────────────────────────────────
 
 function renderMarkdown(text: string): React.ReactNode[] {
   const lines = text.split('\n')
@@ -49,14 +84,26 @@ function renderMarkdown(text: string): React.ReactNode[] {
     if (line === '') { i++; continue }
 
     if (line.startsWith('### ')) {
-      nodes.push(<h3 key={i} className="text-lg font-bold text-charcoal mt-8 mb-3 leading-snug">{line.slice(4)}</h3>)
+      const headingText = line.slice(4)
+      const id = headingText.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
+      nodes.push(
+        <h3 id={id} key={i} className="text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug scroll-mt-32">
+          {headingText}
+        </h3>
+      )
     } else if (line.startsWith('## ')) {
-      nodes.push(<h2 key={i} className="text-xl md:text-2xl font-bold text-charcoal mt-10 mb-4 leading-snug pb-2 border-b border-gray-100">{line.slice(3)}</h2>)
+      const headingText = line.slice(3)
+      const id = headingText.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
+      nodes.push(
+        <h2 id={id} key={i} className="text-xl md:text-2xl font-extrabold text-gray-900 mt-10 mb-4 leading-snug pb-2 border-b border-gray-100 scroll-mt-32">
+          {headingText}
+        </h2>
+      )
     } else if (line.startsWith('# ')) {
-      nodes.push(<h1 key={i} className="text-2xl md:text-3xl font-bold text-charcoal mt-6 mb-5 leading-tight">{line.slice(2)}</h1>)
+      nodes.push(<h1 key={i} className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-6 mb-5 leading-tight">{line.slice(2)}</h1>)
     } else if (line.startsWith('> ')) {
       nodes.push(
-        <blockquote key={i} className="my-6 pl-5 border-l-4 border-daikin-blue bg-daikin-blue-50 rounded-r-xl py-4 pr-5">
+        <blockquote key={i} className="my-6 pl-5 border-l-4 border-[#0097E0] bg-[#0097E0]/5 rounded-r-xl py-4 pr-5">
           <p className="text-gray-700 italic leading-relaxed text-[15px]">{line.slice(2)}</p>
         </blockquote>
       )
@@ -70,7 +117,7 @@ function renderMarkdown(text: string): React.ReactNode[] {
         <ul key={i} className="my-4 space-y-2 pl-1">
           {items.map((item, j) => (
             <li key={j} className="flex items-start gap-3 text-gray-700 text-[15px] leading-relaxed">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-daikin-blue flex-shrink-0" />
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0097E0] flex-shrink-0" />
               {item}
             </li>
           ))}
@@ -87,7 +134,7 @@ function renderMarkdown(text: string): React.ReactNode[] {
   return nodes
 }
 
-// ─── Share button ─────────────────────────────────────────────────────
+// ─── Share buttons ───────────────────────────────────────────────────
 
 function ShareButtons({ url, title }: { url: string; title: string }) {
   const [copied, setCopied] = useState(false)
@@ -98,7 +145,7 @@ function ShareButtons({ url, title }: { url: string; title: string }) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      // fallback: select the URL manually
+      // fallback
     }
   }
 
@@ -107,64 +154,86 @@ function ShareButtons({ url, title }: { url: string; title: string }) {
 
   const shareLinks = [
     {
+      label: 'WhatsApp',
+      icon: MessageCircle,
+      href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+      color: 'bg-emerald-50 text-emerald-600 border-emerald-200/80 hover:bg-emerald-600 hover:text-white',
+    },
+    {
+      label: 'Instagram',
+      icon: Instagram,
+      href: `https://www.instagram.com/`,
+      color: 'bg-pink-50 text-pink-600 border-pink-200/80 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 hover:text-white',
+    },
+    {
+      label: 'Threads',
+      icon: ThreadsIcon,
+      href: `https://www.threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}`,
+      color: 'bg-stone-100 text-stone-800 border-stone-200 hover:bg-black hover:text-white',
+    },
+    {
+      label: 'Twitter',
+      icon: Twitter,
+      href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+      color: 'bg-sky-50 text-sky-500 border-sky-200/80 hover:bg-black hover:text-white',
+    },
+    {
+      label: 'LinkedIn',
+      icon: Linkedin,
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+      color: 'bg-blue-50 text-blue-600 border-blue-200/80 hover:bg-blue-700 hover:text-white',
+    },
+    {
       label: 'Facebook',
       icon: Facebook,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-      color: 'hover:bg-[#1877f2] hover:text-white hover:border-[#1877f2]',
-    },
-    {
-      label: 'Twitter / X',
-      icon: Twitter,
-      href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
-      color: 'hover:bg-charcoal hover:text-white hover:border-charcoal',
-    },
-    {
-      label: 'WhatsApp',
-      icon: ({ className }: { className?: string }) => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-        </svg>
-      ),
-      href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
-      color: 'hover:bg-[#25d366] hover:text-white hover:border-[#25d366]',
+      color: 'bg-indigo-50 text-indigo-600 border-indigo-200/80 hover:bg-indigo-600 hover:text-white',
     },
   ]
 
   return (
-    <div className="flex items-center gap-2 flex-wrap">
-      <span className="flex items-center gap-1.5 text-sm font-semibold text-gray-500">
-        <Share2 className="w-4 h-4" /> Bagikan:
-      </span>
-      {shareLinks.map(({ label, icon: Icon, href, color }) => (
-        <a
-          key={label}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Bagikan ke ${label}`}
-          className={cn(
-            'w-9 h-9 rounded-xl border border-gray-200 flex items-center justify-center text-gray-500 transition-all duration-200',
-            color
-          )}
-        >
-          <Icon className="w-4 h-4" />
-        </a>
-      ))}
+    <div className="space-y-3.5">
+      {/* Icon-only social share buttons grid */}
+      <div className="grid grid-cols-6 gap-2">
+        {shareLinks.map(({ label, icon: Icon, href, color }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Bagikan ke ${label}`}
+            aria-label={`Bagikan ke ${label}`}
+            className={cn(
+              'h-10 w-full flex items-center justify-center rounded-xl border text-sm transition-all duration-200 hover:scale-105 shadow-xs',
+              color
+            )}
+          >
+            <Icon className="w-4 h-4" />
+          </a>
+        ))}
+      </div>
+
+      {/* Salin Link Button */}
       <button
         onClick={handleCopy}
-        aria-label="Salin tautan"
+        aria-label="Salin link artikel"
         className={cn(
-          'flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all duration-200',
+          'w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border text-xs font-bold transition-all duration-200 shadow-xs',
           copied
-            ? 'bg-emerald-50 text-emerald-600 border-emerald-200'
-            : 'border-gray-200 text-gray-500 hover:bg-daikin-blue hover:text-white hover:border-daikin-blue'
+            ? 'bg-emerald-50 text-emerald-600 border-emerald-300'
+            : 'border-gray-200 text-gray-700 bg-gray-50 hover:bg-[#0097E0] hover:text-white hover:border-[#0097E0]'
         )}
       >
         <AnimatePresence mode="wait" initial={false}>
-          {copied
-            ? <motion.span key="check" initial={{ scale: 0.6 }} animate={{ scale: 1 }} className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5" />Tersalin!</motion.span>
-            : <motion.span key="copy" initial={{ scale: 0.6 }} animate={{ scale: 1 }} className="flex items-center gap-1.5"><Copy className="w-3.5 h-3.5" />Salin Tautan</motion.span>
-          }
+          {copied ? (
+            <motion.span key="check" initial={{ scale: 0.8 }} animate={{ scale: 1 }} className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-emerald-600" /> Link Tersalin!
+            </motion.span>
+          ) : (
+            <motion.span key="copy" initial={{ scale: 0.8 }} animate={{ scale: 1 }} className="flex items-center gap-2">
+              <Copy className="w-4 h-4 text-[#0097E0]" /> Salin Link Artikel
+            </motion.span>
+          )}
         </AnimatePresence>
       </button>
     </div>
@@ -188,10 +257,9 @@ function ReadProgress() {
   }, [])
 
   return (
-    /* sits above navbar (z-50) at top of viewport */
     <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-gray-200/60">
       <motion.div
-        className="h-full bg-gradient-to-r from-daikin-blue via-[#0097E0] to-daikin-blue-light rounded-r-full"
+        className="h-full bg-[#0097E0] rounded-r-full"
         style={{ width: `${pct}%` }}
         transition={{ type: 'tween', ease: 'linear', duration: 0.05 }}
       />
@@ -199,280 +267,525 @@ function ReadProgress() {
   )
 }
 
-
+// ─── Main Component ───────────────────────────────────────────────────
 
 export default function NewsDetail() {
   const { slug } = useParams<{ slug: string }>()
   const { i18n } = useTranslation()
   const lang: 'id' | 'en' = i18n.language?.startsWith('en') ? 'en' : 'id'
-  const articleRef = useRef<HTMLDivElement>(null)
+
+  const [search, setSearch]             = useState('')
+  const [activeToc, setActiveToc]       = useState('')
+  const [emailInput, setEmailInput]     = useState('')
+  const [isSubscribed, setIsSubscribed] = useState(false)
 
   const article  = getNewsBySlug(slug ?? '')
   const adjacent = slug ? getAdjacentArticles(slug) : { prev: null, next: null }
-  const related  = slug ? getRelatedArticles(slug, 4) : []
+  const related  = slug ? getRelatedArticles(slug, 3) : []
+
+  const toc = useMemo(() => (article ? extractToc(article.content[lang]) : []), [article, lang])
+
+  // Track active heading on scroll
+  useEffect(() => {
+    if (toc.length === 0) return
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 160
+      for (let i = toc.length - 1; i >= 0; i--) {
+        const el = document.getElementById(toc[i].id)
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveToc(toc[i].id)
+          break
+        }
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [toc])
+
+  const scrollToToc = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const leftAsideRef  = useRef<HTMLElement>(null)
+  const rightAsideRef = useRef<HTMLElement>(null)
+  const [leftTranslateY, setLeftTranslateY]   = useState(0)
+  const [rightTranslateY, setRightTranslateY] = useState(0)
+
+  // Dynamic JS Scroll Tracking for Left & Right Sidebars
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbarOffset = 110
+
+      if (leftAsideRef.current) {
+        const leftAside = leftAsideRef.current
+        const parentGrid = leftAside.parentElement
+        if (parentGrid) {
+          const gridRect = parentGrid.getBoundingClientRect()
+          const asideHeight = leftAside.offsetHeight
+          if (gridRect.top > navbarOffset) {
+            setLeftTranslateY(0)
+          } else {
+            const maxTranslate = Math.max(0, parentGrid.offsetHeight - asideHeight)
+            const currentTranslate = Math.min(Math.abs(gridRect.top - navbarOffset), maxTranslate)
+            setLeftTranslateY(currentTranslate)
+          }
+        }
+      }
+
+      if (rightAsideRef.current) {
+        const rightAside = rightAsideRef.current
+        const parentGrid = rightAside.parentElement
+        if (parentGrid) {
+          const gridRect = parentGrid.getBoundingClientRect()
+          const asideHeight = rightAside.offsetHeight
+          if (gridRect.top > navbarOffset) {
+            setRightTranslateY(0)
+          } else {
+            const maxTranslate = Math.max(0, parentGrid.offsetHeight - asideHeight)
+            const currentTranslate = Math.min(Math.abs(gridRect.top - navbarOffset), maxTranslate)
+            setRightTranslateY(currentTranslate)
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (emailInput.trim()) {
+      setIsSubscribed(true)
+      setTimeout(() => {
+        setIsSubscribed(false)
+        setEmailInput('')
+      }, 4000)
+    }
+  }
 
   if (!article) {
     return (
-      <div className="min-h-screen flex items-center justify-center pt-24">
-        <div className="text-center">
-          <div className="w-16 h-16 rounded-2xl bg-daikin-blue-50 flex items-center justify-center mx-auto mb-4">
-            <ArrowLeft className="w-7 h-7 text-daikin-blue" />
+      <div className="min-h-screen flex items-center justify-center pt-24 bg-[#F8FAFC]">
+        <div className="text-center bg-white p-8 rounded-3xl border border-gray-100 shadow-sm max-w-md">
+          <div className="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center mx-auto mb-4">
+            <ArrowLeft className="w-7 h-7 text-[#0097E0]" />
           </div>
-          <h2 className="text-2xl font-bold text-charcoal mb-2">Artikel tidak ditemukan</h2>
-          <p className="text-gray-500 mb-6 text-sm">Artikel yang Anda cari mungkin sudah dipindahkan atau dihapus.</p>
-          <Link to="/insights/news" className="inline-flex items-center gap-2 bg-daikin-blue text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-daikin-blue-dark transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Kembali ke Berita
+          <h2 className="text-2xl font-black text-gray-900 mb-2">Artikel tidak ditemukan</h2>
+          <p className="text-gray-500 mb-6 text-xs leading-relaxed">Artikel yang Anda cari mungkin sudah dipindahkan atau tidak tersedia saat ini.</p>
+          <Link to="/insights/news" className="inline-flex items-center gap-2 bg-[#0097E0] text-white font-bold text-xs px-5 py-3 rounded-xl hover:bg-[#0080BD] transition-colors shadow-sm">
+            <ArrowLeft className="w-4 h-4" /> Kembali ke Semua Berita
           </Link>
         </div>
       </div>
     )
   }
 
-  const gradient   = COVER_GRADIENT[article.category] ?? 'from-slate-600 to-slate-800'
-  const readTime   = estimateReadTime(article.content[lang])
-  const shareUrl   = typeof window !== 'undefined' ? window.location.href : ''
-  const catLabel   = CATEGORY_LABELS[article.category] ?? article.category
-  const catColor   = CATEGORY_COLORS[article.category] ?? 'bg-gray-600 text-white'
+  const readTime = estimateReadTime(article.content[lang])
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const catLabel = CATEGORY_LABELS[article.category] ?? article.category
+  const catColor = CATEGORY_COLORS[article.category] ?? 'bg-gray-600 text-white'
 
   return (
     <PageTransition>
       <ReadProgress />
       <PageMeta
-        title={article.title[lang]}
+        title={`${article.title[lang]} - Daikin Indonesia`}
         description={article.excerpt[lang]}
         canonical={`/insights/news/${article.slug}`}
         ogImage={article.coverImage}
       />
 
-      {/* ── Header strip ─────────────────────────────────────── */}
-      <div className="bg-gradient-to-br from-daikin-blue-dark via-daikin-blue to-[#0097E0]">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 pt-28 pb-8">
-          {/* Back link */}
+      {/* ── Page Hero Header ────────────────────────────────────────────── */}
+      <div className="bg-gradient-to-br from-[#003B71] via-[#0072CE] to-[#0097E0] text-white pt-36 pb-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          
           <Link
             to="/insights/news"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium transition-colors group mb-6"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white text-xs font-bold transition-colors group mb-6 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Berita & Update
+            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
+            Kembali ke Berita & Update
           </Link>
 
           <FadeInUp>
-            <span className={cn('inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4', catColor)}>
+            <span className={cn('inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-md mb-3 shadow-sm', catColor)}>
               {catLabel}
             </span>
-            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight max-w-3xl mb-4">
+
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-tight max-w-4xl mb-4 tracking-tight">
               {article.title[lang]}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-white/65 text-sm">
-              <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{formatDate(article.publishedAt)}</span>
-              {article.author && <span className="flex items-center gap-1.5"><User className="w-4 h-4" />{article.author}</span>}
-              <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{readTime} menit baca</span>
+
+            <div className="flex flex-wrap items-center gap-4 text-white/80 text-xs md:text-sm font-medium">
+              <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4 text-white/70" />{formatDate(article.publishedAt)}</span>
+              {article.author && <span className="flex items-center gap-1.5"><User className="w-4 h-4 text-white/70" />{article.author}</span>}
+              <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-white/70" />{readTime} mins read</span>
             </div>
           </FadeInUp>
+
         </div>
       </div>
 
-      {/* ── Body ─────────────────────────────────────────────── */}
-      <div className="bg-soft-gray">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-10">
+      {/* ── Main Content Area ──────────────────────────────────────────── */}
+      <div className="bg-[#F8FAFC] py-10 md:py-14">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-          {/* ── Cover image - contained, not full-bleed ──────── */}
-          <FadeInUp className="mb-8">
-            <div className={`relative w-full rounded-2xl overflow-hidden bg-gradient-to-br ${gradient} shadow-[0_8px_40px_rgba(0,0,0,0.12)]`} style={{ maxHeight: '460px' }}>
-              <img
-                src={article.coverImage}
-                alt={article.title[lang]}
-                className="w-full object-cover"
-                style={{ maxHeight: '460px' }}
-                loading="eager"
-              />
-              {/* Subtle tint so gradient identity shows */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-20 pointer-events-none`} />
-            </div>
-          </FadeInUp>
-
-          <div className="grid lg:grid-cols-[1fr_320px] gap-8 xl:gap-12">
-
-            {/* ── Article content ──────────────────────────── */}
-            <article ref={articleRef} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-10">
-              {/* Excerpt lead */}
-              <p className="text-lg text-gray-600 leading-relaxed mb-8 pb-8 border-b border-gray-100 font-medium">
-                {article.excerpt[lang]}
-              </p>
-
-              {/* Rendered body */}
-              <div className="mb-10">
-                {renderMarkdown(article.content[lang])}
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap items-center gap-2 pt-6 border-t border-gray-100 mb-8">
-                <Tag className="w-4 h-4 text-gray-400" />
-                {article.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-gray-100 hover:bg-daikin-blue-50 hover:text-daikin-blue text-gray-600 text-xs font-medium rounded-full cursor-pointer transition-colors"
+          {/* 3-Column Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* ══════════════════════════════════════════════════════════
+                1. LEFT SIDEBAR: Search & Table of Contents (Sticky)
+               ══════════════════════════════════════════════════════════ */}
+            <aside
+              ref={leftAsideRef}
+              style={{ transform: `translateY(${leftTranslateY}px)` }}
+              className="lg:col-span-3 space-y-6 self-start order-2 lg:order-1 transition-transform duration-75 ease-out"
+            >
+              
+              {/* Quick Search */}
+              <div className="bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="text-xs font-bold uppercase text-gray-400 tracking-wider mb-3 px-1 flex items-center gap-2">
+                  <Search className="w-4 h-4 text-[#0097E0]" /> Cari Berita
+                </h4>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    if (search.trim()) window.location.href = `/insights/news`
+                  }}
+                  className="flex items-center gap-2.5"
+                >
+                  <input
+                    type="text"
+                    placeholder="Cari artikel..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#0097E0]"
+                  />
+                  <Link
+                    to="/insights/news"
+                    className="px-4 py-2.5 bg-[#0097E0] hover:bg-[#0080BD] text-white text-xs font-bold rounded-xl transition-colors shadow-sm flex items-center justify-center flex-shrink-0"
                   >
-                    #{tag}
-                  </span>
-                ))}
+                    Cari
+                  </Link>
+                </form>
               </div>
 
-              {/* Share */}
-              <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 mb-8">
-                <ShareButtons url={shareUrl} title={article.title[lang]} />
-              </div>
-
-              {/* Author card */}
-              {article.author && (
-                <div className="flex items-center gap-4 p-5 bg-daikin-blue-50 rounded-2xl border border-daikin-blue/10 mb-10">
-                  <div className="w-12 h-12 rounded-xl bg-daikin-blue flex items-center justify-center flex-shrink-0">
-                    <User className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-daikin-blue font-semibold uppercase tracking-wide mb-0.5">Ditulis oleh</p>
-                    <p className="font-bold text-charcoal">{article.author}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">Daikin Indonesia - {formatDate(article.publishedAt)}</p>
-                  </div>
+              {/* Table of Contents (Daftar Isi) */}
+              {toc.length > 0 && (
+                <div className="bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm space-y-3">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
+                    <List className="w-4 h-4 text-[#0097E0]" /> Daftar Isi Artikel
+                  </h4>
+                  <nav className="space-y-1 max-h-[340px] overflow-y-auto pr-1 custom-scrollbar text-xs">
+                    {toc.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToToc(item.id)}
+                        className={cn(
+                          'w-full text-left py-1.5 px-2.5 rounded-lg transition-all line-clamp-2 block leading-relaxed',
+                          item.level === 3 ? 'pl-5 text-[11px]' : 'font-medium',
+                          activeToc === item.id
+                            ? 'bg-[#0097E0]/10 text-[#0097E0] font-bold border-l-2 border-[#0097E0]'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                        )}
+                      >
+                        {item.text}
+                      </button>
+                    ))}
+                  </nav>
                 </div>
               )}
 
-              {/* Prev / Next */}
-              {(adjacent.prev || adjacent.next) && (
-                <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-                  {adjacent.prev ? (
-                    <Link
-                      to={`/insights/news/${adjacent.prev.slug}`}
-                      className="group flex items-center gap-4 p-4 rounded-2xl border border-gray-100 hover:border-daikin-blue/30 hover:bg-daikin-blue-50/50 transition-all duration-200"
-                    >
-                      <div className="w-9 h-9 rounded-xl bg-gray-100 group-hover:bg-daikin-blue group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors text-gray-400">
-                        <ChevronLeft className="w-5 h-5" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-[11px] text-gray-400 font-medium mb-1">Artikel Sebelumnya</p>
-                        <p className="text-sm font-semibold text-charcoal group-hover:text-daikin-blue transition-colors leading-snug line-clamp-2">
-                          {adjacent.prev.title[lang]}
-                        </p>
-                      </div>
-                    </Link>
-                  ) : <div />}
-
-                  {adjacent.next && (
-                    <Link
-                      to={`/insights/news/${adjacent.next.slug}`}
-                      className="group flex items-center gap-4 p-4 rounded-2xl border border-gray-100 hover:border-daikin-blue/30 hover:bg-daikin-blue-50/50 transition-all duration-200 text-right sm:flex-row-reverse"
-                    >
-                      <div className="w-9 h-9 rounded-xl bg-gray-100 group-hover:bg-daikin-blue group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors text-gray-400">
-                        <ChevronRight className="w-5 h-5" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-[11px] text-gray-400 font-medium mb-1">Artikel Berikutnya</p>
-                        <p className="text-sm font-semibold text-charcoal group-hover:text-daikin-blue transition-colors leading-snug line-clamp-2">
-                          {adjacent.next.title[lang]}
-                        </p>
-                      </div>
-                    </Link>
-                  )}
-                </div>
-              )}
-            </article>
-
-            {/* ── Sidebar - sticky ─────────────────────────── */}
-            <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-
-              {/* Article info card */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 space-y-3">
-                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Info Artikel</h4>
-                <div className="space-y-2.5 text-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-500">Kategori</span>
-                    <span className={cn('text-[11px] font-bold px-2.5 py-1 rounded-full', catColor)}>{catLabel}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-500">Tanggal</span>
-                    <span className="font-semibold text-charcoal text-[13px]">{formatShortDate(article.publishedAt)}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-500">Waktu baca</span>
-                    <span className="font-semibold text-charcoal text-[13px]">{readTime} menit</span>
-                  </div>
-                  {article.author && (
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-500">Penulis</span>
-                      <span className="font-semibold text-charcoal text-[13px] text-right max-w-[55%] leading-tight">{article.author}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Share sidebar */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
-                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Bagikan Artikel</h4>
-                <ShareButtons url={shareUrl} title={article.title[lang]} />
-              </div>
-
-              {/* Tags sidebar */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
-                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Topik</h4>
-                <div className="flex flex-wrap gap-2">
-                  {article.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1.5 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">#{tag}</span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Back button */}
+              {/* Back to All News Button */}
               <Link
                 to="/insights/news"
-                className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-daikin-blue transition-colors group"
+                className="w-full flex items-center justify-center gap-2 text-xs font-bold text-[#0097E0] bg-white hover:bg-[#0097E0] hover:text-white p-3 rounded-2xl border border-gray-200 transition-all shadow-sm group"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                Kembali ke Semua Berita
+                Semua Berita Daikin
               </Link>
+
             </aside>
+
+
+            {/* ══════════════════════════════════════════════════════════
+                2. MIDDLE COLUMN: News Detail Content
+               ══════════════════════════════════════════════════════════ */}
+            <main className="lg:col-span-6 space-y-6 order-1 lg:order-2">
+              
+              {/* Cover Image Box */}
+              <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm">
+                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                  <img
+                    src={article.coverImage}
+                    alt={article.title[lang]}
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+
+              {/* Main Article Content Container */}
+              <article className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8">
+                
+                {/* Excerpt Lead Paragraph */}
+                <div className="text-sm md:text-base text-gray-700 leading-relaxed font-semibold mb-6 pb-6 border-b border-gray-100 bg-sky-50/50 p-4 rounded-2xl border-l-4 border-[#0097E0]">
+                  {article.excerpt[lang]}
+                </div>
+
+                {/* Rendered Body */}
+                <div className="prose prose-slate max-w-none text-gray-700 leading-relaxed">
+                  {renderMarkdown(article.content[lang])}
+                </div>
+
+                {/* Author Card */}
+                {article.author && (
+                  <div className="mt-10 p-5 bg-gradient-to-r from-sky-50 to-blue-50/40 rounded-2xl border border-sky-100 flex items-center gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-[#0097E0] text-white font-bold flex items-center justify-center text-sm shadow-sm flex-shrink-0">
+                      DK
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold text-[#0097E0] uppercase tracking-wider mb-0.5">Penulis & Redaksi</p>
+                      <h5 className="font-bold text-gray-900 text-xs md:text-sm">{article.author}</h5>
+                      <p className="text-[11px] text-gray-500">Official Daikin Airconditioning Indonesia</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Adjacent Navigation */}
+                {(adjacent.prev || adjacent.next) && (
+                  <div className="grid sm:grid-cols-2 gap-4 pt-8 mt-8 border-t border-gray-100">
+                    {adjacent.prev ? (
+                      <Link
+                        to={`/insights/news/${adjacent.prev.slug}`}
+                        className="group flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200/80 hover:border-[#0097E0] hover:bg-[#0097E0]/5 transition-all text-left"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-gray-100 group-hover:bg-[#0097E0] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors text-gray-500">
+                          <ChevronLeft className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-[10px] text-gray-400 font-bold uppercase mb-0.5">Sebelumnya</p>
+                          <p className="text-xs font-bold text-gray-800 group-hover:text-[#0097E0] transition-colors leading-snug line-clamp-1">
+                            {adjacent.prev.title[lang]}
+                          </p>
+                        </div>
+                      </Link>
+                    ) : <div />}
+
+                    {adjacent.next && (
+                      <Link
+                        to={`/insights/news/${adjacent.next.slug}`}
+                        className="group flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200/80 hover:border-[#0097E0] hover:bg-[#0097E0]/5 transition-all text-right sm:flex-row-reverse"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-gray-100 group-hover:bg-[#0097E0] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors text-gray-500">
+                          <ChevronRight className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-[10px] text-gray-400 font-bold uppercase mb-0.5">Berikutnya</p>
+                          <p className="text-xs font-bold text-gray-800 group-hover:text-[#0097E0] transition-colors leading-snug line-clamp-1">
+                            {adjacent.next.title[lang]}
+                          </p>
+                        </div>
+                      </Link>
+                    )}
+                  </div>
+                )}
+
+              </article>
+            </main>
+
+
+            {/* ══════════════════════════════════════════════════════════
+                3. RIGHT SIDEBAR: Promo Banner, Subscribe, Share & Tags (Sticky)
+               ══════════════════════════════════════════════════════════ */}
+            <aside
+              ref={rightAsideRef}
+              style={{ transform: `translateY(${rightTranslateY}px)` }}
+              className="lg:col-span-3 space-y-6 self-start order-3 transition-transform duration-75 ease-out"
+            >
+              
+              {/* Promotional Banner Card */}
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm group">
+                <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                  <img
+                    src="/images/promotions/daikin-promo-banner.png"
+                    alt="Promo AC Daikin 2026"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-2.5 right-2.5 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase shadow-sm">
+                    Promo Spesial
+                  </div>
+                </div>
+                <div className="p-5 md:p-6 space-y-2.5">
+                  <h4 className="font-extrabold text-gray-900 text-xs md:text-sm leading-snug">
+                    Promo Mid-Year Daikin Inverter 2026
+                  </h4>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">
+                    Dapatkan diskon hingga 30% + gratis biaya instalasi di dealer resmi Daikin iShop.
+                  </p>
+                  <Link
+                    to="/insights/promotions"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0097E0] hover:text-[#0072CE] transition-colors pt-1"
+                  >
+                    Klaim Promo <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Social Share Box */}
+              <div className="bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm space-y-3.5">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
+                  <Share2 className="w-4 h-4 text-[#0097E0]" /> Bagikan Artikel
+                </h4>
+                <ShareButtons url={shareUrl} title={article.title[lang]} />
+              </div>
+
+              {/* Article Tags / Topik */}
+              {article.tags && article.tags.length > 0 && (
+                <div className="bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm space-y-3.5">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
+                    <Tag className="w-4 h-4 text-[#0097E0]" /> Tag & Topik
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {article.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 bg-gray-50 hover:bg-[#0097E0]/10 hover:text-[#0097E0] border border-gray-200/80 text-gray-600 text-xs font-semibold rounded-xl cursor-pointer transition-all"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Subscribe Box */}
+              <div className="bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                <div className="flex items-center gap-2 text-[#0097E0] mb-2">
+                  <Mail className="w-4 h-4" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Langganan Artikel</span>
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed mb-4">
+                  Dapatkan info berita & promo Daikin langsung ke email Anda.
+                </p>
+
+                {isSubscribed ? (
+                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs p-3 rounded-xl flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span>Terima kasih! Berhasil berlangganan.</span>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubscribe} className="space-y-2.5">
+                    <input
+                      type="email"
+                      required
+                      placeholder="Email Anda..."
+                      value={emailInput}
+                      onChange={(e) => setEmailInput(e.target.value)}
+                      className="w-full px-3.5 py-2 rounded-xl border border-gray-200 text-xs text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#0097E0]"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full py-2.5 rounded-xl bg-[#0097E0] hover:bg-[#0080BD] text-white font-bold text-xs transition-all shadow-sm"
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                )}
+              </div>
+
+            </aside>
+
           </div>
+
         </div>
       </div>
 
-      {/* ── More articles ─────────────────────────────────────── */}
+      {/* ── Related Articles Section (Artikel Lainnya) ────────────────── */}
       {related.length > 0 && (
-        <div className="bg-white py-12 border-t border-gray-100">
+        <div className="bg-white py-14 border-t border-gray-200/80">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <h3 className="text-xl font-bold text-charcoal">Baca Juga</h3>
+            
+            <div className="flex items-center justify-between mb-8 pb-3 border-b border-gray-100">
+              <div>
+                <span className="text-xs font-bold text-[#0097E0] uppercase tracking-wider">Rekomendasi Bacaan</span>
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight mt-0.5">Artikel Lainnya</h3>
+              </div>
               <Link
                 to="/insights/news"
-                className="text-sm font-semibold text-daikin-blue hover:text-daikin-blue-dark flex items-center gap-1 transition-colors"
+                className="text-xs md:text-sm font-bold text-[#0097E0] hover:text-[#0072CE] flex items-center gap-1 transition-all"
               >
-                Semua Berita <ArrowRight className="w-4 h-4" />
+                Lihat Semua Berita <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {related.map((rel) => {
-                const relGradient = COVER_GRADIENT[rel.category] ?? 'from-slate-600 to-slate-800'
-                return (
-                  <Link
-                    key={rel.id}
-                    to={`/insights/news/${rel.slug}`}
-                    className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
-                  >
-                    <div className={`relative h-36 bg-gradient-to-br ${relGradient} overflow-hidden`}>
-                      <img src={rel.coverImage} alt={rel.title[lang]} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                      <div className="absolute inset-0 bg-black/20" />
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {related.map((rel) => (
+                <div
+                  key={rel.id}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group"
+                >
+                  <Link to={`/insights/news/${rel.slug}`} className="flex flex-col h-full">
+                    <div className="relative overflow-hidden bg-gray-100 aspect-[16/10]">
+                      <img
+                        src={rel.coverImage}
+                        alt={rel.title[lang]}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="p-4">
-                      <p className="text-[11px] text-gray-400 mb-1.5">{formatShortDate(rel.publishedAt)}</p>
-                      <p className="text-sm font-bold text-charcoal line-clamp-2 group-hover:text-daikin-blue transition-colors leading-snug">
+                    <div className="p-5 flex flex-col flex-1 bg-white">
+                      <h4 className="font-bold text-[#0097E0] text-sm md:text-base leading-snug mb-2 line-clamp-2 group-hover:underline transition-all">
                         {rel.title[lang]}
+                      </h4>
+                      <p className="text-xs text-gray-400 font-normal mb-3">
+                        {formatShortDate(rel.publishedAt)}
+                      </p>
+                      <p className="text-xs text-gray-500 leading-relaxed line-clamp-2 flex-1">
+                        {rel.excerpt[lang]}
                       </p>
                     </div>
                   </Link>
-                )
-              })}
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
       )}
+
+      {/* ── Bottom Call To Action Banner ──────────────────────────────── */}
+      <div className="bg-[#003B71] text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center space-y-4">
+          <h3 className="text-2xl md:text-3xl font-black tracking-tight">
+            Ingin Solusi Tata Udara Terbaik Untuk Rumah Atau Kantor Anda?
+          </h3>
+          <p className="text-xs md:text-sm text-white/80 max-w-xl mx-auto leading-relaxed">
+            Dapatkan rekomendasi AC Daikin Inverter dan penawaran terbaik dari dealer resmi Daikin Indonesia.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link
+              to="/services/ishop"
+              className="px-6 py-3 rounded-xl bg-[#0097E0] hover:bg-[#0080BD] text-white font-bold text-xs md:text-sm transition-all shadow-md"
+            >
+              Temukan Dealer Terdekat
+            </Link>
+            <Link
+              to="/contact"
+              className="px-6 py-3 rounded-xl border border-white/40 hover:bg-white/10 text-white font-bold text-xs md:text-sm transition-all"
+            >
+              Hubungi Tim Daikin
+            </Link>
+          </div>
+        </div>
+      </div>
+
     </PageTransition>
   )
 }

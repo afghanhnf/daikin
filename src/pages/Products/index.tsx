@@ -1,11 +1,13 @@
+import { lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, Building2, Package, Settings, BookOpen, ArrowRight, Zap, Wind, Cpu } from 'lucide-react'
+import { Home, Building2, Package, Settings, BookOpen, ArrowRight, Zap, Wind, Cpu, ChevronRight } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeading from '@/components/sections/SectionHeading'
 import FadeInUp, { FadeInItem } from '@/components/animations/FadeInUp'
 import { FadeInLeft, FadeInRight } from '@/components/animations/FadeInLeft'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 const categories = [
   {
@@ -16,22 +18,22 @@ const categories = [
   {
     icon: Building2, title: 'Commercial Solutions', subtitle: 'Komersial', path: '/products/commercial',
     desc: 'Sistem VRV, Sky Air, dan Cassette untuk gedung perkantoran, hotel, mall, dan fasilitas industri. Efisiensi tinggi dengan fleksibilitas instalasi maksimal.',
-    count: '15+ Model', gradient: 'from-slate-700 to-daikin-blue-dark',
+    count: '15+ Model', gradient: 'from-slate-800 to-daikin-blue-dark',
   },
   {
     icon: Package, title: 'Accessories', subtitle: 'Aksesori', path: '/products/accessories',
     desc: 'Wifi adapter, remote control pintar, bracket premium, dan aksesori resmi yang menyempurnakan ekosistem AC Daikin Anda untuk kontrol lebih mudah.',
-    count: '10+ Item', gradient: 'from-emerald-500 to-teal-700',
+    count: '10+ Item', gradient: 'from-[#0080cb] to-[#00b0f0]',
   },
   {
     icon: Settings, title: 'Spare Parts', subtitle: 'Suku Cadang', path: '/products/spare-parts',
     desc: 'Suku cadang 100% orisinal Daikin untuk menjaga performa optimal dan memperpanjang usia unit AC Anda. Tersedia di semua cabang dan service center resmi.',
-    count: '100+ SKU', gradient: 'from-orange-500 to-red-600',
+    count: '100+ SKU', gradient: 'from-[#005a87] to-slate-800',
   },
   {
     icon: BookOpen, title: 'E-Catalogue', subtitle: 'Katalog Digital', path: '/products/e-catalogue',
     desc: 'Spesifikasi teknis lengkap, panduan pemilihan, dan referensi produk terbaru Daikin Indonesia tersedia dalam format PDF yang mudah diunduh dan dibagikan.',
-    count: '5 Katalog', gradient: 'from-violet-500 to-purple-700',
+    count: '5 Katalog', gradient: 'from-[#005a87] to-daikin-blue',
   },
 ]
 
@@ -59,13 +61,26 @@ export default function ProductsIndex() {
         canonical="/products"
       />
 
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-36 pb-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Breadcrumb items={[{ label: 'Produk' }]} className="text-white mb-6" />
+      {/* Hero Header Section */}
+      <div className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 flex flex-col justify-center overflow-hidden bg-gradient-to-r from-[#0080cb] via-[#0097e6] to-[#00b0f0] text-white">
+        <Suspense fallback={null}><AirParticles color="white" /></Suspense>
+        <div className="absolute inset-0 z-0 opacity-15 bg-[url('/images/pattern.png')] bg-repeat" />
+
+        <div className="relative z-20 w-full px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
+          <nav className="flex items-center space-x-2 text-white/80 mb-6 text-xs md:text-sm font-medium tracking-wide">
+            <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <span className="text-white font-semibold">Produk</span>
+          </nav>
+
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Produk Daikin</h1>
-            <p className="text-white/80 text-xl max-w-2xl leading-relaxed">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full text-white text-xs font-semibold uppercase tracking-wider mb-4 border border-white/25">
+              Solusi Tata Udara Terlengkap Daikin
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight drop-shadow-sm">
+              Produk Daikin
+            </h1>
+            <p className="text-white/95 text-base md:text-xl max-w-2xl font-light leading-relaxed drop-shadow-sm">
               Lebih dari 100 model untuk setiap kebutuhan - dari hunian pribadi hingga gedung komersial berskala besar, semua dirancang dengan standar kualitas global Daikin.
             </p>
           </FadeInUp>
@@ -181,7 +196,7 @@ export default function ProductsIndex() {
                     <span className="text-white font-semibold text-sm">VRV System</span>
                   </div>
                 </div>
-                <div className="rounded-2xl overflow-hidden h-32 bg-gradient-to-br from-emerald-600 to-teal-800 relative">
+                <div className="rounded-2xl overflow-hidden h-32 bg-gradient-to-br from-[#005a87] to-[#0097e6] relative">
                   <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 70% 30%, white, transparent 60%)' }} />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-white font-semibold text-sm">Sky Air</span>

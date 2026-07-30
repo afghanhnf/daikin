@@ -3,12 +3,13 @@ import { motion } from 'framer-motion'
 interface WaveBackgroundProps {
   className?: string
   inverted?: boolean
+  color?: string
 }
 
-export default function WaveBackground({ className = '', inverted = false }: WaveBackgroundProps) {
-  const color1 = inverted ? 'rgba(255,255,255,0.15)' : 'rgba(0,151,224,0.15)'
-  const color2 = inverted ? 'rgba(255,255,255,0.10)' : 'rgba(77,192,240,0.10)'
-  const color3 = inverted ? 'rgba(255,255,255,0.08)' : 'rgba(0,114,168,0.08)'
+export default function WaveBackground({ className = '', inverted = false, color }: WaveBackgroundProps) {
+  const color1 = color || (inverted ? 'rgba(255,255,255,0.15)' : 'rgba(0,151,224,0.15)')
+  const color2 = color || (inverted ? 'rgba(255,255,255,0.10)' : 'rgba(77,192,240,0.10)')
+  const color3 = color || (inverted ? 'rgba(255,255,255,0.08)' : 'rgba(0,114,168,0.08)')
 
   return (
     <div className={`absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden ${className}`}>

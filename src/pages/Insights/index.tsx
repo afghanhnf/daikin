@@ -45,7 +45,7 @@ const insightCategories = [
   {
     icon: Heart,
     title: 'Daikin Impact (CSR)',
-    path: '/insights/csr',
+    path: '/profile/csr',
     gradient: 'from-rose-500 to-pink-600',
     count: 'Program Tahunan',
     desc: 'Inisiatif lingkungan, program komunitas, dan komitmen Daikin menuju masa depan yang lebih hijau dan berkelanjutan.',
@@ -136,6 +136,65 @@ export default function InsightsIndex() {
             )
           })}
         </FadeInUp>
+      </section>
+
+      {/* Kampanye Spesial Daikin */}
+      <section className="section-bg-light">
+        <div className="section-container">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <div className="accent-line" />
+              <h2 className="section-heading mb-0">Kampanye Utama Daikin</h2>
+            </div>
+            <Link to="/campaign/power-to-create" className="flex items-center gap-1.5 text-sm font-semibold text-daikin-blue hover:text-daikin-blue-dark transition-colors">
+              <span>Lihat Semua Kampanye</span> <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/campaign/ideal-air" className="group block">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-gray-200/80 transition-all">
+                <div className="h-44 bg-gradient-to-br from-daikin-blue/70 to-daikin-blue-dark relative overflow-hidden">
+                  <img src="/images/campaign/the-ideal.webp" alt="The Ideal Air" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <span className="absolute top-3 left-3 bg-daikin-blue text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full">Kampanye</span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-charcoal group-hover:text-daikin-blue transition-colors mb-1">The Ideal Air</h3>
+                  <p className="text-xs text-gray-500 line-clamp-2">Nyaman itu hak semua orang. Daikin percaya bahwa udara yang sehat adalah kebutuhan, bukan kemewahan.</p>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/campaign/power-to-create" className="group block">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border-2 border-daikin-blue/40 transition-all">
+                <div className="h-44 bg-gradient-to-br from-[#005a87] to-[#00b0f0] relative overflow-hidden">
+                  <img src="/images/campaign/the-power.jpg" alt="The Power to Create" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <span className="absolute top-3 left-3 bg-white text-daikin-blue text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm">Masa Depan Udara</span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-charcoal group-hover:text-daikin-blue transition-colors mb-1">The Power to Create The Air of The Future</h3>
+                  <p className="text-xs text-gray-500 line-clamp-2">Inovasi 4 elemen utama udara (Suhu, Kelembapan, Kebersihan, Aliran Udara) untuk masa depan yang lebih hijau & berkelanjutan.</p>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/campaign/perfecting-air" className="group block">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-gray-200/80 transition-all">
+                <div className="h-44 bg-gradient-to-br from-daikin-blue-dark to-charcoal relative overflow-hidden">
+                  <img src="/images/campaign/perfecting.webp" alt="Perfecting Air Stories" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <span className="absolute top-3 left-3 bg-daikin-blue text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full">Kisah Pelanggan</span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-charcoal group-hover:text-daikin-blue transition-colors mb-1">Perfecting The Air Stories</h3>
+                  <p className="text-xs text-gray-500 line-clamp-2">Kisah nyata dari jutaan pelanggan yang kini tahu perbedaan antara sekadar dingin, dan udara yang benar-benar sempurna.</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Latest news */}
@@ -255,7 +314,7 @@ export default function InsightsIndex() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 Setiap tahun, kami menanam ribuan pohon, mengedukasi puluhan ribu siswa tentang efisiensi energi, dan melatih ratusan teknisi dari daerah terpencil.
               </p>
-              <Link to="/insights/csr" className="btn-primary inline-flex items-center gap-2">
+              <Link to="/profile/csr" className="btn-primary inline-flex items-center gap-2">
                 <TrendingUp className="w-4 h-4" /> Lihat Program CSR
               </Link>
             </FadeInUp>

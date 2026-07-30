@@ -22,11 +22,11 @@ import FadeInUp, { FadeInItem } from '@/components/animations/FadeInUp'
 import { FadeInLeft, FadeInRight } from '@/components/animations/FadeInLeft'
 import SectionHeading from '@/components/sections/SectionHeading'
 import ProductCard from '@/components/sections/ProductCard'
-import NewsCard from '@/components/sections/NewsCard'
 import StatCounter from '@/components/sections/StatCounter'
 import PichonKunHelper from '@/components/sections/PichonKunHelper'
 import PageMeta from '@/components/seo/PageMeta'
 import Button from '@/components/ui/Button'
+import QuickJourneySection from '@/components/home/QuickJourneySection'
 import { getFeaturedProducts } from '@/data/products'
 import { getLatestNews } from '@/data/news'
 
@@ -41,8 +41,8 @@ const heroSlides = [
     title: 'Perfecting',
     titleAccent: 'the Air',
     subtitle: 'Lebih dari sekadar pendingin ruangan - Daikin menghadirkan udara yang sehat, efisien, dan nyaman. Karena setiap napas yang Anda hirup di rumah, itu tanggung jawab kami.',
-    ctaPrimary: { label: 'Lihat Produk', href: '#', disabled: true },
-    ctaSecondary: { label: 'Kalkulator AC', href: '/solutions/ac-calculator' },
+    ctaPrimary: { label: 'Temukan Solusi', href: '/solutions/how-to-choose' },
+    ctaSecondary: { label: 'Cari Dealer', href: '/services/ishop' },
     stat1: { value: '60%', label: 'Hemat Energi' },
     stat2: { value: '5 Thn', label: 'Garansi Kompressor' },
     gradient: 'from-daikin-blue-dark via-daikin-blue to-daikin-blue-light',
@@ -57,7 +57,7 @@ const heroSlides = [
     titleAccent: 'Technology',
     subtitle: 'Ketika udara dalam ruangan bisa lebih berbahaya dari luar, Streamer Technology hadir sebagai penjaga. Aktif menghancurkan 99.9% virus - bukan sekadar menyaringnya.',
     ctaPrimary: { label: 'Pelajari Teknologi', href: '/profile/streamer' },
-    ctaSecondary: { label: 'Lihat Produk', href: '#', disabled: true },
+    ctaSecondary: { label: 'Lihat Produk', href: '/products/residential/air-purifier' },
     stat1: { value: '99.9%', label: 'Virus Tereliminasi' },
     stat2: { value: 'PM2.5', label: 'Filter Aktif' },
     gradient: 'from-[#0a1628] via-daikin-blue-dark to-daikin-blue',
@@ -71,8 +71,8 @@ const heroSlides = [
     title: 'Daikin',
     titleAccent: 'Emura Series',
     subtitle: 'Saat estetika dan performa menyatu tanpa kompromi - itulah Emura. Dirancang di Eropa, diperkuat teknologi Jepang, untuk mereka yang tidak berkompromi dengan kualitas maupun keindahan.',
-    ctaPrimary: { label: 'Lihat Emura', href: '#', disabled: true },
-    ctaSecondary: { label: 'Cari Dealer', href: '#', disabled: true },
+    ctaPrimary: { label: 'Lihat Single Split', href: '/products/residential/single-split' },
+    ctaSecondary: { label: 'Cari Dealer', href: '/services/proshop' },
     stat1: { value: 'Red Dot', label: 'Design Award' },
     stat2: { value: 'A++', label: 'Energy Rating' },
     gradient: 'from-charcoal via-[#1a2a4a] to-daikin-blue-dark',
@@ -118,7 +118,7 @@ const productCategories: ProductCat[] = [
   {
     label: 'Commercial Solutions', sublabel: 'AC Komersial & Industrial',
     tags: ['VRV / VRF', 'Chiller', 'Cassette'],
-    href: '#', disabled: true, featured: true,
+    href: '/products/commercial', featured: true,
     image: '/images/category_ac/ac-komersial.webp',
     overlay: 'from-[#0a1628]/80 via-daikin-blue-dark/35 to-transparent',
     gradient: 'from-[#0a1628] to-daikin-blue-dark',
@@ -126,14 +126,14 @@ const productCategories: ProductCat[] = [
   // ── Row 2 - compact (4 cards) ─────────────────────────────────────
   {
     label: 'Accessories', sublabel: 'Aksesori Pelengkap',
-    href: '#', disabled: true,
+    href: '/products/accessories',
     image: '/images/category_ac/acc.jpg',
     overlay: 'from-emerald-700/75 via-emerald-600/30 to-transparent',
     gradient: 'from-emerald-600 to-teal-700',
   },
   {
     label: 'Spare Parts', sublabel: 'Suku Cadang Resmi',
-    href: '#', disabled: true,
+    href: '/products/spare-parts',
     image: '/images/category_ac/spareparts.jpg',
     overlay: 'from-orange-600/75 via-orange-500/30 to-transparent',
     gradient: 'from-orange-500 to-amber-600',
@@ -147,7 +147,7 @@ const productCategories: ProductCat[] = [
   },
   {
     label: 'Virtual Tour', sublabel: 'Showroom Online',
-    href: '/profile/technology',
+    href: '/virtual-tour',
     image: '/images/category_ac/virtual-tour.webp',
     overlay: 'from-daikin-blue/70 via-daikin-blue-light/25 to-transparent',
     gradient: 'from-daikin-blue to-daikin-blue-light',
@@ -176,14 +176,6 @@ const innovationPoints = [
   { icon: Globe, title: 'Manufaktur Hijau', desc: 'Fasilitas produksi bersertifikat ISO 14001 di seluruh dunia.' },
 ]
 
-// Innovation image placeholders - replace src="" when images are ready
-const innovationImages = [
-  { label: 'R&D Laboratory', gradient: 'from-daikin-blue to-sky-500', image: '/images/inovasi/lab-daikin.jpg' },
-  { label: 'Green Manufacturing', gradient: 'from-emerald-600 to-teal-700', image: '/images/inovasi/green-manufacturing.png' },
-  { label: 'Low-GWP Refrigerant', gradient: 'from-daikin-blue-dark to-daikin-blue', image: '/images/inovasi/refrigerant.jpg' },
-  { label: 'Renewable Energy Facility', gradient: 'from-green-600 to-emerald-700', image: '/images/inovasi/renewable.jpeg' },
-]
-
 const xperienceImages = [
   { label: 'Showroom Utama', gradient: 'from-charcoal to-daikin-blue-dark', image: '/images/zone/showroom.jpg' },
   { label: 'Demo Area', gradient: 'from-daikin-blue to-daikin-blue-light', image: '/images/zone/demo-area.jpg' },
@@ -191,13 +183,13 @@ const xperienceImages = [
 ]
 
 const accessoryCategories = [
-  { label: 'Refrigerant', sublabel: 'R-32 & R-410A', gradient: 'from-blue-600 to-blue-800', Icon: Thermometer },
-  { label: 'Pipa AC', sublabel: 'Copper & Flare', gradient: 'from-slate-600 to-slate-800', Icon: Cable },
-  { label: 'Insulasi AC', sublabel: 'Armaflex & Foam', gradient: 'from-daikin-blue to-[#005a87]', Icon: WrapText },
-  { label: 'Daikin Recommend Tools', sublabel: 'Toolkit Resmi', gradient: 'from-charcoal to-[#1a2a4a]', Icon: Settings },
-  { label: 'Filter', sublabel: 'HEPA & PM2.5', gradient: 'from-teal-600 to-teal-800', Icon: SlidersHorizontal },
-  { label: 'Smart Connection', sublabel: 'WiFi & BMS', gradient: 'from-sky-500 to-sky-700', Icon: Wifi },
-  { label: 'Lainnya', sublabel: 'Produk Lainnya', gradient: 'from-gray-600 to-gray-800', Icon: MoreHorizontal },
+  { label: 'Refrigerant', sublabel: 'R-32 & R-410A', gradient: 'from-blue-600 to-blue-800', Icon: Thermometer, href: '/products/accessories/refrigerant' },
+  { label: 'Pipa AC', sublabel: 'Copper & Flare', gradient: 'from-slate-600 to-slate-800', Icon: Cable, href: '/products/accessories/pipa' },
+  { label: 'Insulasi AC', sublabel: 'Armaflex & Foam', gradient: 'from-daikin-blue to-[#005a87]', Icon: WrapText, href: '/products/accessories/insulasi' },
+  { label: 'Daikin Recommend Tools', sublabel: 'Toolkit Resmi', gradient: 'from-charcoal to-[#1a2a4a]', Icon: Settings, href: '/products/accessories/tools' },
+  { label: 'Filter', sublabel: 'HEPA & PM2.5', gradient: 'from-teal-600 to-teal-800', Icon: SlidersHorizontal, href: '/products/accessories/filter' },
+  { label: 'Smart Connection', sublabel: 'WiFi & BMS', gradient: 'from-sky-500 to-sky-700', Icon: Wifi, href: '/products/accessories/smart-connection' },
+  { label: 'Lainnya', sublabel: 'Produk Lainnya', gradient: 'from-gray-600 to-gray-800', Icon: MoreHorizontal, href: '/products/accessories/others' },
 ]
 
 // Campaign - original titles preserved
@@ -205,21 +197,21 @@ const campaigns = [
   {
     title: 'The Ideal Air',
     desc: 'Nyaman itu hak semua orang. Daikin percaya bahwa udara yang sehat adalah kebutuhan, bukan kemewahan.',
-    href: '#', disabled: true,
+    href: '/campaign/ideal-air',
     gradient: 'from-daikin-blue/70 to-daikin-blue-dark/80',
     image: '/images/campaign/the-ideal.webp',
   },
   {
     title: 'The Power to Create the Air of the Future',
     desc: 'AC canggih yang tidak mengkhianati lingkungan. Inovasi hijau untuk generasi yang mewarisi bumi ini.',
-    href: '#', disabled: true,
+    href: '/campaign/power-to-create',
     gradient: 'from-[#0a1628]/75 to-daikin-blue-dark/80',
     image: '/images/campaign/the-power.jpg',
   },
   {
     title: 'Perfecting The Air Stories',
     desc: 'Kisah nyata dari jutaan pelanggan yang kini tahu perbedaan antara sekadar dingin, dan udara yang benar-benar sempurna.',
-    href: '#', disabled: true,
+    href: '/campaign/perfecting-air',
     gradient: 'from-daikin-blue-dark/75 to-charcoal/80',
     image: '/images/campaign/perfecting.webp',
   },
@@ -232,7 +224,7 @@ const trainingCategories = [
     title: 'Pusat Pelatihan',
     desc: 'Fasilitas modern di Jakarta, Surabaya & Medan - lengkap dengan lab praktik dan ruang kelas berstandar internasional Daikin.',
     gradient: 'from-daikin-blue-dark to-daikin-blue',
-    href: '#', disabled: true,
+    href: '/insights/training',
     cta: 'Temukan Lokasi',
   },
   {
@@ -240,7 +232,7 @@ const trainingCategories = [
     title: 'Kurikulum',
     desc: 'Materi dikembangkan langsung oleh Daikin Japan - dari instalasi dasar, diagnostik sistem, hingga integrasi VRV & BMS tingkat lanjut.',
     gradient: 'from-charcoal to-daikin-blue-dark',
-    href: '#', disabled: true,
+    href: '/insights/training',
     cta: 'Lihat Kurikulum',
   },
   {
@@ -248,7 +240,7 @@ const trainingCategories = [
     title: 'Sistem Pelatihan Online',
     desc: 'Platform e-learning Daikin dengan modul video, simulasi interaktif, dan ujian sertifikasi yang bisa diakses kapan saja dan di mana saja.',
     gradient: 'from-daikin-blue to-sky-600',
-    href: '#', disabled: true,
+    href: '/insights/training',
     cta: 'Mulai Belajar',
   },
 ]
@@ -267,7 +259,7 @@ const dealerHighlights = [
 export default function Home() {
   useTranslation(['home', 'common'])
   const featuredProducts = getFeaturedProducts().slice(0, 3)
-  const latestNews = getLatestNews(3)
+  const latestNews = getLatestNews(4)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
@@ -303,23 +295,24 @@ export default function Home() {
                   backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
                   backgroundSize: '52px 52px',
                 }} />
-                <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full py-20 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                  <div className="text-white relative z-10 lg:pr-4">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full py-24 md:py-28 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                  {/* Left Column: Glass Container Card */}
+                  <div className="lg:col-span-7 text-white relative z-10 bg-white/10 backdrop-blur-md border border-white/20 p-6 md:p-8 lg:p-10 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
                     <motion.span
                       initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-                      className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-md border border-white/20"
+                      className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-5 backdrop-blur-md border border-white/20"
                     >
                       <Wind className="w-4 h-4" />{slide.badge}
                     </motion.span>
                     <motion.h1
                       initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.6 }}
-                      className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] mb-5 drop-shadow-sm"
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-[1.15] mb-5 drop-shadow-xs"
                     >
-                      {slide.title}{slide.titleAccent && <><br /><span className="text-white/90 drop-shadow-md">{slide.titleAccent}</span></>}
+                      {slide.title}{slide.titleAccent && <><br /><span className="text-white/90 drop-shadow-xs">{slide.titleAccent}</span></>}
                     </motion.h1>
                     <motion.p
                       initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 }}
-                      className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-xl drop-shadow-sm"
+                      className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-xl drop-shadow-xs"
                     >
                       {slide.subtitle}
                     </motion.p>
@@ -333,7 +326,7 @@ export default function Home() {
                         </span>
                       ) : (
                         <Link to={slide.ctaPrimary.href}>
-                          <button className="inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full bg-white text-daikin-blue hover:bg-daikin-blue-50 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_24px_rgba(0,0,0,0.25)] active:scale-95">
+                          <button className="inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full bg-white text-daikin-blue hover:bg-daikin-blue-50 transition-all shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_14px_rgba(0,0,0,0.12)] active:scale-95">
                             {slide.ctaPrimary.label} <ArrowRight className="w-4 h-4" />
                           </button>
                         </Link>
@@ -344,45 +337,46 @@ export default function Home() {
                         </span>
                       ) : (
                         <Link to={slide.ctaSecondary.href}>
-                          <button className="inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/60 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] active:scale-95">
+                          <button className="inline-flex items-center gap-2 px-7 py-3 text-[15px] font-bold rounded-full border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/60 transition-all shadow-xs hover:shadow-sm active:scale-95">
                             {slide.ctaSecondary.label}
                           </button>
                         </Link>
                       )}
                     </motion.div>
                   </div>
+
+                  {/* Right Column: Visual Frame Container */}
                   <motion.div
                     initial={{ opacity: 0, x: 32, scale: 0.94 }} animate={{ opacity: 1, x: 0, scale: 1 }}
                     transition={{ delay: 0.32, duration: 0.7, ease: 'easeOut' }}
-                    className="flex justify-center lg:justify-end"
+                    className="lg:col-span-5 flex justify-center lg:justify-end"
                   >
-                    <div className="relative w-full max-w-md lg:max-w-[500px]">
-                      <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-black/10 backdrop-blur-md border border-white/25 shadow-[0_24px_64px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.18)]">
+                    <div className="relative w-full max-w-md lg:max-w-full bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-5 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
+                      <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-black/10 backdrop-blur-md border border-white/25 shadow-[0_8px_24px_rgba(0,0,0,0.10)]">
                         {/* Fallback bg */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${slide.thumbGradient}`} />
                         {/* Photo */}
                         <img src={slide.image} alt={slide.titleAccent} className="relative z-10 w-full h-full object-cover" loading="eager" width={480} height={360} />
-                        {/* Branded tone overlay - blends slide colour into photo without crushing it */}
+                        {/* Branded tone overlay */}
                         <div className={`absolute inset-0 z-[15] bg-gradient-to-br ${(slide as typeof slide & { toneOverlay: string }).toneOverlay} pointer-events-none`} />
                         {/* Caption */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/65 to-transparent px-5 py-4 z-20">
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent px-5 py-4 z-20">
                           <div className="text-white/60 text-xs">Daikin Indonesia</div>
                           <div className="text-white font-bold text-sm">{slide.titleAccent}</div>
                         </div>
-                        {/* Glass edge - top shine line simulates light hitting glass rim */}
+                        {/* Glass edges */}
                         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/55 to-transparent z-30 pointer-events-none" />
-                        {/* Glass edge - left rim */}
                         <div className="absolute left-0 inset-y-0 w-px bg-gradient-to-b from-white/35 via-white/10 to-transparent z-30 pointer-events-none" />
                       </div>
-                      <motion.div animate={{ y: [0, -8, 0] }} transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
-                        className="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] px-4 py-3 min-w-[100px]">
-                        <div className="text-[11px] text-gray-400 font-medium">{slide.stat1.label}</div>
-                        <div className="text-xl font-bold text-daikin-blue">{slide.stat1.value}</div>
+                      <motion.div animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
+                        className="absolute -bottom-3 -left-3 bg-white rounded-xl shadow-[0_4px_14px_rgba(0,0,0,0.06)] px-3.5 py-2.5 min-w-[95px] z-30 border border-gray-100">
+                        <div className="text-[10px] text-gray-400 font-medium">{slide.stat1.label}</div>
+                        <div className="text-lg font-bold text-daikin-blue">{slide.stat1.value}</div>
                       </motion.div>
-                      <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 3.8, ease: 'easeInOut', delay: 0.5 }}
-                        className="absolute -top-5 -right-5 bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] px-4 py-3 min-w-[100px]">
-                        <div className="text-[11px] text-gray-400 font-medium">{slide.stat2.label}</div>
-                        <div className="text-xl font-bold text-daikin-blue">{slide.stat2.value}</div>
+                      <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 3.8, ease: 'easeInOut', delay: 0.5 }}
+                        className="absolute -top-3 -right-3 bg-white rounded-xl shadow-[0_4px_14px_rgba(0,0,0,0.06)] px-3.5 py-2.5 min-w-[95px] z-30 border border-gray-100">
+                        <div className="text-[10px] text-gray-400 font-medium">{slide.stat2.label}</div>
+                        <div className="text-lg font-bold text-daikin-blue">{slide.stat2.value}</div>
                       </motion.div>
                     </div>
                   </motion.div>
@@ -405,42 +399,17 @@ export default function Home() {
         </button>
       </section>
 
-      {/* ── Cerita yang Kami Yakini (Campaign Cards) ────────── */}
-      <section className="bg-white relative z-20 flow-root">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <FadeInUp stagger className="grid md:grid-cols-3 gap-5 -mt-16 md:-mt-28 pb-4">
-            {campaigns.map((camp) => (
-              <FadeInItem key={camp.href}>
-                <div className="pointer-events-none cursor-default">
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    className="relative overflow-hidden rounded-xl text-white h-56 flex flex-col justify-end group shadow-card hover:shadow-card-hover transition-shadow"
-                  >
-                    <img src={(camp as typeof camp & { image: string }).image} alt={camp.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${camp.gradient}`} />
-                    <div className="relative z-10 p-6 border-t border-white/10">
-                      <h3 className="text-sm font-bold mb-1.5 leading-snug drop-shadow">{camp.title}</h3>
-                      <p className="text-white/75 text-xs mb-3 line-clamp-2">{camp.desc}</p>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:gap-2.5 transition-all duration-300">
-                        Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </motion.div>
-                </div>
-              </FadeInItem>
-            ))}
-          </FadeInUp>
-        </div>
-      </section>
+      {/* ── 2. QUICK USER JOURNEY (PRD Section 9) ───────────── */}
+      <QuickJourneySection />
 
-      {/* ── 2. PRODUCT CATEGORIES ───────────────────────────── */}
-      <section className="pt-16 md:pt-20 pb-12 md:pb-16 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+      {/* ── 3. PRODUCT CATEGORIES ───────────────────────────── */}
+      <section className="pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-8 md:pb-10 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <SectionHeading
-            title="Lengkapi Kebutuhan Tata Udara Anda"
-            subtitle="Iovasi pendingin udara terdepan untuk setiap ruang. Mulai dari AC residensial hemat energi, sistem komersial tangguh untuk produktivitas bisnis, hingga solusi pendinginan presisi untuk skala industri."
+            title="Temukan Solusi Pendingin Ruangan Anda"
+            subtitle="Produk pendingin udara terdepan untuk setiap ruang. Mulai dari AC residensial hemat energi, sistem komersial tangguh untuk produktivitas bisnis, hingga solusi pendinginan presisi untuk skala industri."
             centered
-            className="mb-8 md:mb-12"
+            className="mb-6 md:mb-8"
             subtitleClassName="max-w-4xl mx-auto"
           />
 
@@ -449,14 +418,15 @@ export default function Home() {
             {productCategories.filter((c) => c.featured).map((cat) => {
               const inner = (
                 <motion.div
-                  whileHover={cat.disabled ? undefined : 'hover'}
-                  className="relative rounded-2xl overflow-hidden h-72 md:h-80 cursor-pointer group shadow-md hover:shadow-xl transition-shadow duration-300"
+                  whileHover={cat.disabled ? undefined : { y: -5, scale: 1.01 }}
+                  whileTap={cat.disabled ? undefined : { scale: 0.98 }}
+                  className="relative rounded-2xl overflow-hidden h-72 md:h-80 cursor-pointer group shadow-md hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-white/30"
                 >
                   {/* Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${cat.gradient}`} />
                   {cat.image && (
                     <motion.img
-                      variants={cat.disabled ? undefined : { hover: { scale: 1.05 } }}
+                      variants={cat.disabled ? undefined : { hover: { scale: 1.06 } }}
                       transition={{ duration: 0.55, ease: 'easeOut' }}
                       src={cat.image} alt={cat.label}
                       className="absolute inset-0 w-full h-full object-cover"
@@ -464,30 +434,38 @@ export default function Home() {
                     />
                   )}
                   {/* Gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay ?? 'from-black/70 to-transparent'}`} />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${cat.overlay ?? 'from-black/75 via-black/30 to-transparent'}`} />
 
                   {/* Tags - top left */}
                   {cat.tags && (
-                    <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10">
                       {cat.tags.map((tag) => (
-                        <span key={tag} className="text-[10px] font-semibold text-white/90 bg-white/15 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/20">
+                        <span key={tag} className="text-[10px] font-semibold text-white/95 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20 shadow-xs">
                           {tag}
                         </span>
                       ))}
                     </div>
                   )}
 
-                  {/* Arrow - top right */}
+                  {/* Always Visible Interactive Arrow Badge - top right */}
                   {!cat.disabled && (
-                    <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                      <ArrowRight className="w-4 h-4 text-white" />
+                    <div className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white group-hover:bg-daikin-blue group-hover:border-daikin-blue group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   )}
 
                   {/* Label panel - bottom */}
-                  <div className="absolute bottom-0 inset-x-0 bg-black/35 backdrop-blur-sm px-6 py-4 border-t border-white/10 group-hover:bg-black/50 transition-colors duration-300">
-                    <p className="text-white font-bold text-xl leading-tight drop-shadow">{cat.label}</p>
-                    <p className="text-white/65 text-[13px] mt-1 font-medium">{cat.sublabel}</p>
+                  <div className="absolute bottom-0 inset-x-0 bg-black/40 backdrop-blur-md px-6 py-4 border-t border-white/15 group-hover:bg-black/60 transition-colors duration-300 z-10">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-white font-bold font-display text-xl leading-tight drop-shadow">{cat.label}</p>
+                        <p className="text-white/75 text-[13px] mt-1 font-sans font-medium">{cat.sublabel}</p>
+                      </div>
+                      <div className="hidden sm:flex items-center gap-1.5 text-xs font-bold font-display text-cyan-300 opacity-80 group-hover:opacity-100 group-hover:text-white transition-all">
+                        <span>Lihat</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               )
@@ -505,8 +483,9 @@ export default function Home() {
               const Icon = cat.Icon
               const inner = (
                 <motion.div
-                  whileHover={cat.disabled ? undefined : 'hover'}
-                  className={`relative rounded-2xl overflow-hidden h-52 cursor-pointer group shadow-sm hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br ${cat.gradient ?? 'from-slate-600 to-slate-800'}`}
+                  whileHover={cat.disabled ? undefined : { y: -4, scale: 1.01 }}
+                  whileTap={cat.disabled ? undefined : { scale: 0.98 }}
+                  className={`relative rounded-2xl overflow-hidden h-52 cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-white/30 bg-gradient-to-br ${cat.gradient ?? 'from-slate-600 to-slate-800'}`}
                 >
                   {/* Dot pattern watermark */}
                   <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)', backgroundSize: '18px 18px' }} />
@@ -514,7 +493,7 @@ export default function Home() {
                   {/* Photo (if available) */}
                   {cat.image && (
                     <motion.img
-                      variants={cat.disabled ? undefined : { hover: { scale: 1.07 } }}
+                      variants={cat.disabled ? undefined : { hover: { scale: 1.08 } }}
                       transition={{ duration: 0.5, ease: 'easeOut' }}
                       src={cat.image} alt={cat.label}
                       className="absolute inset-0 w-full h-full object-cover"
@@ -557,58 +536,61 @@ export default function Home() {
             })}
           </div>
 
-          {/* Quick access strip */}
-          <FadeInUp className="mt-8 md:mt-12 bg-daikin-blue-50/70 rounded-2xl p-3 md:p-4 border border-daikin-blue-100/50">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {[
-                { label: 'Panduan Memilih AC', desc: 'Panduan lengkap sebelum membeli', icon: BookOpen, href: '/solutions/how-to-choose' },
-                { label: 'Jaminan & Garansi', desc: 'Garansi resmi & cara klaim', icon: Shield, href: '/services/warranty' },
-                { label: 'Dealer & Service Center', desc: 'Temukan lokasi resmi terdekat', icon: MapPin, href: '/services/ishop' },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="flex items-center gap-3 md:gap-4 bg-white rounded-xl border border-transparent hover:border-daikin-blue/20 px-4 md:px-5 py-3.5 md:py-4 transition-all duration-200 group shadow-sm hover:shadow-md"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-daikin-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-daikin-blue group-hover:text-white transition-colors">
-                    <item.icon className="w-4 h-4 md:w-5 md:h-5 text-daikin-blue group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-bold text-charcoal text-sm md:text-[15px] leading-tight">{item.label}</p>
-                    <p className="text-gray-500 text-xs mt-0.5 md:mt-1">{item.desc}</p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-daikin-blue transition-colors flex-shrink-0" />
-                </Link>
-              ))}
-            </div>
-          </FadeInUp>
-
         </div>
       </section>
 
-      {/* ── 3. WHY DAIKIN - with air particles ──────────────── */}
+      {/* ── 4. PRODUK UNGGULAN - Dirancang untuk Kebutuhan Anda ── */}
+      <section className="pt-10 md:pt-14 pb-10 md:pb-14 mb-10 md:mb-14 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="flex items-end justify-between mb-8 md:mb-10 flex-wrap gap-4">
+            <SectionHeading
+              title="Produk Unggulan"
+              subtitle="Dari kamar tidur hingga gedung bertingkat - ada satu Daikin yang tepat ruangan."
+              className="mb-0"
+            />
+            <Link to="/products" className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 hover:underline">
+              Lihat Semua <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <FadeInUp stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProducts.map((product) => (
+              <FadeInItem key={product.id}><ProductCard product={product} /></FadeInItem>
+            ))}
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* ── 5. CORPORATE CAMPAIGN ──────────────────────────── */}
       <section className="py-16 md:py-24 bg-daikin-blue-50 relative overflow-hidden">
         <Suspense fallback={null}><AirParticles /></Suspense>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="grid lg:grid-cols-5 gap-12 items-start mb-14">
-            <FadeInLeft className="lg:col-span-2 space-y-5">
+            <FadeInLeft className="lg:col-span-2 space-y-6">
               <div className="accent-line" />
-              <h2 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-charcoal leading-tight">
                 Bukan Kebetulan<br /><span className="text-daikin-blue">Kami Jadi yang Pertama</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <p className="text-gray-600 leading-relaxed text-base sm:text-lg font-sans font-light">
                 Setiap fitur Daikin lahir dari satu pertanyaan sederhana: bagaimana udara ini bisa lebih baik untuk Anda?
               </p>
-              <Link to="/profile/about">
-                <Button variant="primary">Kenali Lebih Lanjut <ArrowRight className="w-4 h-4" /></Button>
-              </Link>
-              <div className="hidden lg:flex flex-col items-start pt-4 gap-2">
-                <div className="bg-white rounded-xl rounded-bl-none shadow-card px-4 py-2.5 text-xs font-semibold text-daikin-blue border border-daikin-blue-50 ml-8">
+
+              {/* Generous spacing above and below the button */}
+              <div className="pt-3 pb-6">
+                <Link to="/profile/about">
+                  <Button variant="primary" className="px-7 py-3.5 rounded-xl font-bold font-display shadow-md">
+                    Kenali Lebih Lanjut <ArrowRight className="w-4 h-4 ml-1.5" />
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Pichon-kun mascot with proper top margin */}
+              <div className="hidden lg:flex flex-col items-start pt-0 gap-2.5">
+                <div className="bg-white rounded-2xl rounded-bl-none shadow-sm px-4 py-2.5 text-xs font-bold font-display text-daikin-blue border border-daikin-blue/15 ml-6">
                   Daikin pilihan tepat!
                 </div>
                 <motion.img
                   src="/images/mascot/icon-daikin.png" alt="Pichon-kun"
-                  className="h-24 w-auto drop-shadow-lg"
+                  className="h-28 w-auto drop-shadow-lg"
                   animate={{ y: [0, -8, 0] }}
                   transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
                 />
@@ -647,9 +629,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 3. WHY DAIKIN - with air particles ──────────────── */}
       {/* ── 4. DAIKIN DALAM ANGKA ───────────────────────────── */}
       <section className="wave-bg relative overflow-hidden py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
           <SectionHeading
             title="Angka yang Berbicara"
             subtitle="Satu abad bukan waktu yang pendek - dan setiap tahunnya, standar kami terus diperbaiki."
@@ -667,7 +650,7 @@ export default function Home() {
 
       {/* ── 5. VIDEO SECTION ────────────────────────────────── */}
       <section className="py-16 md:py-24 bg-charcoal">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeInLeft className="text-white order-2 lg:order-1">
               <div className="w-10 h-1 bg-daikin-blue rounded-full mb-6" />
@@ -732,8 +715,8 @@ export default function Home() {
       </section>
 
       {/* ── 6. DAIKIN GROUP ─────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <section className="pt-16 pb-8 md:pt-24 md:pb-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeInLeft>
               <div className="accent-line" />
@@ -759,76 +742,113 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-daikin-blue-dark shadow-card">
                 <img src="/images/daikin-group.jpg" alt="Daikin Group" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-daikin-blue-dark/75 via-daikin-blue-dark/20 to-transparent" />
-                <div className="absolute bottom-5 left-5 z-10 text-white">
-                  <div className="text-xs text-white/60 mb-0.5">Hadir di seluruh dunia</div>
-                  <div className="text-xl font-bold">170+ Negara</div>
-                </div>
-              </div>
-              <div className="grid grid-cols-4 gap-3 mt-4">
-                {[{ v: '100+', l: 'Tahun' }, { v: '170+', l: 'Negara' }, { v: '90K+', l: 'Karyawan' }, { v: '48+', l: 'Thn di Indonesia' }].map((s) => (
-                  <div key={s.l} className="bg-daikin-blue-50 rounded-lg px-3 py-3 text-center border border-daikin-blue/10">
-                    <div className="text-base font-bold text-daikin-blue">{s.v}</div>
-                    <div className="text-[11px] text-gray-500 mt-0.5 leading-tight">{s.l}</div>
-                  </div>
-                ))}
               </div>
             </FadeInRight>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white relative z-20 pt-2 pb-12 md:pt-4 md:pb-16 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          {/* Section Header - Left Aligned */}
+          <div className="mb-6 sm:mb-8 text-left">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-daikin-blue bg-daikin-blue-50 border border-daikin-blue/15 uppercase mb-2">
+              Kampanye Daikin
+            </span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-display text-charcoal tracking-tight">
+              Cerita & Kampanye Daikin
+            </h2>
+          </div>
+
+          <FadeInUp stagger className="grid md:grid-cols-3 gap-5">
+            {campaigns.map((camp) => (
+              <FadeInItem key={camp.href}>
+                <Link to={camp.href} className="block">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="relative overflow-hidden rounded-xl text-white h-56 flex flex-col justify-end group shadow-card hover:shadow-card-hover transition-shadow"
+                  >
+                    <img src={(camp as typeof camp & { image: string }).image} alt={camp.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${camp.gradient}`} />
+                    <div className="relative z-10 p-6 border-t border-white/10">
+                      <h3 className="text-sm font-bold mb-1.5 leading-snug drop-shadow">{camp.title}</h3>
+                      <p className="text-white/75 text-xs mb-3 line-clamp-2">{camp.desc}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:gap-2.5 transition-all duration-300">
+                        Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </FadeInItem>
+            ))}
+          </FadeInUp>
         </div>
       </section>
 
       {/* ── 7. INOVASI UNTUK PENINGKATAN BERKELANJUTAN ──────── */}
       <section className="py-16 md:py-24 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start mb-12">
             <FadeInLeft>
               <div className="accent-line" />
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4 leading-tight">
                 Inovasi Untuk<br /><span className="text-daikin-blue">Peningkatan Berkelanjutan</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-lg mb-8">
+              <p className="text-gray-600 leading-relaxed text-lg mb-6">
                 Setiap terobosan yang kami hadirkan bukan hanya untuk hari ini - melainkan untuk menjaga bumi dan kualitas hidup generasi yang akan datang.
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {innovationPoints.map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                    <div className="w-9 h-9 rounded-lg bg-daikin-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Icon className="w-4 h-4 text-daikin-blue" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-charcoal text-sm mb-0.5">{title}</div>
-                      <div className="text-xs text-gray-500 leading-relaxed">{desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Link to="/profile/technology">
-                <Button variant="primary">Selengkapnya <ArrowRight className="w-4 h-4" /></Button>
+              <Link to="/profile/technology" className="inline-flex items-center gap-2 text-daikin-blue font-semibold hover:text-daikin-blue-dark transition-colors">
+                Selengkapnya <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeInLeft>
 
             <FadeInRight>
-              <div className="grid grid-cols-2 gap-3">
-                {innovationImages.map((img, i) => (
-                  <div
-                    key={i}
-                    className={`relative rounded-xl overflow-hidden bg-gradient-to-br ${img.gradient} aspect-[4/3]`}
-                  >
-                    <img src={img.image} alt={img.label} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <span className="text-white text-[11px] font-semibold leading-tight drop-shadow">{img.label}</span>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {innovationPoints.map(({ icon: Icon, title, desc }) => (
+                  <div key={title} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow h-full">
+                    <div className="w-10 h-10 rounded-xl bg-daikin-blue-50 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-daikin-blue" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-charcoal text-sm leading-tight mb-1">{title}</div>
+                      <div className="text-xs text-gray-500 leading-relaxed">{desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </FadeInRight>
           </div>
+
+          <FadeInUp>
+            <div className="rounded-3xl overflow-hidden shadow-card border border-gray-100 relative">
+              <Swiper
+                modules={[Autoplay, Pagination, Navigation, EffectFade]}
+                effect="fade"
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                navigation={{ nextEl: '.banner-next', prevEl: '.banner-prev' }}
+                loop
+                className="w-full aspect-[21/9] md:aspect-[3/1] banner-slider"
+              >
+                {[1, 2, 3].map((i) => (
+                  <SwiperSlide key={i}>
+                    <img src={`/images/slider/banner${i}.webp`} alt={`Banner ${i}`} className="w-full h-full object-cover" loading="lazy" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <button className="banner-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white backdrop-blur-md text-charcoal flex items-center justify-center transition-all shadow-md">
+                <ChevronRight className="w-5 h-5 rotate-180" />
+              </button>
+              <button className="banner-next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white backdrop-blur-md text-charcoal flex items-center justify-center transition-all shadow-md">
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </FadeInUp>
         </div>
       </section>
 
       {/* ── 8. XPERIENCE ZONE ───────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="hidden py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -838,9 +858,9 @@ export default function Home() {
                 Rasakan langsung kecanggihan teknologi Daikin di showroom eksklusif kami. Sentuh, rasakan, dan temukan perbedaan udara sempurna sebelum memutuskan.
               </p>
             </div>
-            <span className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 pointer-events-none cursor-default">
+            <Link to="/services/ishop" className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 hover:underline">
               Cari Lokasi <ArrowRight className="w-4 h-4" />
-            </span>
+            </Link>
           </div>
 
           <FadeInUp>
@@ -888,46 +908,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. PRODUK UNGGULAN - 3 cards ────────────────────── */}
-      <section className="pt-16 md:pt-24 pb-8 md:pb-10 bg-soft-gray">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
-            <SectionHeading
-              title="Dirancang untuk Kebutuhan Anda"
-              subtitle="Dari kamar tidur hingga gedung bertingkat - ada satu Daikin yang tepat untuk setiap ruang."
-              className="mb-0"
-            />
-            <span className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 pointer-events-none cursor-default">
-              Lihat Semua <ArrowRight className="w-4 h-4" />
-            </span>
-          </div>
-          <FadeInUp stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProducts.map((product) => (
-              <FadeInItem key={product.id}><ProductCard product={product} /></FadeInItem>
-            ))}
-          </FadeInUp>
-        </div>
-      </section>
+
 
       {/* ── 10. AKSESORI - CATEGORIES ───────────────────────── */}
-      <section className="pt-8 md:pt-10 pb-16 md:pb-20 bg-soft-gray">
+      <section className="pt-8 md:pt-1 pb-20 md:pb-20 bg-soft-gray">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
               <div className="accent-line" />
-              <h2 className="text-3xl md:text-4xl font-bold text-charcoal">Sempurnakan Sistem Daikin Anda</h2>
-              <p className="text-gray-500 mt-2 text-sm">Setiap komponen dirancang dan diuji untuk performa optimal pada unit Daikin.</p>
+              <p className="text-gray-500 mt-2 text-lg">Setiap komponen dirancang dan diuji untuk performa optimal pada unit Daikin.</p>
             </div>
-            <span className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 pointer-events-none cursor-default">
+            <Link to="/products/accessories" className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 hover:underline">
               Lihat Semua <ArrowRight className="w-4 h-4" />
-            </span>
+            </Link>
           </div>
           <FadeInUp stagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
             {accessoryCategories.map((cat) => {
               const Icon = cat.Icon
               return (
                 <FadeInItem key={cat.label}>
-                  <div className="pointer-events-none cursor-default">
+                  <Link to={cat.href} className="block">
                     <motion.div
                       className={`relative rounded-xl overflow-hidden bg-gradient-to-br ${cat.gradient} aspect-[3/4] flex flex-col justify-end group shadow-sm hover:shadow-lg transition-shadow`}
                     >
@@ -946,7 +946,7 @@ export default function Home() {
                         <div className="text-white/60 text-[10px] mt-0.5">{cat.sublabel}</div>
                       </div>
                     </motion.div>
-                  </div>
+                  </Link>
                 </FadeInItem>
               )
             })}
@@ -955,7 +955,7 @@ export default function Home() {
       </section>
 
       {/* ── 12. PELATIHAN - 3 CATEGORIES + KARIR ───────────── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="hidden py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="mb-12">
             <div className="accent-line" />
@@ -969,7 +969,7 @@ export default function Home() {
               const Icon = cat.icon
               return (
                 <FadeInItem key={cat.title}>
-                  <div className="pointer-events-none cursor-default h-full">
+                  <Link to={cat.href} className="block h-full">
                     <motion.div
                       whileHover={{ y: -4 }}
                       className={`relative overflow-hidden rounded-xl bg-gradient-to-br ${cat.gradient} p-7 text-white group shadow-card hover:shadow-card-hover transition-shadow h-full flex flex-col justify-between min-h-[220px]`}
@@ -989,7 +989,7 @@ export default function Home() {
                         {cat.cta} <ArrowRight className="w-3.5 h-3.5" />
                       </div>
                     </motion.div>
-                  </div>
+                  </Link>
                 </FadeInItem>
               )
             })}
@@ -1079,8 +1079,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 14. ARTIKEL & BERITA ────────────────────────────── */}
-      <section className="pt-2 md:pt-4 pb-16 md:pb-24 bg-white">
+      {/* ── 14. ARTIKEL & BERITA (FEATURED COVER CARD + SIDE LIST MODEL) ──── */}
+      <section className="mt-10 mb-6 md:mt-14 md:mb-8 pt-2 md:pt-4 pb-16 md:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <SectionHeading
@@ -1088,15 +1088,114 @@ export default function Home() {
               subtitle="Inovasi terbaru, cerita di balik layar, dan informasi yang relevan untuk Anda."
               className="mb-0"
             />
-            <span className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 pointer-events-none cursor-default">
-              Semua Artikel <ArrowRight className="w-4 h-4" />
-            </span>
+            <Link to="/insights/news" className="text-daikin-blue text-sm font-semibold flex items-center gap-1.5 flex-shrink-0 hover:text-daikin-blue-dark transition-colors group">
+              <span>Semua Artikel</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
-          <FadeInUp stagger className="grid md:grid-cols-3 gap-6">
-            {latestNews.map((article) => (
-              <FadeInItem key={article.id}><NewsCard article={article} /></FadeInItem>
-            ))}
-          </FadeInUp>
+
+          {latestNews.length > 0 && (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              {/* Left Column: 1 Large Featured/Pinned Article Card */}
+              {(() => {
+                const featured = latestNews[0]
+                return (
+                  <div className="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-xl border border-gray-200/80 group flex flex-col justify-end min-h-[420px] sm:min-h-[480px] bg-slate-900">
+                    <img
+                      src={featured.coverImage}
+                      alt={featured.title.id}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-transparent" />
+
+                    {/* Category & Pin Badge */}
+                    <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
+                      <span className="px-3.5 py-1.5 rounded-full bg-daikin-blue text-white text-xs font-extrabold shadow-sm uppercase tracking-wider">
+                        {featured.category === 'news' ? 'Berita' : featured.category === 'csr' ? 'CSR' : 'Event'}
+                      </span>
+                      <span className="px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-cyan-200 text-xs font-bold border border-white/20">
+                        Pin Terbaru
+                      </span>
+                    </div>
+
+                    {/* Bottom Content Container */}
+                    <div className="relative z-10 p-6 sm:p-8 space-y-3">
+                      <div className="flex items-center gap-3 text-xs text-cyan-200/90 font-medium">
+                        <span>{featured.publishedAt}</span>
+                        <span>•</span>
+                        <span>{featured.author}</span>
+                      </div>
+
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-tight group-hover:text-cyan-300 transition-colors line-clamp-2">
+                        {featured.title.id}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 font-light leading-relaxed max-w-xl">
+                        {featured.excerpt.id}
+                      </p>
+
+                      <div className="pt-2">
+                        <Link
+                          to={`/insights/news/${featured.slug}`}
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-daikin-blue hover:bg-daikin-blue-dark text-white text-xs font-extrabold transition-colors shadow-md border border-white/20"
+                        >
+                          <span>Baca Selengkapnya</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })()}
+
+              {/* Right Column: Side List Articles Model */}
+              <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
+                {latestNews.slice(1, 4).map((article) => (
+                  <div
+                    key={article.id}
+                    className="bg-white rounded-2xl p-4 border border-gray-200/80 hover:border-daikin-blue/30 shadow-xs hover:shadow-md transition-all duration-300 flex items-center gap-4 group flex-1"
+                  >
+                    {/* Thumbnail Image Left */}
+                    <div className="w-28 sm:w-36 aspect-[4/3] rounded-xl overflow-hidden shrink-0 relative bg-slate-900 border border-gray-100">
+                      <img
+                        src={article.coverImage}
+                        alt={article.title.id}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Article Info Right */}
+                    <div className="space-y-1.5 flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-50 text-daikin-blue border border-sky-100">
+                          {article.category === 'news' ? 'Berita' : article.category.toUpperCase()}
+                        </span>
+                        <span className="text-[10px] text-gray-400 font-semibold">{article.publishedAt}</span>
+                      </div>
+
+                      <h4 className="font-extrabold text-xs sm:text-sm text-charcoal line-clamp-2 group-hover:text-daikin-blue transition-colors leading-snug">
+                        {article.title.id}
+                      </h4>
+
+                      <p className="text-[11px] text-gray-500 line-clamp-2 leading-relaxed">
+                        {article.excerpt.id}
+                      </p>
+
+                      <Link
+                        to={`/insights/news/${article.slug}`}
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-daikin-blue hover:text-daikin-blue-dark pt-0.5 group-hover:gap-1.5 transition-all"
+                      >
+                        <span>Baca selengkapnya</span>
+                        <ArrowRight className="w-3 h-3 text-daikin-blue" />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1171,9 +1270,9 @@ export default function Home() {
               Ceritakan kebutuhan ruangan Anda kepada kami - dan kami akan pastikan setiap napas yang Anda hirup di sana, sempurna.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <span className="pointer-events-none cursor-default">
+              <Link to="/services/proshop">
                 <Button variant="primary" size="lg"><MapPin className="w-5 h-5" /> Cari Dealer Terdekat</Button>
-              </span>
+              </Link>
               <Link to="/solutions/ac-calculator">
                 <button className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl border-2 border-white/25 text-white/75 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all duration-200">
                   <Play className="w-5 h-5" /> Kalkulator AC

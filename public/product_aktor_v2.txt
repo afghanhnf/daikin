@@ -1,0 +1,544 @@
+# Product Requirement Document (PRD)
+
+Project Name
+Homepage Experience Redesign & Solution Discovery
+Daikin Indonesia
+
+Version
+1.0
+
+Author
+Product Team
+
+====================================================
+1. Background
+====================================================
+
+Homepage Daikin Indonesia saat ini telah memiliki informasi yang lengkap mengenai perusahaan, produk, campaign, dealer, dan layanan.
+
+Namun berdasarkan analisa UX, homepage masih berorientasi pada penyampaian informasi perusahaan (Company Driven) dibandingkan membantu pengguna menyelesaikan tujuan mereka (User Task Driven).
+
+Mayoritas pengunjung datang dengan salah satu tujuan berikut:
+
+1. Mencari AC atau solusi pendingin udara yang sesuai.
+2. Sudah memiliki produk Daikin dan membutuhkan layanan purna jual.
+3. Ingin menemukan dealer resmi.
+4. Ingin mengetahui informasi mengenai Daikin.
+
+Oleh karena itu homepage akan diubah menjadi Homepage berbasis User Intent tanpa menghilangkan identitas premium dan corporate dari Daikin Indonesia.
+
+====================================================
+2. Goals
+====================================================
+
+Primary Goals
+
+• Mempercepat user menemukan kebutuhan utama.
+• Mengurangi effort scrolling.
+• Meningkatkan conversion menuju produk.
+• Meningkatkan penggunaan fitur kalkulator AC.
+• Meningkatkan kunjungan ke dealer resmi.
+• Meningkatkan akses ke layanan after sales.
+
+Secondary Goals
+
+• Memperjelas Information Architecture.
+• Menjadikan homepage sebagai entry point seluruh ekosistem Daikin.
+• Tetap mempertahankan branding premium Daikin.
+
+====================================================
+3. Homepage Structure
+====================================================
+
+Current
+
+Hero
+
+↓
+
+Corporate Campaign
+
+↓
+
+Product Category
+
+↓
+
+Corporate Value
+
+↓
+
+News
+
+↓
+
+Footer
+
+
+New Structure
+
+Hero Banner
+
+↓
+
+Quick User Journey
+
+↓
+
+Corporate Campaign
+
+↓
+
+Product Categories
+
+↓
+
+Why Daikin
+
+↓
+
+Products
+
+↓
+
+News
+
+↓
+
+Footer
+
+====================================================
+4. Hero Section
+====================================================
+
+Hero tetap menggunakan visual campaign premium Daikin.
+
+Primary CTA
+
+Temukan Solusi Anda
+
+Secondary CTA
+
+Temukan Dealer
+
+====================================================
+5. Header Navigation
+====================================================
+
+Current
+
+Tentang
+
+Produk
+
+Informasi
+
+Layanan
+
+Wawasan
+
+Karir
+
+Hubungi
+
+Temukan Dealer
+
+
+New
+
+Tentang
+
+Produk
+
+Informasi
+
+Layanan
+
+Wawasan
+
+Karir
+
+Hubungi
+
+Temukan Solusi Anda
+
+====================================================
+6. Temukan Solusi Anda
+====================================================
+
+Fungsi
+
+Sebagai pusat seluruh solusi Daikin berdasarkan kebutuhan pengguna.
+
+Landing Page
+
+Headline
+
+Temukan Solusi Pendingin Udara yang Tepat
+
+Subheadline
+
+Pilih kebutuhan Anda dan kami akan membantu menemukan solusi terbaik.
+
+Card Solutions (eksport semua card produk kesini tapi by categori misal residential, commercial, dll)
+
+Setiap card mengarah ke solusi sesuai kategori.
+
+====================================================
+7. Filter Solution
+====================================================
+
+User dapat melakukan filtering berdasarkan
+
+Jenis Bangunan
+
+• Rumah
+• Apartemen
+• Ruko
+• Kantor
+• Hotel
+• Restoran
+• Rumah Sakit
+• Sekolah
+• Mall
+• Gudang
+• Pabrik
+• Data Center
+
+Luas Area
+
+• <20m²
+• 20-50m²
+• 50-100m²
+• 100-300m²
+• >300m²
+
+Jumlah Ruangan
+
+Jumlah Pengguna
+
+Budget
+
+• Entry
+• Mid
+• Premium
+
+Prioritas
+
+• Hemat Listrik
+• Pendinginan Cepat
+• Low Noise
+• Smart Control
+• Premium Design
+• Ramah Lingkungan
+
+Kebutuhan
+
+• Residential
+• Commercial
+• Industrial
+
+Jenis Produk
+
+• Split Wall
+• Multi Split
+• Cassette
+• Ceiling Suspended
+• Floor Standing
+• Ducted
+• VRV
+• Chiller
+• Air Purifier
+• Ventilation
+
+Teknologi
+
+• Inverter
+• Standard
+• Smart AC
+• Streamer Technology
+
+====================================================
+8. Recommendation Engine
+====================================================
+
+Output setelah user memilih filter
+
+Menampilkan
+
+Recommended Solution
+
+↓
+
+Recommended Product
+
+↓
+
+Comparison
+
+↓
+
+CTA
+
+Lihat Detail
+
+atau
+
+Hubungi Sales
+
+atau
+
+Temukan Dealer
+
+====================================================
+9. Homepage Quick Journey
+====================================================
+
+Section Title
+
+Bagaimana kami dapat membantu Anda?
+
+Empat Interactive Cards
+
+------------------------------------------------
+
+Card 1
+
+Icon
+
+Rumah
+
+Title
+
+Saya ingin membeli AC
+
+Description
+
+Mulai dengan panduan memilih AC yang sesuai untuk kebutuhan Anda.
+
+CTA
+
+Mulai
+
+------------------------------------------------
+
+Card 2
+
+Icon
+
+Tools
+
+Title
+
+Saya sudah memiliki AC Daikin
+
+Description
+
+Cek garansi, booking servis, manual produk, dan FAQ.
+
+CTA
+
+Masuk
+
+------------------------------------------------
+
+Card 3
+
+Icon
+
+Location
+
+Title
+
+Cari Dealer Resmi
+
+Description
+
+Temukan dealer resmi Daikin terdekat di kota Anda.
+
+CTA
+
+Cari Dealer
+
+------------------------------------------------
+
+Card 4
+
+Icon
+
+Building
+
+Title
+
+Kenal Lebih Dekat dengan Daikin
+
+Description
+
+Campaign, teknologi, inovasi, berita, dan karir.
+
+CTA
+
+Jelajahi
+
+====================================================
+10. Existing Campaign
+====================================================
+
+Section Corporate Campaign tetap dipertahankan.
+
+Posisi dipindahkan menjadi section setelah Quick Journey.
+
+Tidak ada perubahan terhadap desain visual campaign.
+
+====================================================
+11. After Sales Flow
+====================================================
+
+Landing
+
+Saya Sudah Memiliki AC Daikin
+
+Menu
+
+• Cek Garansi
+• Registrasi Produk
+• Booking Service
+• Manual Book
+• FAQ
+• Troubleshooting
+• Download Katalog
+• Hubungi Service Center
+
+====================================================
+12. Dealer Flow
+====================================================
+
+Filter
+
+Provinsi
+
+Kota
+
+Gunakan Lokasi Saya
+
+Dealer Type
+
+• Dealer
+• Showroom
+• Service Center
+
+Output
+
+Nama Dealer
+
+Alamat
+
+Jam Operasional
+
+Telepon
+
+WhatsApp
+
+Google Maps
+
+====================================================
+13. Corporate Information
+====================================================
+
+Menu
+
+Tentang Daikin
+
+Campaign
+
+CSR
+
+Technology
+
+Innovation
+
+News
+
+Events
+
+Career
+
+Downloads
+
+====================================================
+14. UI Guidelines
+====================================================
+
+Visual Style
+
+Tetap mengikuti identitas visual Daikin Indonesia.
+
+Tone
+
+Corporate
+
+Professional
+
+Premium
+
+Clean
+
+Modern
+
+Trusted
+
+Color
+
+Menggunakan seluruh Design System yang sudah ada.
+
+Tidak mengubah
+
+Primary Blue
+
+Dark Navy
+
+White Space
+
+Typography
+
+Button Style
+
+Border Radius
+
+Shadow
+
+Card Style
+
+Animation
+
+Interaction
+
+Menggunakan icon outline / light style agar tetap ringan secara visual.
+
+Quick Journey menggunakan card dengan elevasi rendah agar tidak mendominasi Hero Banner.
+
+Hover menggunakan micro interaction yang konsisten dengan website saat ini.
+
+====================================================
+15. Success Metrics
+====================================================
+
+Increase
+
+CTR menuju Panduan Memilih AC
+
+CTR menuju Dealer
+
+CTR menuju After Sales
+
+Average Session Duration
+
+Product Detail View
+
+Recommendation Completion Rate
+
+Dealer Visit Rate
+
+Service Feature Usage
+
+Bounce Rate Homepage turun

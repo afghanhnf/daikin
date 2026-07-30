@@ -51,7 +51,7 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal text-white">
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
@@ -72,7 +72,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-daikin-blue flex-shrink-0 mt-0.5" />
-                <span>Wisma Argo Manunggal Lt. 18, Jl. Gatot Subroto, Jakarta Selatan</span>
+                <span>Menara Astra Lt. 7 & 8, Jalan Jendral Sudirman Kav. 5-6, Jakarta Pusat 10220, Indonesia</span>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} PT Daikin Airconditioning Indonesia. All rights reserved.
           </p>

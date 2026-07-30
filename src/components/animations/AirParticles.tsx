@@ -11,7 +11,11 @@ interface Particle {
   swayOffset: number
 }
 
-export default function AirParticles() {
+interface AirParticlesProps {
+  color?: 'blue' | 'white';
+}
+
+export default function AirParticles({ color = 'blue' }: AirParticlesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -53,6 +57,8 @@ export default function AirParticles() {
       if (!canvas || !ctx) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+      const rgbColor = color === 'white' ? '255,255,255' : '0,151,224';
+
       particles.forEach((p, i) => {
         p.swayOffset += p.swaySpeed
         p.x += Math.sin(p.swayOffset) * 0.5
@@ -64,7 +70,7 @@ export default function AirParticles() {
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,151,224,${p.opacity})`
+        ctx.fillStyle = `rgba(${rgbColor},${p.opacity})`
         ctx.fill()
       })
 
@@ -81,7 +87,7 @@ export default function AirParticles() {
       cancelAnimationFrame(animId)
       ro.disconnect()
     }
-  }, [])
+  }, [color])
 
   return (
     <canvas

@@ -33,7 +33,7 @@ export default function JobDetail() {
     <PageTransition>
       <PageMeta title={job.title.id} canonical={`/careers/${job.id}`} />
 
-      <div className="bg-gradient-to-br from-daikin-blue-dark to-daikin-blue pt-28 pb-20 px-4 md:px-8">
+      <div className="bg-gradient-to-br from-[#0a1526] via-daikin-blue-dark to-[#0080cb] pt-32 pb-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb items={[{ label: 'Karir', path: '/careers' }, { label: job.title.id }]} className="text-white/60 mb-6" />
           <FadeInUp>
