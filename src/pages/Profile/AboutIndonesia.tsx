@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { 
   Building2, Globe, Clock, Leaf, Zap, Wind, Award, ShieldCheck, 
@@ -14,6 +14,8 @@ import { FadeInLeft, FadeInRight } from '@/components/animations/FadeInLeft'
 import WaveBackground from '@/components/animations/WaveBackground'
 import PichonKunHelper from '@/components/sections/PichonKunHelper'
 import { cn } from '@/utils/cn'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 // ─── Data: Network Cards & Table Content ────────────────────────────────────
 interface NetworkDetail {
@@ -117,27 +119,39 @@ export default function AboutIndonesia() {
       />
 
       {/* ── 1. HERO HEADER ─────────────────────────────────────────────────── */}
-      <div className="relative bg-gradient-to-br from-[#005580] via-daikin-blue-dark to-daikin-blue pt-32 pb-24 lg:pt-40 lg:pb-28 text-white overflow-hidden">
-        <WaveBackground color="white" />
+      <div className="relative pt-28 pb-12 md:pt-36 md:pb-16 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-daikin-blue-dark to-daikin-blue text-center">
+        <Suspense fallback={null}><AirParticles /></Suspense>
+        
+        {/* Radial dots pattern */}
+        <div className="absolute inset-0 opacity-[0.05]" style={{
+          backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+          backgroundSize: '40px 40px',
+        }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-          <Breadcrumb
-            items={[
-              { label: 'Profil Perusahaan', path: '/all-about' },
-              { label: 'PT Daikin Airconditioning Indonesia' }
-            ]}
-            className="text-white/80 mb-6"
-          />
+        {/* Ambient background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-daikin-blue-light/10 rounded-full blur-3xl pointer-events-none" />
 
-          <FadeInUp className="max-w-3xl space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white tracking-tight leading-tight">
-              Tentang Daikin Indonesia
+        <div className="relative z-20 w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-4xl mx-auto text-center flex flex-col items-center">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center justify-center space-x-2 text-white/70 mb-6 text-sm font-medium tracking-wide">
+            <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link to="/all-about" className="hover:text-white transition-colors">Profil Perusahaan</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-white drop-shadow-md">Tentang Daikin Indonesia</span>
+          </nav>
+
+          <FadeInUp>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
+              Tentang <span className="text-daikin-blue-light font-light">Daikin Indonesia</span>
             </h1>
-            <p className="text-white/90 text-base sm:text-lg md:text-xl font-sans font-light leading-relaxed">
-              Daikin Indonesia didirikan untuk memenuhi kebutuhan pasar pendingin udara di Indonesia dengan berbagai macam produk berkualitas tinggi. Pengalaman Daikin dalam mengembangkan pendingin udara berkualitas dunia dari Jepang adalah fondasi utama kami.
+            <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed drop-shadow max-w-2xl mx-auto">
+              Pelopor solusi tata udara tepercaya buatan Jepang untuk kenyamanan hunian dan bisnis di Indonesia.
             </p>
           </FadeInUp>
         </div>
+
+        <WaveBackground inverted />
       </div>
 
       {/* ── 2. INTRO NARRATIVE & HEADQUARTER CONTACT CARD ──────────────────── */}

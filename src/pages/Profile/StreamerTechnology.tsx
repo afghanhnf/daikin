@@ -37,7 +37,7 @@ export default function StreamerTechnology() {
                 Solusi Kualitas Udara Total • Streamer & Ventilation
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 leading-tight drop-shadow-md">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 leading-tight drop-shadow-md sm:whitespace-nowrap">
                 Fresh & Pure Daikin Air
               </h1>
               <p className="text-cyan-100 font-extrabold text-lg md:text-xl mb-4 tracking-wider uppercase">

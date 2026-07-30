@@ -84,7 +84,7 @@ export default function Glance() {
         description="Fakta-fakta menarik mengapa Daikin adalah pemimpin global di industri tata udara (Air Specialists)." 
       />
       
-      <div className="relative h-[400px] md:h-[450px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-daikin-blue-dark to-daikin-blue text-center">
+      <div className="relative pt-28 pb-12 md:pt-36 md:pb-16 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-daikin-blue-dark to-daikin-blue text-center">
         <Suspense fallback={null}><AirParticles /></Suspense>
         
         <div className="absolute inset-0 opacity-[0.05]" style={{
@@ -112,7 +112,7 @@ export default function Glance() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 relative bg-[#0a1628] overflow-hidden">
+      <section className="pt-6 pb-16 md:pt-8 md:pb-24 relative bg-[#0a1628] overflow-hidden">
         {/* Background elements for depth */}
         <div className="absolute inset-0 bg-gradient-to-br from-daikin-blue-dark/50 via-transparent to-[#0a1628]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-daikin-blue/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />

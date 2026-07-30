@@ -18,14 +18,14 @@ export default function SpareParts() {
   const [dpsPage, setDpsPage] = useState(1)
   const dpsPerPage = 12
 
-  // MOCK DATA
+  // QUICK LINKS
   const quickLinks = [
-    { icon: <Book className="w-6 h-6" />, label: "Buku Katalog" },
-    { icon: <FileText className="w-6 h-6" />, label: "Pricelist" },
-    { icon: <Wrench className="w-6 h-6" />, label: "Petunjuk Penggunaan" },
-    { icon: <ShieldCheck className="w-6 h-6" />, label: "Sertifikasi" },
-    { icon: <Download className="w-6 h-6" />, label: "Brosur" },
-    { icon: <PlayCircle className="w-6 h-6" />, label: "Video Tutorial" },
+    { icon: <Book className="w-6 h-6" />, label: "Buku Katalog", href: "/products/e-catalogue" },
+    { icon: <FileText className="w-6 h-6" />, label: "Pricelist", href: "/services/technical-data" },
+    { icon: <Wrench className="w-6 h-6" />, label: "Petunjuk Penggunaan", href: "/solutions/maintenance-tips" },
+    { icon: <ShieldCheck className="w-6 h-6" />, label: "Sertifikasi", href: "/profile/tkdn" },
+    { icon: <Download className="w-6 h-6" />, label: "Brosur", href: "/products/e-catalogue" },
+    { icon: <PlayCircle className="w-6 h-6" />, label: "Video Tutorial", href: "/insights/training" },
   ]
 
   const seriesList = ["Semua", "FLASH INVERTER", "LITE", "SMS", "URUSARA"]
@@ -135,11 +135,13 @@ export default function SpareParts() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <div className="flex flex-wrap justify-center md:justify-between items-center gap-6">
             {quickLinks.map((link, i) => (
-              <FadeInUp key={i} delay={i * 0.1} className="flex flex-col items-center gap-3 group cursor-pointer">
-                <div className="w-14 h-14 rounded-full bg-daikin-blue/10 flex items-center justify-center text-daikin-blue group-hover:bg-daikin-blue group-hover:text-white transition-all duration-300 group-hover:scale-110 shadow-sm">
-                  {link.icon}
-                </div>
-                <span className="text-sm font-medium text-gray-600 group-hover:text-daikin-blue transition-colors text-center w-24 leading-tight">{link.label}</span>
+              <FadeInUp key={i} delay={i * 0.1}>
+                <Link to={link.href} className="flex flex-col items-center gap-3 group cursor-pointer">
+                  <div className="w-14 h-14 rounded-full bg-daikin-blue/10 flex items-center justify-center text-daikin-blue group-hover:bg-daikin-blue group-hover:text-white transition-all duration-300 group-hover:scale-110 shadow-sm">
+                    {link.icon}
+                  </div>
+                  <span className="text-sm font-medium text-gray-600 group-hover:text-daikin-blue transition-colors text-center w-24 leading-tight">{link.label}</span>
+                </Link>
               </FadeInUp>
             ))}
           </div>

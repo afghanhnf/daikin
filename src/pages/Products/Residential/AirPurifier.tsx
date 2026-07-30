@@ -240,7 +240,7 @@ export default function AirPurifierPage() {
               <span className="text-cyan-300 font-bold text-xs uppercase tracking-wider bg-white/10 px-4 py-1.5 rounded-full inline-block border border-white/20">
                 Perlindungan Udara Keluarga
               </span>
-              <h2 className="text-4xl md:text-6xl font-black text-white leading-tight drop-shadow-md">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-md sm:whitespace-nowrap">
                 Fresh & Pure Daikin Air
               </h2>
               <p className="text-white/90 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto drop-shadow">
