@@ -1330,10 +1330,10 @@ export default function Home() {
               className="h-20 w-auto mx-auto mb-6 drop-shadow-xl"
               animate={{ y: [0, -8, 0] }} transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }} />
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Mulai Perjalanan<br /><span className="text-daikin-blue-light">Udara Sempurna Anda</span>
+              Mulai Perjalanan<br /><span className="text-daikin-blue-light">Sempurna Anda</span>
             </h2>
             <p className="text-gray-400 mb-10 text-base max-w-xl mx-auto leading-relaxed">
-              Ceritakan kebutuhan ruangan Anda kepada kami - dan kami akan pastikan setiap napas yang Anda hirup di sana, sempurna.
+              Ceritakan kebutuhan ruangan Anda kepada kami - dan kami akan pastikan anda menemukan solusi pendingin yang cocok dan sempurna.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/services/proshop">
