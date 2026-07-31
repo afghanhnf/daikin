@@ -254,6 +254,33 @@ const dealerHighlights = [
   { city: 'Semarang', count: '40+', type: 'iShop' },
 ]
 
+const homeFeaturedProducts = [
+  {
+    id: 'alpha-inverter',
+    name: 'ALPHA Inverter',
+    model: 'FTKM Series',
+    badges: ['Streamer', 'Coanda Airflow', 'Inverter', 'Built-in Wi-Fi'],
+    description: 'AC Inverter premium buatan Indonesia dilengkapi teknologi Streamer pemurni udara dan hembusan Coanda nyaman.',
+    link: '/products/residential/alpha-inverter'
+  },
+  {
+    id: 'beta-inverter',
+    name: 'BETA Inverter',
+    model: 'FTKC Series',
+    badges: ['Inverter', 'Intelligent Eye', 'Quiet Operation', 'Deodorizing Filter'],
+    description: 'AC Inverter hemat listrik buatan Indonesia dengan sensor Intelligent Eye dan operasional sangat tenang.',
+    link: '/products/residential/beta-inverter'
+  },
+  {
+    id: 'super-mini-split-sms',
+    name: 'Super Mini Split (SMS)',
+    model: 'FTC Series',
+    badges: ['Super PCB', 'Refrigerant R-32', 'Anti-Corrosion', 'Fast Cooling'],
+    description: 'AC Non-Inverter tangguh buatan Indonesia dengan Super PCB tahan fluktuasi voltase listrik.',
+    link: '/products/residential/super-mini-split'
+  }
+]
+
 // ─── Component ───────────────────────────────────────────────────────
 
 export default function Home() {
@@ -545,18 +572,57 @@ export default function Home() {
           <div className="flex items-end justify-between mb-8 md:mb-10 flex-wrap gap-4">
             <SectionHeading
               title="Produk Unggulan"
-              subtitle="Dari kamar tidur hingga gedung bertingkat - ada satu Daikin yang tepat ruangan."
+              subtitle="Dari kamar tidur hingga gedung bertingkat - ada satu Daikin yang tepat untuk ruangan Anda."
               className="mb-0"
             />
-            <Link to="/products" className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 hover:underline">
+            <Link to="/products/residential/single-split" className="text-daikin-blue text-sm font-semibold flex items-center gap-1 flex-shrink-0 hover:underline">
               Lihat Semua <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <FadeInUp stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProducts.map((product) => (
-              <FadeInItem key={product.id}><ProductCard product={product} /></FadeInItem>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {homeFeaturedProducts.map((prod) => (
+              <FadeInUp key={prod.id}>
+                <div className="bg-white rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-daikin-blue transition-all flex flex-col justify-between h-full group p-6 text-center">
+                  <div>
+                    {/* Empty Thumbnail Box */}
+                    <div className="w-full aspect-[4/3] bg-gray-50 rounded-xl mb-4 border border-gray-100 flex items-center justify-center p-3 relative overflow-hidden group-hover:border-daikin-blue/30 transition-colors">
+                      <div className="w-full h-full bg-white rounded-lg border-2 border-dashed border-gray-200"></div>
+                    </div>
+
+                    {/* Badges */}
+                    {prod.badges && (
+                      <div className="flex flex-wrap gap-1.5 justify-center mb-3">
+                        {prod.badges.map((b, idx) => (
+                          <span key={idx} className="px-2 py-0.5 bg-blue-50 text-daikin-blue text-[10px] font-bold rounded">
+                            {b}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <h4 className="font-black text-daikin-blue text-xl mb-1 group-hover:text-daikin-blue-dark transition-colors">
+                      {prod.name}
+                    </h4>
+                    <p className="text-gray-500 font-semibold text-xs mb-3">
+                      {prod.model}
+                    </p>
+                    <p className="text-gray-600 text-xs leading-relaxed mb-6">
+                      {prod.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-gray-100 flex justify-center">
+                    <Link
+                      to={prod.link}
+                      className="w-full py-2.5 bg-white text-daikin-blue border-2 border-daikin-blue font-bold text-xs rounded-xl hover:bg-daikin-blue hover:text-white transition-all text-center shadow-2xs"
+                    >
+                      Lihat Detail
+                    </Link>
+                  </div>
+                </div>
+              </FadeInUp>
             ))}
-          </FadeInUp>
+          </div>
         </div>
       </section>
 

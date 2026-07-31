@@ -18,9 +18,9 @@ export default {
         'soft-gray-2': '#EAECF0',
       },
       fontFamily: {
-        sans: ['Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif'],
-        display: ['Frutiger', 'Frutiger LT Std', 'Frutiger Next', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        heading: ['Frutiger', 'Frutiger LT Std', 'Frutiger Next', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        display: ['Frutiger', 'Frutiger Bold', 'Frutiger LT Std', 'sans-serif'],
+        heading: ['Frutiger', 'Frutiger Bold', 'Frutiger LT Std', 'sans-serif'],
       },
       borderRadius: {
         'card': '1.25rem',
