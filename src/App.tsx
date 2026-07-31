@@ -27,6 +27,8 @@ const ProductsIndex = lazy(() => import('@/pages/Products'))
 const ResidentialSolutions = lazy(() => import('@/pages/Products/ResidentialSolutions'))
 const SingleSplitPage = lazy(() => import('@/pages/Products/Residential/SingleSplit'))
 const AlphaInverterPage = lazy(() => import('@/pages/Products/Residential/AlphaInverter'))
+const BetaInverterPage = lazy(() => import('@/pages/Products/Residential/BetaInverter'))
+const SuperMiniSplitPage = lazy(() => import('@/pages/Products/Residential/SuperMiniSplit'))
 const MultiSplitPage = lazy(() => import('@/pages/Products/Residential/MultiSplit'))
 const MultiS3ConnectionPage = lazy(() => import('@/pages/Products/Residential/MultiS3Connection'))
 const AirPurifierPage = lazy(() => import('@/pages/Products/Residential/AirPurifier'))
@@ -165,6 +167,12 @@ export default function App() {
             <Route path="/products/residential/alpha-inverter" element={<PageSuspense><AlphaInverterPage /></PageSuspense>} />
             <Route path="/products/residential/single-split/alpha-inverter" element={<PageSuspense><AlphaInverterPage /></PageSuspense>} />
             <Route path="/products/single-split/alpha-inverter" element={<PageSuspense><AlphaInverterPage /></PageSuspense>} />
+            <Route path="/products/residential/beta-inverter" element={<PageSuspense><BetaInverterPage /></PageSuspense>} />
+            <Route path="/products/residential/single-split/beta-inverter" element={<PageSuspense><BetaInverterPage /></PageSuspense>} />
+            <Route path="/products/single-split/beta-inverter" element={<PageSuspense><BetaInverterPage /></PageSuspense>} />
+            <Route path="/products/residential/super-mini-split" element={<PageSuspense><SuperMiniSplitPage /></PageSuspense>} />
+            <Route path="/products/residential/single-split/super-mini-split" element={<PageSuspense><SuperMiniSplitPage /></PageSuspense>} />
+            <Route path="/products/single-split/super-mini-split" element={<PageSuspense><SuperMiniSplitPage /></PageSuspense>} />
             <Route path="/products/residential/multi-split" element={<PageSuspense><MultiSplitPage /></PageSuspense>} />
             <Route path="/products/residential/multi-split/multi-s-3-connection" element={<PageSuspense><MultiS3ConnectionPage /></PageSuspense>} />
             <Route path="/products/residential/multi-s-3-connection" element={<PageSuspense><MultiS3ConnectionPage /></PageSuspense>} />

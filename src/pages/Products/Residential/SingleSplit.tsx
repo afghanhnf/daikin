@@ -38,7 +38,7 @@ const NUSANTARA_PRODUCTS = [
     model: 'FTKC Series',
     badges: ['Inverter', 'Intelligent Eye', 'Quiet Operation', 'Deodorizing Filter'],
     description: 'AC Inverter hemat listrik buatan Indonesia dengan sensor Intelligent Eye dan operasional sangat tenang.',
-    link: '#'
+    link: '/products/residential/beta-inverter'
   },
   {
     id: 'super-mini-split-sms',
@@ -46,7 +46,7 @@ const NUSANTARA_PRODUCTS = [
     model: 'FTC Series',
     badges: ['Super PCB', 'Refrigerant R-32', 'Anti-Corrosion', 'Fast Cooling'],
     description: 'AC Non-Inverter tangguh buatan Indonesia dengan Super PCB tahan fluktuasi voltase listrik.',
-    link: '#'
+    link: '/products/residential/super-mini-split'
   }
 ]
 
@@ -102,7 +102,7 @@ const MAIN_SINGLE_SPLIT_PRODUCTS: SingleSplitProduct[] = [
     categoryLabel: 'Non-Inverter Series',
     badges: ['R-32', 'Anti-Corrosion', 'High Cooling'],
     description: 'AC Standard hemat energi buatan Indonesia dengan sirip hidrofilik anti korosi.',
-    link: '#'
+    link: '/products/residential/super-mini-split'
   },
   {
     id: 'lite',

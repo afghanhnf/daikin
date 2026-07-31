@@ -83,7 +83,7 @@ const heroSlides = [
   {
     id: 4,
     badge: 'Mulai dari Keputusan yang Tepat',
-    title: 'Pilih AC yang tepat untuk Anda',
+    title: 'Temukan Solusi Pendingin Ruangan Anda',
     titleAccent: '',
     subtitle: 'Ukuran ruangan, kapasitas daya, dan tipe AC menentukan kenyamanan Anda seterusnya. Pelajari panduan lengkap kami sebelum membeli - gratis, cepat, dan akurat.',
     ctaPrimary: { label: 'Panduan Memilih AC', href: '/solutions/how-to-choose' },
