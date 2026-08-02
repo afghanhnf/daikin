@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ShoppingBag, Building2, Wrench, MapPin, ShieldCheck, ArrowRight, Users, Star, Clock, Award } from 'lucide-react'
+import { ShoppingBag, Building2, Wrench, MapPin, ShieldCheck, ArrowRight, Users, Star, Clock, Award, Headphones } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -43,6 +43,15 @@ const services = [
     gradient: 'from-emerald-500 to-teal-700',
     desc: 'Lebih dari 500 titik service center resmi Daikin tersebar di seluruh Indonesia. Setiap pusat servis memiliki peralatan diagnostik canggih dan stok suku cadang orisinal untuk menangani berbagai kerusakan dengan cepat dan tepat.',
     count: '500+ Titik Servis',
+  },
+  {
+    icon: Headphones,
+    title: 'Layanan Umum',
+    subtitle: 'Dukungan Teknis & Instalasi',
+    path: '/services/general-services',
+    gradient: 'from-sky-500 to-blue-600',
+    desc: 'Layanan umum terpadu meliputi dukungan teknis bebas pulsa, konsultasi instalasi remote & on-site, penyelesaian masalah (troubleshooting), serta panduan pengoperasian produk.',
+    count: 'Respon Cepat',
   },
   {
     icon: ShieldCheck,

@@ -136,7 +136,7 @@ export default function EnergyEfficiency() {
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-daikin-blue-light/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-cyan-400/15 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
           <Breadcrumb
             items={[{ label: 'Solusi Tata Udara', path: '/solutions' }, { label: 'Efisiensi Energi' }]}
             className="text-cyan-200/90 mb-6"

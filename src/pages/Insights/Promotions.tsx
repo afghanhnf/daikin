@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -18,7 +18,8 @@ import {
   Sparkles,
   Info,
   Clock,
-  BookOpen
+  BookOpen,
+  Image as ImageIcon
 } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
@@ -27,6 +28,8 @@ import FadeInUp, { FadeInItem } from '@/components/animations/FadeInUp'
 import { formatShortDate } from '@/utils/formatters'
 import { promotionArticles, PromotionArticle } from '@/data/promotions'
 import { cn } from '@/utils/cn'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 const ITEMS_PER_PAGE = 3
 
@@ -83,32 +86,51 @@ export default function Promotions() {
         canonical="/insights/promotions"
       />
 
-      {/* ── Page Hero Header ────────────────────────────────────────────── */}
-      <div className="relative bg-gradient-to-br from-[#003B71] via-[#0072CE] to-[#0097E0] text-white pt-36 pb-16 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}
+      {/* ── 1. HERO BANNER (MODEL PAGE BANNER) ────────────────────────────────── */}
+      <div className="relative pt-36 pb-28 overflow-hidden bg-gradient-to-br from-[#061834] via-daikin-blue-dark to-[#007bbf] text-white">
+        <Suspense fallback={null}>
+          <AirParticles color="white" />
+        </Suspense>
+
+        {/* Radial dots grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+            backgroundSize: '36px 36px',
+          }} 
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+        {/* Ambient background glow */}
+        <div className="absolute -left-40 -top-40 w-[600px] h-[600px] bg-daikin-blue-light/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <Breadcrumb
-            items={[{ label: 'Insights', path: '/insights' }, { label: 'Promosi Spesial' }]}
-            className="text-white/80 mb-6"
+            items={[
+              { label: 'Wawasan', path: '/insights' },
+              { label: 'Berita & Informasi', path: '/insights/news' },
+              { label: 'Promosi Spesial' }
+            ]}
+            className="text-white/80 mb-8"
           />
 
-          <FadeInUp>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-wider mb-3 text-sky-100">
-              <Gift className="w-4 h-4 text-[#0097E0] bg-white rounded-full p-0.5" /> Penawaran Resmi Daikin Indonesia
-            </div>
+          <div className="max-w-3xl">
+            <FadeInUp>
+              <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-md border border-white/20 text-white">
+                <Gift className="w-4 h-4 text-cyan-200" />
+                Penawaran Resmi Daikin Indonesia
+              </div>
 
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
-              Promosi Spesial
-            </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight font-display">
+                Promosi Spesial <br />
+                <span className="text-daikin-blue-light font-light">Promo & Penawaran Eksklusif</span>
+              </h1>
 
-            <p className="text-white/80 text-base md:text-lg max-w-2xl leading-relaxed">
-              Dapatkan info penawaran menarik, diskon produk Inverter, garansi ekstra, cashback, serta program tukar tambah dari dealer iShop resmi Daikin.
-            </p>
-          </FadeInUp>
+              <p className="text-white/90 text-base md:text-lg font-light leading-relaxed max-w-2xl font-sans">
+                Dapatkan info penawaran menarik, diskon produk Inverter, garansi ekstra, cashback, serta program tukar tambah dari dealer iShop resmi Daikin.
+              </p>
+            </FadeInUp>
+          </div>
         </div>
       </div>
 
@@ -189,22 +211,20 @@ export default function Promotions() {
                   <FadeInItem key={promo.id}>
                     <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col h-full group">
                       
-                      {/* Fixed Thumbnail Image Container */}
-                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100">
-                        <img
-                          src={promo.coverImage}
-                          alt={promo.title[lang]}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
+                      {/* Empty Image Placeholder Container (Images Kosongan) */}
+                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100/90 border-b border-slate-200/60 flex items-center justify-center">
+                        <div className="flex flex-col items-center justify-center text-slate-300 gap-1">
+                          <ImageIcon className="w-8 h-8 opacity-40" />
+                          <span className="text-[10px] font-semibold text-slate-400">Daikin Promotion</span>
+                        </div>
                         
-                        {/* Clean Badges (Daikin Blue / Dark Blue / Emerald - No Yellow) */}
+                        {/* Badges */}
                         <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                          <span className="bg-[#003B71] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
+                          <span className="bg-[#003B71] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider shadow-2xs">
                             {promo.badge}
                           </span>
                           {promo.discount && (
-                            <span className="bg-[#0097E0] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-xs">
+                            <span className="bg-[#0097E0] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-2xs">
                               {promo.discount}
                             </span>
                           )}

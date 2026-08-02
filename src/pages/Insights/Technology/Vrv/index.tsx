@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -22,6 +22,8 @@ import PageMeta from '@/components/seo/PageMeta'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import FadeInUp, { FadeInItem } from '@/components/animations/FadeInUp'
 import { cn } from '@/utils/cn'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 const vrvTimeline = [
   {
@@ -75,55 +77,51 @@ export default function Vrv() {
         canonical="/insights/technology/vrv"
       />
 
-      {/* ── Page Hero Header ────────────────────────────────────────────── */}
-      <div className="relative bg-gradient-to-br from-[#003B71] via-[#0072CE] to-[#0097E0] text-white pt-36 pb-20 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}
+      {/* ── 1. HERO BANNER (MODEL PAGE BANNER) ────────────────────────────────── */}
+      <div className="relative pt-36 pb-28 overflow-hidden bg-gradient-to-br from-[#061834] via-daikin-blue-dark to-[#007bbf] text-white">
+        <Suspense fallback={null}>
+          <AirParticles color="white" />
+        </Suspense>
+
+        {/* Radial dots grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+            backgroundSize: '36px 36px',
+          }} 
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+        {/* Ambient background glow */}
+        <div className="absolute -left-40 -top-40 w-[600px] h-[600px] bg-daikin-blue-light/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <Breadcrumb
             items={[
-              { label: 'Insights', path: '/insights' },
-              { label: 'Teknologi', path: '/insights/technology/benefits' },
-              { label: 'Sistem VRV' }
+              { label: 'Wawasan', path: '/insights' },
+              { label: 'Berita & Informasi', path: '/insights/news' },
+              { label: 'VRV Era' }
             ]}
-            className="text-white/80 mb-6"
+            className="text-white/80 mb-8"
           />
 
-          <FadeInUp>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-wider mb-4 text-sky-100 border border-white/10">
-                  <Building2 className="w-4 h-4 text-[#0097E0] bg-white rounded-full p-0.5" /> Daikin VRV Commercial System
-                </div>
-
-                <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
-                  Membuka Era Baru VRV
-                </h1>
-
-                <p className="text-white/90 text-lg md:text-xl font-bold leading-relaxed text-sky-100">
-                  Mendinginkan Hanya di Tempat yang Membutuhkan. Sebuah sejarah bagaimana Daikin mengubah standar AC komersial dunia sejak 1982.
-                </p>
+          <div className="max-w-3xl">
+            <FadeInUp>
+              <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-md border border-white/20 text-white">
+                <Building2 className="w-4 h-4 text-cyan-200" />
+                Daikin VRV Commercial System
               </div>
 
-              {/* Hero Image Placeholder */}
-              <div className="lg:col-span-5">
-                <div className="w-full aspect-[4/3] bg-white/10 backdrop-blur-md rounded-3xl border-2 border-dashed border-white/20 p-6 flex flex-col items-center justify-center text-center group hover:border-white/40 transition-colors">
-                  <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <ImageIcon className="w-7 h-7" />
-                  </div>
-                  <h4 className="text-xs md:text-sm font-extrabold text-white mb-1">
-                    [Hero Product Image Placeholder]
-                  </h4>
-                  <p className="text-[11px] text-white/60 max-w-xs leading-relaxed">
-                    Foto Produk Outdoor Unit VRV IV / VRV 5 Daikin di Rooftop Gedung Perkantoran
-                  </p>
-                </div>
-              </div>
-            </div>
-          </FadeInUp>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight font-display">
+                VRV Era <br />
+                <span className="text-daikin-blue-light font-light">Evolusi Teknologi VRV</span>
+              </h1>
+
+              <p className="text-white/90 text-base md:text-lg font-light leading-relaxed max-w-2xl font-sans">
+                Mendinginkan Hanya di Tempat yang Membutuhkan. Sejarah bagaimana Daikin mengubah standar AC komersial dunia sejak 1982.
+              </p>
+            </FadeInUp>
+          </div>
         </div>
       </div>
 

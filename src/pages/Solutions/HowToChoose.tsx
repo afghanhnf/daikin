@@ -207,9 +207,9 @@ export default function HowToChoose() {
       <PageMeta title="Panduan Memilih AC" canonical="/solutions/how-to-choose" />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-daikin-blue-dark via-[#004f7a] to-daikin-blue text-white pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden bg-gradient-to-br from-daikin-blue-dark via-[#004f7a] to-daikin-blue text-white pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24">
         <AirParticles color="white" />
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
           <Breadcrumb items={[{ label: 'Beranda', path: '/' }, { label: 'Solusi', path: '/solutions' }, { label: 'Panduan Memilih AC' }]} className="text-white mb-6" />
           <FadeInUp>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold mb-4 text-cyan-300">
@@ -225,7 +225,7 @@ export default function HowToChoose() {
 
       {/* ── Section navigator (sticky) ───────────────────────── */}
       <div className="bg-white border-b border-gray-200 sticky top-16 z-30 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="flex gap-2 overflow-x-auto py-3 scrollbar-none">
             {sections.map((s) => (
               <button

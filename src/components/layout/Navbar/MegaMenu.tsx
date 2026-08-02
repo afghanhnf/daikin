@@ -1,28 +1,30 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Home, Building2, Package, Settings, BookOpen, ArrowRight } from 'lucide-react'
+import { Home, Building2, Package, Settings, BookOpen, Smartphone, ArrowRight } from 'lucide-react'
 import type { NavChild } from '@/types/navigation'
 import { cn } from '@/utils/cn'
 
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
-  Home, Building2, Package, Settings, BookOpen,
+  Home, Building2, Package, Settings, BookOpen, Smartphone
 }
 
 const iconBg: Record<string, string> = {
-  Home:      'bg-daikin-blue-50   group-hover:bg-daikin-blue',
-  Building2: 'bg-sky-50           group-hover:bg-sky-500',
-  Package:   'bg-emerald-50       group-hover:bg-emerald-500',
-  Settings:  'bg-orange-50        group-hover:bg-orange-500',
-  BookOpen:  'bg-violet-50        group-hover:bg-violet-500',
+  Home:       'bg-daikin-blue-50   group-hover:bg-daikin-blue',
+  Building2:  'bg-sky-50           group-hover:bg-sky-500',
+  Package:    'bg-emerald-50       group-hover:bg-emerald-500',
+  Settings:   'bg-orange-50        group-hover:bg-orange-500',
+  BookOpen:   'bg-violet-50        group-hover:bg-violet-500',
+  Smartphone: 'bg-cyan-50          group-hover:bg-cyan-500',
 }
 
 const iconColor: Record<string, string> = {
-  Home:      'text-daikin-blue    group-hover:text-white',
-  Building2: 'text-sky-500        group-hover:text-white',
-  Package:   'text-emerald-500    group-hover:text-white',
-  Settings:  'text-orange-500     group-hover:text-white',
-  BookOpen:  'text-violet-500     group-hover:text-white',
+  Home:       'text-daikin-blue    group-hover:text-white',
+  Building2:  'text-sky-500        group-hover:text-white',
+  Package:    'text-emerald-500    group-hover:text-white',
+  Settings:   'text-orange-500     group-hover:text-white',
+  BookOpen:   'text-violet-500     group-hover:text-white',
+  Smartphone: 'text-cyan-500       group-hover:text-white',
 }
 
 interface MegaMenuProps {
@@ -103,7 +105,7 @@ export default function MegaMenu({ items, onClose }: MegaMenuProps) {
                   "text-sm font-semibold transition-colors leading-tight",
                   isActive ? "text-daikin-blue" : "text-charcoal group-hover:text-daikin-blue"
                 )}>
-                  {t(item.labelKey)}
+                  {item.labelKey.startsWith('nav:') ? t(item.labelKey) : item.labelKey}
                 </div>
                 {item.description && (
                   <div className="text-xs text-gray-400 mt-0.5 leading-snug truncate">{item.description}</div>

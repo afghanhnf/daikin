@@ -2,10 +2,11 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, ChevronDown, Search, Facebook, Instagram, Youtube, Twitter, Building2, Zap } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Facebook, Instagram, Youtube, Twitter, Building2, Zap, ArrowRight } from 'lucide-react'
 import { navItems } from '@/data/navigation'
 import { useNavigation } from '@/context/NavigationContext'
 import { cn } from '@/utils/cn'
+import { daikinSocialLinks } from '@/components/ui/SocialIcons'
 import MegaMenu from './MegaMenu'
 import TwoColumnMenu from './TwoColumnMenu'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -17,15 +18,8 @@ const mobileCategoryIconMap: Record<string, React.FC<{ className?: string }>> = 
 }
 
 const topBarLinks = [
-  { label: '#KeputusanYangTepat', href: '/profile/about', accent: true, external: false },
+  { label: '#KeputusanYangTepat', href: '/campaign/keputusan-yang-tepat', accent: true, external: false },
   { label: 'DAIKIN DESIGNER AWARDS', href: 'https://daikindesignerawards.daikin.co.id/', accent: false, external: true },
-]
-
-const socialLinks = [
-  { icon: Facebook,  href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Youtube,   href: '#', label: 'YouTube' },
-  { icon: Twitter,   href: '#', label: 'Twitter / X' },
 ]
 
 export default function Navbar() {
@@ -116,15 +110,15 @@ export default function Navbar() {
                 </div>
 
                 {/* Right: social icons */}
-                <div className="flex items-center gap-4 ml-auto">
-                  {socialLinks.map(({ icon: Icon, href, label }) => (
+                <div className="flex items-center gap-3.5 ml-auto">
+                  {daikinSocialLinks.map(({ id, icon: Icon, href, label }) => (
                     <a
-                      key={label}
+                      key={id}
                       href={href}
                       aria-label={label}
-                      className="text-white/60 hover:text-white transition-colors"
+                      className="text-white/70 hover:text-white transition-colors"
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3.5 h-3.5" />
                     </a>
                   ))}
                 </div>
@@ -217,8 +211,8 @@ export default function Navbar() {
                             item.isMegaMenu
                               ? <MegaMenu items={item.children!} onClose={() => setActiveDropdown(null)} />
                               : item.isTwoColumn
-                                ? <TwoColumnMenu items={item.children!} footerLink={item.footerLink} onClose={() => setActiveDropdown(null)} />
-                              : (
+                                ? <TwoColumnMenu items={item.children!} footerLink={item.footerLink} footerLinks={item.footerLinks} onClose={() => setActiveDropdown(null)} />
+                                : (
                                 <motion.div
                                   initial={{ opacity: 0, y: 8 }}
                                   animate={{ opacity: 1, y: 0 }}
@@ -371,6 +365,22 @@ export default function Navbar() {
                                 </Link>
                               )
                             ))}
+
+                            {item.footerLinks && item.footerLinks.length > 0 && (
+                              <div className="pt-2 pb-1 border-t border-gray-100 mt-2 space-y-1">
+                                {item.footerLinks.map((fLink) => (
+                                  <Link
+                                    key={fLink.path}
+                                    to={fLink.path}
+                                    onClick={closeMobileMenu}
+                                    className="flex items-center justify-between px-3 py-2 bg-daikin-blue-50 text-daikin-blue rounded-lg font-bold text-xs"
+                                  >
+                                    <span>{fLink.title}</span>
+                                    <ArrowRight className="w-3.5 h-3.5" />
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
                           </motion.div>
                         )}
                       </AnimatePresence>

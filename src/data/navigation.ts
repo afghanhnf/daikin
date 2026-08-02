@@ -33,6 +33,7 @@ export const navItems: NavItem[] = [
       { labelKey: 'nav:products.accessories', path: '/products/accessories', icon: 'Package', description: 'Aksesori pelengkap' },
       { labelKey: 'nav:products.spareParts', path: '/products/spare-parts', icon: 'Settings', description: 'Suku cadang resmi' },
       { labelKey: 'nav:products.catalogue', path: '/products/e-catalogue', icon: 'BookOpen', description: 'Unduh e-catalogue' },
+      { labelKey: 'Aplikasi Daikin', path: '/products/daikin-app', icon: 'Smartphone', description: 'Perangkat lunak & controller' },
     ],
   },
   {
@@ -78,6 +79,7 @@ export const navItems: NavItem[] = [
       { labelKey: 'nav:services.proshop', path: '/services/proshop', description: 'Dealer resmi AC komersial & proyek' },
       { labelKey: 'VRV Certified Dealer', path: '/services/vrv-dealer', description: 'Daftar dealer resmi VRV tersertifikasi' },
       { labelKey: '', path: '__divider_service', isDivider: true, groupLabel: 'Layanan Teknis' },
+      { labelKey: 'Layanan Umum', path: '/services/general-services', description: 'Dukungan teknis, instalasi, dan penyelesaian masalah' },
       { labelKey: 'nav:services.center', path: '/services/service-center', description: 'Temukan service center resmi terdekat' },
       { labelKey: 'Maintenance', path: '/services/maintenance', description: 'Kontrak & layanan pemeliharaan berkala' },
       { labelKey: 'nav:services.warranty', path: '/services/warranty', description: 'Jaminan & garansi resmi' },
@@ -95,6 +97,7 @@ export const navItems: NavItem[] = [
       { labelKey: 'nav:insights.promotions', path: '/insights/promotions', description: 'Promo spesial' },
       { labelKey: 'nav:insights.events', path: '/insights/events', description: 'Acara & kegiatan' },
       { labelKey: 'nav:insights.training', path: '/insights/training', description: 'Pelatihan & sertifikasi' },
+      { labelKey: 'FAQ', path: '/insights/faq', description: 'Jawaban pertanyaan umum & penanganan masalah AC' },
 
       // ── Riset & Teknologi Terkini ─────────────
       { labelKey: '', path: '__divider_tech_new', isDivider: true, groupLabel: 'Riset & Teknologi Terkini', categoryIcon: 'Lightbulb' },
@@ -106,6 +109,7 @@ export const navItems: NavItem[] = [
 
       // ── Kampanye ─────────────
       { labelKey: '', path: '__divider_campaigns', isDivider: true, groupLabel: 'Kampanye', categoryIcon: 'Megaphone' },
+      { labelKey: '#KeputusanYangTepat', path: '/campaign/keputusan-yang-tepat', description: 'Untuk kenyamanan tanpa batas' },
       { labelKey: 'nav:perfecting.idealAir', path: '/campaign/ideal-air', description: 'Udara nyaman adalah hak semua orang' },
       { labelKey: 'nav:perfecting.power', path: '/campaign/power-to-create', description: 'Inovasi hijau untuk masa depan' },
       { labelKey: 'nav:perfecting.stories', path: '/campaign/perfecting-air', description: 'Kisah nyata pelanggan Daikin' },

@@ -201,3 +201,18 @@ Membahas regulasi bangunan hemat energi dan implementasi teknologi pendingin beb
 export function getEventBySlug(slug: string): EventArticle | undefined {
   return eventArticles.find((e) => e.slug === slug)
 }
+
+export function getAdjacentEvents(currentSlug: string) {
+  const index = eventArticles.findIndex((e) => e.slug === currentSlug)
+  if (index === -1) return { prev: null, next: null }
+  return {
+    prev: index > 0 ? eventArticles[index - 1] : null,
+    next: index < eventArticles.length - 1 ? eventArticles[index + 1] : null,
+  }
+}
+
+export function getRelatedEvents(currentSlug: string, category?: string, limit = 3) {
+  const filtered = eventArticles.filter((e) => e.slug !== currentSlug && (!category || e.category === category))
+  if (filtered.length >= limit) return filtered.slice(0, limit)
+  return eventArticles.filter((e) => e.slug !== currentSlug).slice(0, limit)
+}

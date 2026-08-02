@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, Building2, Package, Settings, BookOpen, ArrowRight, Zap, Wind, Cpu, ChevronRight } from 'lucide-react'
+import { Home, Building2, Package, Settings, BookOpen, ArrowRight, Zap, Wind, Cpu, ChevronRight, Smartphone } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
 import SectionHeading from '@/components/sections/SectionHeading'
@@ -229,17 +229,60 @@ export default function ProductsIndex() {
               </div>
             </FadeInUp>
             <FadeInUp delay={0.1}>
-              <div className="bg-white rounded-2xl p-8 shadow-card border border-gray-100 h-full flex flex-col">
-                <h3 className="text-xl font-bold text-charcoal mb-2">Unduh E-Catalogue Terbaru</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                  Dapatkan spesifikasi teknis lengkap, panduan pemilihan model, dan informasi terbaru semua produk Daikin Indonesia dalam format PDF.
-                </p>
-                <Link to="/products/e-catalogue" className="btn-primary inline-flex items-center gap-2 self-start">
-                  <BookOpen className="w-4 h-4" /> Lihat E-Catalogue
-                </Link>
+              <div className="bg-white rounded-2xl p-8 shadow-card border border-gray-100 h-full flex flex-col justify-between space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-charcoal mb-2">Unduh E-Catalogue Terbaru</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Dapatkan spesifikasi teknis lengkap, panduan pemilihan model, dan informasi terbaru semua produk Daikin Indonesia dalam format PDF.
+                  </p>
+                </div>
+                
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link to="/products/e-catalogue" className="btn-primary inline-flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" /> Lihat E-Catalogue
+                  </Link>
+
+                  <Link 
+                    to="/products/daikin-app" 
+                    className="px-4 py-2.5 rounded-xl border-2 border-daikin-blue text-daikin-blue hover:bg-daikin-blue hover:text-white font-bold text-xs transition-all shadow-2xs inline-flex items-center gap-2"
+                  >
+                    <Smartphone className="w-4 h-4" /> Aplikasi Daikin
+                  </Link>
+                </div>
               </div>
             </FadeInUp>
           </div>
+
+          {/* ── LITE (OUTLINE) DAIKIN APP SECTION AFTER E-CATALOGUE ─────────── */}
+          <FadeInUp className="mt-8">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-2xs hover:shadow-md hover:border-daikin-blue/30 transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-sky-50 text-daikin-blue flex items-center justify-center border border-sky-100 flex-shrink-0">
+                  <Smartphone className="w-6 h-6 text-daikin-blue" />
+                </div>
+                <div className="space-y-1 text-center md:text-left">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-daikin-blue bg-sky-50 px-2.5 py-0.5 rounded-md border border-sky-100 inline-block">
+                    Mobile Controller & eQuts
+                  </span>
+                  <h3 className="text-lg font-bold font-display text-charcoal">
+                    Perangkat Lunak & Aplikasi Daikin
+                  </h3>
+                  <p className="text-xs text-gray-500 font-sans leading-relaxed max-w-xl">
+                    Aplikasi pengontrol seluler Daikin memungkinkan Anda mengontrol AC dari mana saja & mengakses katalog teknis eQuts.
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                to="/products/daikin-app"
+                className="px-5 py-2.5 rounded-xl border-2 border-daikin-blue text-daikin-blue hover:bg-daikin-blue hover:text-white font-bold text-xs transition-all shadow-2xs inline-flex items-center gap-2 flex-shrink-0 group"
+              >
+                <Smartphone className="w-4 h-4" />
+                <span>Buka Aplikasi Daikin</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </FadeInUp>
         </div>
       </section>
     </PageTransition>

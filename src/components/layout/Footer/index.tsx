@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter, Shield, FileText } from 'lucide-react'
+import { Phone, Mail, MapPin, Shield, FileText } from 'lucide-react'
+import { daikinSocialLinks } from '@/components/ui/SocialIcons'
 
 const footerSections = [
   {
@@ -127,19 +128,17 @@ export default function Footer() {
           </div>
 
           {/* Social icons */}
-          <div className="flex items-center gap-4">
-            <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-daikin-blue transition-colors">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-daikin-blue transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a href="#" aria-label="YouTube" className="text-gray-500 hover:text-daikin-blue transition-colors">
-              <Youtube className="w-5 h-5" />
-            </a>
-            <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-daikin-blue transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
+          <div className="flex items-center gap-3 md:gap-4">
+            {daikinSocialLinks.map(({ id, icon: Icon, href, label }) => (
+              <a
+                key={id}
+                href={href}
+                aria-label={label}
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#0097E0] text-gray-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs group"
+              >
+                <Icon className="w-4 h-4 transition-transform group-hover:scale-110" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

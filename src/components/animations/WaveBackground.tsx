@@ -8,7 +8,6 @@ interface WaveBackgroundProps {
 
 export default function WaveBackground({ className = '', inverted = false, color }: WaveBackgroundProps) {
   const color1 = color || (inverted ? 'rgba(255,255,255,0.15)' : 'rgba(0,151,224,0.15)')
-  const color2 = color || (inverted ? 'rgba(255,255,255,0.10)' : 'rgba(77,192,240,0.10)')
   const color3 = color || (inverted ? 'rgba(255,255,255,0.08)' : 'rgba(0,114,168,0.08)')
 
   return (
@@ -25,20 +24,6 @@ export default function WaveBackground({ className = '', inverted = false, color
         <path
           d="M0,100 C240,180 480,20 720,100 C960,180 1200,20 1440,100 L1440,200 L0,200 Z"
           fill={color1}
-        />
-      </motion.svg>
-
-      {/* Wave 2 */}
-      <motion.svg
-        viewBox="0 0 1440 200"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full absolute bottom-0"
-        animate={{ x: [0, 80, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <path
-          d="M0,120 C200,60 400,160 720,120 C1040,80 1240,160 1440,120 L1440,200 L0,200 Z"
-          fill={color2}
         />
       </motion.svg>
 

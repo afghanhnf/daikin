@@ -399,10 +399,10 @@ export default function ACRecommendationPage() {
       <div className="bg-gray-50 min-h-screen pb-20">
 
         {/* ── 1. HERO BANNER ────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1526] via-daikin-blue-dark to-[#007bbf] text-white pt-28 sm:pt-36 lg:pt-40 pb-24 sm:pb-28 px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1526] via-daikin-blue-dark to-[#007bbf] text-white pt-28 sm:pt-36 lg:pt-40 pb-24 sm:pb-28">
           <AirParticles color="white" />
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
             <Breadcrumb
               items={[
                 { label: 'Solusi', path: '/solutions' },

@@ -52,6 +52,7 @@ const VRV6APage = lazy(() => import('@/pages/Products/Commercial/VRV6A'))
 const PackagedACPage = lazy(() => import('@/pages/Products/Commercial/PackagedAC'))
 const SpareParts = lazy(() => import('@/pages/Products/SpareParts'))
 const ECatalogue = lazy(() => import('@/pages/Products/ECatalogue'))
+const DaikinApp = lazy(() => import('@/pages/Products/DaikinApp'))
 const ProductDetail = lazy(() => import('@/pages/Products/ProductDetail'))
 const VirtualTour = lazy(() => import('@/pages/VirtualTour'))
 
@@ -64,6 +65,7 @@ const ServiceMaintenance = lazy(() => import('@/pages/Services/ServiceMaintenanc
 const ServiceCenter = lazy(() => import('@/pages/Services/ServiceCenter'))
 const WarrantySupport = lazy(() => import('@/pages/Services/WarrantySupport'))
 const TechnicalData = lazy(() => import('@/pages/Services/TechnicalData'))
+const GeneralServices = lazy(() => import('@/pages/Services/GeneralServices'))
 
 // Solutions
 const SolutionsIndex = lazy(() => import('@/pages/Solutions'))
@@ -81,7 +83,9 @@ const NewsDetail = lazy(() => import('@/pages/Insights/NewsDetail'))
 const Promotions = lazy(() => import('@/pages/Insights/Promotions'))
 const PromotionDetail = lazy(() => import('@/pages/Insights/PromotionDetail'))
 const Events = lazy(() => import('@/pages/Insights/Events'))
+const EventDetail = lazy(() => import('@/pages/Insights/EventDetail'))
 const TrainingCertification = lazy(() => import('@/pages/Insights/TrainingCertification'))
+const FAQ = lazy(() => import('@/pages/Insights/FAQ'))
 const DaikinImpact = lazy(() => import('@/pages/Insights/DaikinImpact'))
 const InverterDetail = lazy(() => import('@/pages/Insights/Technology/Inverter'))
 const HeatPumpDetail = lazy(() => import('@/pages/Insights/Technology/HeatPump'))
@@ -91,6 +95,7 @@ const VentilationDetail = lazy(() => import('@/pages/Insights/Technology/Ventila
 
 // Campaign
 const CampaignIndex = lazy(() => import('@/pages/Campaign'))
+const KeputusanYangTepat = lazy(() => import('@/pages/Campaign/KeputusanYangTepat'))
 const IdealAir = lazy(() => import('@/pages/Campaign/IdealAir'))
 const PowerToCreate = lazy(() => import('@/pages/Campaign/PowerToCreate'))
 const PerfectingAirStories = lazy(() => import('@/pages/Campaign/PerfectingAirStories'))
@@ -212,6 +217,9 @@ export default function App() {
             <Route path="/products/accessories/others" element={<PageSuspense><OthersPage /></PageSuspense>} />
             <Route path="/products/spare-parts" element={<PageSuspense><SpareParts /></PageSuspense>} />
             <Route path="/products/e-catalogue" element={<PageSuspense><ECatalogue /></PageSuspense>} />
+            <Route path="/products/daikin-app" element={<PageSuspense><DaikinApp /></PageSuspense>} />
+            <Route path="/products/app" element={<PageSuspense><DaikinApp /></PageSuspense>} />
+            <Route path="/products/perangkat-lunak" element={<PageSuspense><DaikinApp /></PageSuspense>} />
             <Route path="/virtual-tour" element={<PageSuspense><VirtualTour /></PageSuspense>} />
             <Route path="/products/:productSlug" element={<PageSuspense><ProductDetail /></PageSuspense>} />
 
@@ -224,6 +232,8 @@ export default function App() {
             <Route path="/services/maintenance" element={<PageSuspense><ServiceMaintenance /></PageSuspense>} />
             <Route path="/services/service-center" element={<PageSuspense><ServiceCenter /></PageSuspense>} />
             <Route path="/services/warranty" element={<PageSuspense><WarrantySupport /></PageSuspense>} />
+            <Route path="/services/general-services" element={<PageSuspense><GeneralServices /></PageSuspense>} />
+            <Route path="/services/layanan-umum" element={<PageSuspense><GeneralServices /></PageSuspense>} />
             <Route path="/services/technical-data" element={<PageSuspense><TechnicalData /></PageSuspense>} />
             <Route path="/services/data-teknis" element={<Navigate to="/services/technical-data" replace />} />
 
@@ -243,7 +253,10 @@ export default function App() {
             <Route path="/insights/promotions" element={<PageSuspense><Promotions /></PageSuspense>} />
             <Route path="/insights/promotions/:slug" element={<PageSuspense><PromotionDetail /></PageSuspense>} />
             <Route path="/insights/events" element={<PageSuspense><Events /></PageSuspense>} />
+            <Route path="/insights/events/:slug" element={<PageSuspense><EventDetail /></PageSuspense>} />
             <Route path="/insights/training" element={<PageSuspense><TrainingCertification /></PageSuspense>} />
+            <Route path="/insights/faq" element={<PageSuspense><FAQ /></PageSuspense>} />
+            <Route path="/faq" element={<PageSuspense><FAQ /></PageSuspense>} />
             <Route path="/insights/technology/inverter" element={<PageSuspense><InverterDetail /></PageSuspense>} />
             <Route path="/insights/technology/heat-pump" element={<PageSuspense><HeatPumpDetail /></PageSuspense>} />
             <Route path="/insights/technology/r32" element={<PageSuspense><R32Detail /></PageSuspense>} />
@@ -253,6 +266,8 @@ export default function App() {
 
             {/* Campaign */}
             <Route path="/campaign" element={<PageSuspense><CampaignIndex /></PageSuspense>} />
+            <Route path="/campaign/keputusan-yang-tepat" element={<PageSuspense><KeputusanYangTepat /></PageSuspense>} />
+            <Route path="/insights/keputusan-yang-tepat" element={<PageSuspense><KeputusanYangTepat /></PageSuspense>} />
             <Route path="/campaign/ideal-air" element={<PageSuspense><IdealAir /></PageSuspense>} />
             <Route path="/campaign/power-to-create" element={<PageSuspense><PowerToCreate /></PageSuspense>} />
             <Route path="/campaign/perfecting-air" element={<PageSuspense><PerfectingAirStories /></PageSuspense>} />

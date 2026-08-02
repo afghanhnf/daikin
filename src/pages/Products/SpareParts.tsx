@@ -1,10 +1,13 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronRight, Settings, Book, FileText, Search, ShieldCheck, MapPin, Phone, Truck, Wrench, PlayCircle, Download, ArrowRight, Filter, Store, Navigation, ChevronDown, Check, Home, Building2, BookOpen, MonitorPlay } from 'lucide-react'
+import { ChevronRight, Settings, Book, FileText, Search, ShieldCheck, MapPin, Phone, Truck, Wrench, PlayCircle, Download, ArrowRight, Filter, Store, Navigation, ChevronDown, Check, Home, Building2, BookOpen, MonitorPlay, Image as ImageIcon } from 'lucide-react'
 import PageTransition from '@/components/animations/PageTransition'
 import PageMeta from '@/components/seo/PageMeta'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 import FadeInUp from '@/components/animations/FadeInUp'
 import { FadeInLeft, FadeInRight } from '@/components/animations/FadeInLeft'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 export default function SpareParts() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -100,30 +103,42 @@ export default function SpareParts() {
     <PageTransition>
       <PageMeta title="Spare Parts Resmi Daikin" canonical="/products/spare-parts" />
 
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 flex flex-col justify-center overflow-hidden bg-daikin-blue-dark">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-daikin-blue-dark via-daikin-blue-dark/80 to-transparent z-10" />
-          <div className="w-full h-full flex items-center justify-end pr-20 relative">
-            <div className="absolute inset-0 bg-[url('/images/category_ac/spareparts.jpg')] bg-cover bg-center opacity-40 mix-blend-overlay" />
-          </div>
-        </div>
+      {/* Hero Section (Standard Model Page Banner) */}
+      <div className="relative pt-36 pb-28 overflow-hidden bg-gradient-to-br from-[#061834] via-daikin-blue-dark to-[#007bbf] text-white">
+        <Suspense fallback={null}>
+          <AirParticles color="white" />
+        </Suspense>
+
+        {/* Radial dots grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+            backgroundSize: '36px 36px',
+          }} 
+        />
+
+        {/* Ambient background glow */}
+        <div className="absolute -left-40 -top-40 w-[600px] h-[600px] bg-daikin-blue-light/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-20 w-full px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
-          <nav className="flex items-center space-x-2 text-white/50 mb-8 text-sm font-medium tracking-wide">
-            <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white/70">Produk</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white font-semibold">Spare Parts</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: 'Produk', path: '/products' },
+              { label: 'Spare Parts' }
+            ]}
+            className="text-white/80 mb-8"
+          />
 
           <FadeInUp>
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold text-daikin-blue bg-white rounded-full tracking-wider">SUKU CADANG ASLI</span>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-md">
-              SPARE <span className="text-daikin-blue-light">PARTS</span> AC
+            <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-md border border-white/20 text-white">
+              Suku Cadang Asli Orisinal
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight font-display">
+              Spare Parts <br />
+              <span className="text-daikin-blue-light font-light">AC Daikin Indonesia</span>
             </h1>
-            <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl drop-shadow">
+            <p className="text-white/90 text-base md:text-lg font-light leading-relaxed max-w-2xl font-sans">
               Suku cadang orisinal Daikin menjamin performa jangka panjang dan efisiensi energi yang tiada duanya untuk investasi pendingin ruangan Anda.
             </p>
           </FadeInUp>
@@ -155,8 +170,12 @@ export default function SpareParts() {
           {/* Suku Cadang */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center group">
             <FadeInLeft className="order-2 lg:order-1 relative">
-              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200" alt="Suku Cadang" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 border border-slate-200/80 flex flex-col items-center justify-center p-6 text-center shadow-xs relative group-hover:bg-slate-200/60 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-white text-daikin-blue flex items-center justify-center mb-3 shadow-xs group-hover:scale-110 transition-transform">
+                  <Settings className="w-8 h-8" />
+                </div>
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-display">[ Image Placeholder ]</span>
+                <span className="text-[11px] text-slate-400 mt-1 font-sans">Komponen & Suku Cadang Presisi Daikin</span>
               </div>
               <div className="absolute -bottom-8 -right-8 bg-daikin-blue text-white p-8 rounded-3xl shadow-xl w-64 hidden md:block">
                 <Settings className="w-10 h-10 mb-4 opacity-50" />
@@ -179,13 +198,14 @@ export default function SpareParts() {
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Dengan jaringan distribusi nasional yang luas, suku cadang yang Anda butuhkan dapat dikirim secara kilat langsung ke titik lokasi, memastikan waktu operasional terhenti minimal (minimum downtime).
               </p>
-              <div className="hidden">
-                {/* Button removed as per request: Cek Status Pengiriman */}
-              </div>
             </FadeInLeft>
             <FadeInRight className="order-2 relative">
-              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1200" alt="Pengiriman" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 border border-slate-200/80 flex flex-col items-center justify-center p-6 text-center shadow-xs relative group-hover:bg-slate-200/60 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-white text-daikin-blue flex items-center justify-center mb-3 shadow-xs group-hover:scale-110 transition-transform">
+                  <Truck className="w-8 h-8" />
+                </div>
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-display">[ Image Placeholder ]</span>
+                <span className="text-[11px] text-slate-400 mt-1 font-sans">Distribusi & Logistik Suku Cadang Daikin</span>
               </div>
               <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-3xl shadow-xl w-64 border border-gray-100 hidden md:block">
                 <Truck className="w-10 h-10 mb-4 text-daikin-blue" />
@@ -198,8 +218,12 @@ export default function SpareParts() {
           {/* Layanan Purna Jual */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center group">
             <FadeInLeft className="order-2 lg:order-1 relative">
-              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200" alt="Layanan Purna Jual" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 border border-slate-200/80 flex flex-col items-center justify-center p-6 text-center shadow-xs relative group-hover:bg-slate-200/60 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-white text-daikin-blue flex items-center justify-center mb-3 shadow-xs group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-8 h-8" />
+                </div>
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-display">[ Image Placeholder ]</span>
+                <span className="text-[11px] text-slate-400 mt-1 font-sans">Teknisi Sertifikasi Purna Jual Daikin</span>
               </div>
               <div className="absolute -bottom-8 -right-8 bg-charcoal text-white p-8 rounded-3xl shadow-xl w-64 hidden md:block">
                 <ShieldCheck className="w-10 h-10 mb-4 opacity-50" />
@@ -212,9 +236,9 @@ export default function SpareParts() {
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Teknisi ahli kami siap memberikan diagnosa yang akurat serta layanan perbaikan berstandar internasional. Keandalan jangka panjang unit Anda adalah komitmen utama kami.
               </p>
-              <button className="flex items-center gap-3 text-daikin-blue font-semibold hover:text-daikin-blue-dark group-hover:translate-x-2 transition-all">
+              <Link to="/contact" className="inline-flex items-center gap-3 text-daikin-blue font-semibold hover:text-daikin-blue-dark group-hover:translate-x-2 transition-all">
                 Hubungi Kami <ArrowRight className="w-5 h-5" />
-              </button>
+              </Link>
             </FadeInRight>
           </div>
 
@@ -301,8 +325,9 @@ export default function SpareParts() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedParts.length > 0 ? paginatedParts.map((part, idx) => (
                   <FadeInUp key={part.id} delay={idx * 0.05} className="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1">
-                    <div className="aspect-[4/3] bg-gray-100 overflow-hidden relative">
-                      <img src={part.image} alt={part.model} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 mix-blend-multiply" />
+                    <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative flex flex-col items-center justify-center border-b border-slate-200/80 group-hover:bg-slate-200/60 transition-colors">
+                      <Settings className="w-10 h-10 text-slate-300 group-hover:text-daikin-blue transition-colors group-hover:scale-110 duration-300 mb-2" />
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-display">[ Sample Image ]</span>
                     </div>
                     <div className="p-5 flex flex-col flex-grow">
                       <div className="flex flex-wrap gap-2 mb-3">

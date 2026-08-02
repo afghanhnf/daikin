@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
@@ -32,6 +32,8 @@ import PageMeta from '@/components/seo/PageMeta'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import FadeInUp, { FadeInItem } from '@/components/animations/FadeInUp'
 import { cn } from '@/utils/cn'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 // ─── SVG Diagram 1: Asupan Harian Tubuh Manusia ───────────────────────
 
@@ -211,37 +213,56 @@ export default function Research() {
         canonical="/insights/research"
       />
 
-      {/* ── Page Hero Header ────────────────────────────────────────────── */}
-      <div className="relative bg-gradient-to-br from-[#003B71] via-[#0072CE] to-[#0097E0] text-white pt-36 pb-20 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}
+      {/* ── 1. HERO BANNER (MODEL PAGE BANNER) ────────────────────────────────── */}
+      <div className="relative pt-36 pb-28 overflow-hidden bg-gradient-to-br from-[#061834] via-daikin-blue-dark to-[#007bbf] text-white">
+        <Suspense fallback={null}>
+          <AirParticles color="white" />
+        </Suspense>
+
+        {/* Radial dots grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+            backgroundSize: '36px 36px',
+          }} 
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+        {/* Ambient background glow */}
+        <div className="absolute -left-40 -top-40 w-[600px] h-[600px] bg-daikin-blue-light/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <Breadcrumb
-            items={[{ label: 'Insights', path: '/insights' }, { label: 'Riset Neurosains' }]}
-            className="text-white/80 mb-6"
+            items={[
+              { label: 'Wawasan', path: '/insights' },
+              { label: 'Berita & Informasi', path: '/insights/news' },
+              { label: 'Riset Neurosains' }
+            ]}
+            className="text-white/80 mb-8"
           />
 
-          <FadeInUp>
-            <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-sky-100 border border-white/10">
-                <FlaskConical className="w-4 h-4 text-[#0097E0] bg-white rounded-full p-0.5" /> Daikin Industries, Ltd.
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold tracking-wider text-white/90 border border-white/10">
-                Produksi Konten: TOYO KEIZAI BRAND STUDIO
-              </span>
-            </div>
+          <div className="max-w-4xl">
+            <FadeInUp>
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md border border-white/20 text-white">
+                  <FlaskConical className="w-4 h-4 text-cyan-200" />
+                  Daikin Industries, Ltd.
+                </div>
+                <div className="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wider backdrop-blur-md border border-white/15 text-white/90">
+                  TOYO KEIZAI BRAND STUDIO
+                </div>
+              </div>
 
-            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight max-w-5xl">
-              TUJUAN PENELITIAN NEUROSAINS DI DAIKIN INDUSTRIES: UDARA YANG MENGHAMBAT KELELAHAN
-            </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight font-display">
+                Riset Neurosains <br />
+                <span className="text-daikin-blue-light font-light">Udara yang Menghambat Kelelahan</span>
+              </h1>
 
-            <p className="text-white/85 text-lg md:text-xl font-medium max-w-3xl leading-relaxed">
-              Apa nilai dari udara selain untuk pemanasan dan pendinginan?
-            </p>
-          </FadeInUp>
+              <p className="text-white/90 text-base md:text-lg font-light leading-relaxed max-w-2xl font-sans">
+                Apa nilai dari udara selain untuk pemanasan dan pendinginan? Membongkar rahasia bagaimana udara memengaruhi kelelahan dan produktivitas manusia.
+              </p>
+            </FadeInUp>
+          </div>
         </div>
       </div>
 

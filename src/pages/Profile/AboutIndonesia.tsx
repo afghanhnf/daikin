@@ -150,8 +150,6 @@ export default function AboutIndonesia() {
             </p>
           </FadeInUp>
         </div>
-
-        <WaveBackground inverted />
       </div>
 
       {/* ── 2. INTRO NARRATIVE & HEADQUARTER CONTACT CARD ──────────────────── */}

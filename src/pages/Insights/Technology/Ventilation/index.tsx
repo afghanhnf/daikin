@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -29,6 +29,8 @@ import PageMeta from '@/components/seo/PageMeta'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import FadeInUp, { FadeInItem } from '@/components/animations/FadeInUp'
 import { cn } from '@/utils/cn'
+
+const AirParticles = lazy(() => import('@/components/animations/AirParticles'))
 
 interface GalleryItem {
   id: string
@@ -108,36 +110,51 @@ export default function Ventilation() {
         canonical="/insights/technology/ventilation"
       />
 
-      {/* ── Page Hero Header ────────────────────────────────────────────── */}
-      <div className="relative bg-gradient-to-br from-[#003B71] via-[#0072CE] to-[#0097E0] text-white pt-36 pb-20 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}
+      {/* ── 1. HERO BANNER (MODEL PAGE BANNER) ────────────────────────────────── */}
+      <div className="relative pt-36 pb-28 overflow-hidden bg-gradient-to-br from-[#061834] via-daikin-blue-dark to-[#007bbf] text-white">
+        <Suspense fallback={null}>
+          <AirParticles color="white" />
+        </Suspense>
+
+        {/* Radial dots grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
+            backgroundSize: '36px 36px',
+          }} 
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+        {/* Ambient background glow */}
+        <div className="absolute -left-40 -top-40 w-[600px] h-[600px] bg-daikin-blue-light/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <Breadcrumb
             items={[
-              { label: 'Insights', path: '/insights' },
-              { label: 'Teknologi', path: '/insights/technology/benefits' },
-              { label: 'Metode Ahli Ventilasi' }
+              { label: 'Wawasan', path: '/insights' },
+              { label: 'Berita & Informasi', path: '/insights/news' },
+              { label: 'Expert Ventilation' }
             ]}
-            className="text-white/80 mb-6"
+            className="text-white/80 mb-8"
           />
 
-          <FadeInUp>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-wider mb-4 text-sky-100 border border-white/10">
-              <Wind className="w-4 h-4 text-[#0097E0] bg-white rounded-full p-0.5" /> Daikin Air Ventilation Expert Guide
-            </div>
+          <div className="max-w-3xl">
+            <FadeInUp>
+              <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-md border border-white/20 text-white">
+                <Wind className="w-4 h-4 text-cyan-200" />
+                Expert Ventilation Guide
+              </div>
 
-            <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight max-w-4xl">
-              METODE EXPERT VENTILASI DAIKIN
-            </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight font-display">
+                Expert Ventilation <br />
+                <span className="text-daikin-blue-light font-light">Metode Ventilasi Ahli</span>
+              </h1>
 
-            <p className="text-white/90 text-lg md:text-xl font-bold max-w-3xl leading-relaxed text-sky-100">
-              Tanya Jawab Ahli: Sirkulasi Udara Segar & Sistem Mekanis untuk Hunian dan Ruang Komersial
-            </p>
-          </FadeInUp>
+              <p className="text-white/90 text-base md:text-lg font-light leading-relaxed max-w-2xl font-sans">
+                Panduan Lengkap Sirkulasi Udara Segar & Sistem Mekanis untuk Hunian, Perkantoran, dan Ruang Komersial dari Pakar Daikin.
+              </p>
+            </FadeInUp>
+          </div>
         </div>
       </div>
 
